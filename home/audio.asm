@@ -398,10 +398,6 @@ EnterMapMusic:: ; 3d03
 
 	xor a
 	ld [wDontPlayMapMusicOnReload], a
-	ld de, MUSIC_BICYCLE
-	ld a, [PlayerState]
-	cp PLAYER_BIKE
-	jr z, .play
 	call GetMapMusic
 .play
 	push de
@@ -466,12 +462,8 @@ SpecialMapMusic:: ; 3d62
 	jr nz, .contest
 
 .no
-	and a
-	ret
-
 .bike
-	ld de, MUSIC_BICYCLE
-	scf
+	and a
 	ret
 
 .surf
