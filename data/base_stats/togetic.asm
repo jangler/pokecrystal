@@ -14,7 +14,7 @@
 	db 5 ; unknown
 	dn 7, 7 ; frontpic dimensions
 	db 0, 0, 0, 0 ; padding
-	db SLOW ; growth rate
+	db MEDIUM_FAST ; growth rate
 	dn AVIAN, FAIRY ; egg groups
 
 	; tmhm
