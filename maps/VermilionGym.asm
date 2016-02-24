@@ -32,6 +32,7 @@ SurgeScript_0x1920a5:
 	writetext UnknownText_0x192277
 	playsound SFX_GET_BADGE
 	waitsfx
+	verbosegiveitem ULTRA_BALL, 3
 	setflag ENGINE_THUNDERBADGE
 	writetext UnknownText_0x192291
 	waitbutton

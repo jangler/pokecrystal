@@ -31,6 +31,7 @@ BugsyScript:
 	writetext Text_ReceivedHiveBadge
 	playsound SFX_GET_BADGE
 	waitsfx
+	verbosegiveitem POKE_BALL, 3
 	setflag ENGINE_HIVEBADGE
 	checkcode VAR_BADGES
 	scall AzaleaGymTriggerRockets

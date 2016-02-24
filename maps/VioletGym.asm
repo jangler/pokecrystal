@@ -28,6 +28,7 @@ FalknerScript_0x683c2:
 	writetext UnknownText_0x685af
 	playsound SFX_GET_BADGE
 	waitsfx
+	verbosegiveitem POKE_BALL, 3
 	setflag ENGINE_ZEPHYRBADGE
 	checkcode VAR_BADGES
 	scall VioletGymTriggerRockets

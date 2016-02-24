@@ -80,6 +80,7 @@ MistyScript_0x188432:
 	writetext UnknownText_0x188768
 	playsound SFX_GET_BADGE
 	waitsfx
+	verbosegiveitem ULTRA_BALL, 3
 	setflag ENGINE_CASCADEBADGE
 .FightDone
 	writetext UnknownText_0x188782

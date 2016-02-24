@@ -48,6 +48,7 @@ ChuckScript_0x9d60f:
 	writetext UnknownText_0x9d835
 	playsound SFX_GET_BADGE
 	waitsfx
+	verbosegiveitem GREAT_BALL, 3
 	setflag ENGINE_STORMBADGE
 	checkcode VAR_BADGES
 	scall CianwoodGymTriggerRockets

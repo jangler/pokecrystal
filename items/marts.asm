@@ -47,8 +47,7 @@ Mart0: ; 160ed
 ; 160f3
 
 Mart1: ; 160f3
-	db 5 ; # items
-	db POKE_BALL
+	db 4 ; # items
 	db POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
@@ -57,8 +56,7 @@ Mart1: ; 160f3
 ; 160fa
 
 Mart2: ; 160fa
-	db 10 ; # items
-	db POKE_BALL
+	db 9 ; # items
 	db POTION
 	db ESCAPE_ROPE
 	db ANTIDOTE
@@ -72,9 +70,8 @@ Mart2: ; 160fa
 ; 16106
 
 Mart3: ; 16106
-	db 9 ; # items
+	db 8 ; # items
 	db CHARCOAL
-	db POKE_BALL
 	db POTION
 	db SUPER_POTION
 	db ESCAPE_ROPE
@@ -108,9 +105,7 @@ Mart5: ; 16118
 ; 16121
 
 Mart6: ; 16121
-	db 8 ; # items
-	db POKE_BALL
-	db GREAT_BALL
+	db 6 ; # items
 	db ESCAPE_ROPE
 	db REPEL
 	db REVIVE
@@ -179,8 +174,7 @@ Mart12: ; 1614c
 ; 16153
 
 Mart13: ; 16153
-	db 9 ; # items
-	db GREAT_BALL
+	db 8 ; # items
 	db SUPER_POTION
 	db HYPER_POTION
 	db ANTIDOTE
@@ -193,9 +187,7 @@ Mart13: ; 16153
 ; 1615e
 
 Mart14: ; 1615e
-	db 10 ; # items
-	db POKE_BALL
-	db GREAT_BALL
+	db 8 ; # items
 	db POTION
 	db SUPER_POTION
 	db ANTIDOTE
@@ -208,18 +200,16 @@ Mart14: ; 1615e
 ; 1616a
 
 Mart15: ; 1616a
-	db 4 ; # items
+	db 3 ; # items
 	db TINYMUSHROOM
 	db SLOWPOKETAIL
-	db POKE_BALL
 	db POTION
 	db $ff
 ; 16170
 
 Mart16: ; 16170
-	db 9 ; # items
+	db 8 ; # items
 	db RAGECANDYBAR
-	db GREAT_BALL
 	db SUPER_POTION
 	db HYPER_POTION
 	db ANTIDOTE
@@ -231,9 +221,7 @@ Mart16: ; 16170
 ; 1617b
 
 Mart17: ; 1617b
-	db 9 ; # items
-	db GREAT_BALL
-	db ULTRA_BALL
+	db 7 ; # items
 	db HYPER_POTION
 	db MAX_POTION
 	db FULL_HEAL
@@ -245,8 +233,7 @@ Mart17: ; 1617b
 ; 16186
 
 Mart18: ; 16186
-	db 9 ; # items
-	db ULTRA_BALL
+	db 8 ; # items
 	db HYPER_POTION
 	db FULL_HEAL
 	db REVIVE
@@ -259,8 +246,7 @@ Mart18: ; 16186
 ; 16191
 
 Mart19: ; 16191
-	db 7 ; # items
-	db GREAT_BALL
+	db 6 ; # items
 	db SUPER_POTION
 	db SUPER_REPEL
 	db ANTIDOTE
@@ -271,9 +257,7 @@ Mart19: ; 16191
 ; 1619a
 
 Mart20: ; 1619a
-	db 9 ; # items
-	db GREAT_BALL
-	db ULTRA_BALL
+	db 7 ; # items
 	db SUPER_POTION
 	db SUPER_REPEL
 	db FULL_HEAL
@@ -285,8 +269,7 @@ Mart20: ; 1619a
 ; 161a5
 
 Mart21: ; 161a5
-	db 8 ; # items
-	db GREAT_BALL
+	db 7 ; # items
 	db POTION
 	db SUPER_POTION
 	db MAX_REPEL
@@ -298,8 +281,7 @@ Mart21: ; 161a5
 ; 161af
 
 Mart22: ; 161af
-	db 8 ; # items
-	db ULTRA_BALL
+	db 7 ; # items
 	db SUPER_POTION
 	db HYPER_POTION
 	db REVIVE
@@ -323,10 +305,7 @@ Mart23: ; 161b9
 ; 161c2
 
 Mart24: ; 161c2
-	db 10 ; # items
-	db POKE_BALL
-	db GREAT_BALL
-	db ULTRA_BALL
+	db 7 ; # items
 	db ESCAPE_ROPE
 	db FULL_HEAL
 	db ANTIDOTE
@@ -378,9 +357,7 @@ Mart28: ; 161e1
 ; 161ea
 
 Mart29: ; 161ea
-	db 7 ; # items
-	db GREAT_BALL
-	db ULTRA_BALL
+	db 5 ; # items
 	db SUPER_POTION
 	db HYPER_POTION
 	db FULL_HEAL
@@ -390,9 +367,7 @@ Mart29: ; 161ea
 ; 161f3
 
 Mart30: ; 161f3
-	db 8 ; # items
-	db GREAT_BALL
-	db ULTRA_BALL
+	db 6 ; # items
 	db HYPER_POTION
 	db MAX_POTION
 	db FULL_HEAL
@@ -414,8 +389,7 @@ Mart31: ; 161fd
 ; 16205
 
 Mart32: ; 16205
-	db 7 ; # items
-	db ULTRA_BALL
+	db 6 ; # items
 	db MAX_REPEL
 	db HYPER_POTION
 	db MAX_POTION
@@ -435,8 +409,7 @@ Mart33: ; 1620e
 ; 16214
 
 DefaultMart: ; 16214
-	db 2 ; # items
-	db POKE_BALL
+	db 1 ; # items
 	db POTION
 	db $ff
 ; 16218

@@ -165,6 +165,7 @@ DragonShrineTestScript:
 	setflag ENGINE_RISINGBADGE
 	playsound SFX_GET_BADGE
 	waitsfx
+	verbosegiveitem ULTRA_BALL, 3
 	special RestartMapMusic
 	specialphonecall SPECIALCALL_MASTERBALL
 	dotrigger $1
