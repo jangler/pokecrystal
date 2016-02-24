@@ -26,6 +26,7 @@ BlueScript_0x9aa26:
 	writetext Text_ReceivedEarthBadge
 	playsound SFX_GET_BADGE
 	waitsfx
+	verbosegiveitem ULTRA_BALL, 3
 	setflag ENGINE_EARTHBADGE
 	writetext LeaderBlueAfterText
 	waitbutton

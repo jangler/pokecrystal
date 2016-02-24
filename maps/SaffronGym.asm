@@ -34,6 +34,7 @@ SabrinaScript_0x189c2e:
 	writetext UnknownText_0x189e95
 	playsound SFX_GET_BADGE
 	waitsfx
+	verbosegiveitem ULTRA_BALL, 3
 	setflag ENGINE_MARSHBADGE
 	writetext UnknownText_0x189ead
 	waitbutton

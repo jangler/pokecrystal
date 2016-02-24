@@ -40,6 +40,7 @@ JanineScript_0x195db9:
 	writetext UnknownText_0x195feb
 	playsound SFX_GET_BADGE
 	waitsfx
+	verbosegiveitem ULTRA_BALL, 3
 	setflag ENGINE_SOULBADGE
 	jump UnknownScript_0x195e02
 .FightDone
