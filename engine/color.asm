@@ -2,9 +2,9 @@ PALPACKET_LENGTH EQU $10
 INCLUDE "predef/sgb.asm"
 
 SHINY_ATK_BIT EQU 5
-SHINY_DEF_VAL EQU 10
-SHINY_SPD_VAL EQU 10
-SHINY_SPC_VAL EQU 10
+SHINY_DEF_BIT EQU 1
+SHINY_SPD_BIT EQU 1
+SHINY_SPC_VAL EQU 15
 LO_NYBBLE     EQU $0f
 HI_NYBBLE     EQU $f0
 
@@ -22,14 +22,12 @@ CheckShininess: ; 8a68
 
 ; Defense
 	ld a, [hli]
-	and LO_NYBBLE
-	cp  SHINY_DEF_VAL
+	and 1 << SHINY_DEF_BIT
 	jr nz, .NotShiny
 
 ; Speed
 	ld a, [hl]
-	and HI_NYBBLE
-	cp  SHINY_SPD_VAL << 4
+	and 1 << SHINY_SPD_BIT
 	jr nz, .NotShiny
 
 ; Special
