@@ -1,4 +1,4 @@
-	db MEDIUM_FASTKING ; 199
+	db SLOWKING ; 199
 
 	db  95,  75,  80,  30, 100, 110
 	;   hp  atk  def  spd  sat  sdf
@@ -14,7 +14,7 @@
 	db 5 ; unknown
 	dn 7, 7 ; frontpic dimensions
 	db 0, 0, 0, 0 ; padding
-	db MEDIUM_FAST ; growth rate
+	db MEDIUM_SLOW ; growth rate
 	dn MONSTER, AMPHIBIAN ; egg groups
 
 	; tmhm
