@@ -60,141 +60,13 @@ endr
 	pop hl
 
 .loop
-	ld a, [hli]
-	and a
-	jr z, EvolveAfterBattle_MasterLoop
-
-	ld b, a
-
-	cp EVOLVE_TRADE
-	jr z, .trade
-
-	ld a, [wLinkMode]
-	and a
-	jp nz, .dont_evolve_2
-
-	ld a, b
-	cp EVOLVE_ITEM
-	jp z, .item
-
-	ld a, [wForceEvolution]
-	and a
-	jp nz, .dont_evolve_2
-
-	ld a, b
-	cp EVOLVE_LEVEL
-	jp z, .level
-
-	cp EVOLVE_HAPPINESS
-	jr z, .happiness
-
-
-; EVOLVE_STAT
 	ld a, [TempMonLevel]
-	cp [hl]
-	jp c, .dont_evolve_1
-
-	call IsMonHoldingEverstone
-	jp z, .dont_evolve_1
-
-	push hl
-	ld de, TempMonAttack
-	ld hl, TempMonDefense
-	ld c, 2
-	call StringCmp
-	ld a, ATK_EQ_DEF
-	jr z, .got_tyrogue_evo
-	ld a, ATK_LT_DEF
-	jr c, .got_tyrogue_evo
-	ld a, ATK_GT_DEF
-.got_tyrogue_evo
-	pop hl
-
-	inc hl
-	cp [hl]
-	jp nz, .dont_evolve_2
-
-	inc hl
-	jr .proceed
-
-
-.happiness
-	ld a, [TempMonHappiness]
-	cp 220
-	jp c, .dont_evolve_2
-
-	call IsMonHoldingEverstone
-	jp z, .dont_evolve_2
-
-	ld a, [hli]
-	cp TR_ANYTIME
-	jr z, .proceed
-	cp TR_MORNDAY
-	jr z, .happiness_daylight
-
-; TR_NITE
-	ld a, [TimeOfDay]
-	cp NITE
-	jp nz, .dont_evolve_3
-	jr .proceed
-
-.happiness_daylight
-	ld a, [TimeOfDay]
-	cp NITE
-	jp z, .dont_evolve_3
-	jr .proceed
-
-
-.trade
-	ld a, [wLinkMode]
+.evolve_mod_10
+	sub 10
+	jr nc, .evolve_mod_10
+	add 10
 	and a
-	jp z, .dont_evolve_2
-
-	call IsMonHoldingEverstone
-	jp z, .dont_evolve_2
-
-	ld a, [hli]
-	ld b, a
-	inc a
-	jr z, .proceed
-
-	ld a, [wLinkMode]
-	cp LINK_TIMECAPSULE
-	jp z, .dont_evolve_3
-
-	ld a, [TempMonItem]
-	cp b
-	jp nz, .dont_evolve_3
-
-	xor a
-	ld [TempMonItem], a
-	jr .proceed
-
-
-.item
-	ld a, [hli]
-	ld b, a
-	ld a, [CurItem]
-	cp b
-	jp nz, .dont_evolve_3
-
-	ld a, [wForceEvolution]
-	and a
-	jp z, .dont_evolve_3
-	ld a, [wLinkMode]
-	and a
-	jp nz, .dont_evolve_3
-	jr .proceed
-
-
-.level
-	ld a, [hli]
-	ld b, a
-	ld a, [TempMonLevel]
-	cp b
-	jp c, .dont_evolve_3
-	call IsMonHoldingEverstone
-	jp z, .dont_evolve_3
+	jr nz, EvolveAfterBattle_MasterLoop
 
 .proceed
 	ld a, [TempMonLevel]
@@ -202,9 +74,14 @@ endr
 	ld a, $1
 	ld [wMonTriedToEvolve], a
 
-	push hl
+	call Random
+	cp 251
+	jr c, .modded_251
+	sub 251
+.modded_251
+	inc a
+	push af
 
-	ld a, [hl]
 	ld [Buffer2], a
 	ld a, [CurPartyMon]
 	ld hl, PartyMonNicknames
@@ -236,9 +113,8 @@ endr
 	ld hl, Text_CongratulationsYourPokemon
 	call PrintText
 
-	pop hl
+	pop af
 
-	ld a, [hl]
 	ld [CurSpecies], a
 	ld [TempMonSpecies], a
 	ld [Buffer2], a
