@@ -430,17 +430,7 @@ Text_WhatEvolving: ; 0x42482
 ; 0x42487
 
 
-LearnLevelMoves: ; 42487
-	; only learn moves on every 5th level
-	ld a, [CurPartyLevel]
-.learn_mod_5
-	sub 5
-	jr nc, .learn_mod_5
-	add 5
-	and a
-	jr nz, .done
-
-.find_move
+FindRandomLearnableMove:
 	; pick random move
 	call Random
 	cp 251
@@ -451,8 +441,7 @@ LearnLevelMoves: ; 42487
 	ld d, a
 
 	; check if move is in learnset
-	ld a, [wd265]
-	ld [CurPartySpecies], a
+	ld a, [CurPartySpecies]
 	dec a
 	ld b, 0
 	ld c, a
@@ -483,10 +472,27 @@ endr
 	predef CanLearnTMHMMove
 	pop de
 	and c
-	jr z, .find_move
+	call z, FindRandomLearnableMove
 
-	; attempt to learn move
 .can_learn
+	ret
+
+
+LearnLevelMoves: ; 42487
+	; only learn moves on every 5th level
+	ld a, [CurPartyLevel]
+.learn_mod_5
+	sub 5
+	jr nc, .learn_mod_5
+	add 5
+	and a
+	jr nz, .done
+
+.find_move
+	ld a, [wd265]
+	ld [CurPartySpecies], a
+	call FindRandomLearnableMove
+
 	ld hl, PartyMon1Moves
 	ld a, [CurPartyMon]
 	ld bc, PARTYMON_STRUCT_LENGTH
