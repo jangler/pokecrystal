@@ -431,6 +431,26 @@ Text_WhatEvolving: ; 0x42482
 
 
 LearnLevelMoves: ; 42487
+	; only learn moves on every 5th level
+	ld a, [CurPartyLevel]
+.learn_mod_5
+	sub 5
+	jr nc, .learn_mod_5
+	add 5
+	and a
+	jr nz, .done
+
+.find_move
+	; pick random move
+	call Random
+	cp 251
+	jr c, .modded_251
+	sub 251
+.modded_251
+	inc a
+	ld d, a
+
+	; check if move is in learnset
 	ld a, [wd265]
 	ld [CurPartySpecies], a
 	dec a
@@ -443,25 +463,30 @@ endr
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-
 .skip_evos
 	ld a, [hli]
 	and a
 	jr nz, .skip_evos
-
-.find_move
+.check_learnset_move
 	ld a, [hli]
 	and a
-	jr z, .done
-
-	ld b, a
-	ld a, [CurPartyLevel]
-	cp b
+	jr z, .check_tmhm
 	ld a, [hli]
-	jr nz, .find_move
+	cp d
+	jr z, .can_learn
 
-	push hl
-	ld d, a
+	; check if move is learnable by TM/HM
+.check_tmhm
+	ld a, d
+	ld [wPutativeTMHMMove], a
+	push de
+	predef CanLearnTMHMMove
+	pop de
+	and c
+	jr z, .find_move
+
+	; attempt to learn move
+.can_learn
 	ld hl, PartyMon1Moves
 	ld a, [CurPartyMon]
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -477,7 +502,6 @@ endr
 	jr .learn
 .has_move
 
-	pop hl
 	jr .find_move
 
 .learn
@@ -487,8 +511,7 @@ endr
 	call GetMoveName
 	call CopyName1
 	predef LearnMove
-	pop hl
-	jr .find_move
+	jr .done
 
 .done
 	ld a, [CurPartySpecies]
