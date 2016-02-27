@@ -7464,7 +7464,23 @@ GiveExperiencePoints: ; 3ee3b
 	ld [hMultiplicand + 1], a
 	ld a, [EnemyMonBaseExp]
 	ld [hMultiplicand + 2], a
+
+	; adjust exp for level differential
+	pop bc
+	push bc
+	push hl
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	pop hl
+	ld b, a
 	ld a, [EnemyMonLevel]
+	add a
+	sub b
+	jr nc, .no_zero
+	xor a
+.no_zero
+
 	ld [hMultiplier], a
 	call Multiply
 	ld a, 7
