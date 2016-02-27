@@ -1965,7 +1965,9 @@ HealParty: ; c658
 	jr z, .next
 
 	push hl
+	call HealPartyMon
 	pop hl
+	jr .done
 
 .next
 	ld a, [CurPartyMon]
@@ -1985,8 +1987,8 @@ HealPartyMon: ; c677
 	ld hl, MON_STATUS
 	add hl, de
 	xor a
-	ld [hli], a
-	ld [hl], a
+	;ld [hli], a
+	;ld [hl], a
 
 	ld hl, MON_MAXHP
 	add hl, de
@@ -1998,12 +2000,18 @@ HealPartyMon: ; c677
 	dec bc
 
 	ld a, [hli]
-	ld [bc], a
+	;ld [bc], a
 	inc bc
 	ld a, [hl]
+	;ld [bc], a
+	ld a, [bc]
+	and a
+	jr nz, .noheal
+	ld a, 1
 	ld [bc], a
+.noheal
 
-	callba RestoreAllPP
+	;callba RestoreAllPP
 	ret
 
 ComputeHPBarPixels: ; c699
