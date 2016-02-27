@@ -534,7 +534,6 @@ FillMoves: ; 424e1
 	push bc
 	ld a, [CurPartyLevel]
 	ld b, a
-	push bc
 	jr .GetMove
 
 .NextMove
@@ -544,8 +543,8 @@ FillMoves: ; 424e1
 	sub 5
 	jr c, .done
 	ld b, a
-	push bc
 .GetMove
+	push bc
 	push de
 	call FindRandomLearnableMove
 	ld a, d
