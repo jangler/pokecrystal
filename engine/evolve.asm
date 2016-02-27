@@ -482,10 +482,10 @@ endr
 LearnLevelMoves: ; 42487
 	; only learn moves on every 5th level
 	ld a, [CurPartyLevel]
-.learn_mod_5
-	sub 5
-	jr nc, .learn_mod_5
-	add 5
+.learn_mod_3
+	sub 3
+	jr nc, .learn_mod_3
+	add 3
 	and a
 	jr nz, .done
 
@@ -541,7 +541,7 @@ FillMoves: ; 424e1
 	pop de
 	pop bc
 	ld a, b
-	sub 5
+	sub 3
 	jr c, .done
 	ld b, a
 .GetMove
