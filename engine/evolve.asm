@@ -541,7 +541,7 @@ FillMoves: ; 424e1
 	pop de
 	pop bc
 	ld a, b
-	sub 5
+	sub 3
 	jr c, .done
 	ld b, a
 .GetMove
