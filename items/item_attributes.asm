@@ -70,7 +70,7 @@ Item2Attributes:
 	item_attribute   175, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_CURRENT, ITEMMENU_NOUSE
 
 ; MAX ELIXER
-	item_attribute  2250, 0,                -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute  1125, 0,                -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; FIRE STONE
 	item_attribute  1050, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_NOUSE
@@ -196,13 +196,13 @@ Item2Attributes:
 	item_attribute  4900, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_NOUSE
 
 ; ETHER
-	item_attribute  600, 0,                10,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute  300, 0,                10,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; MAX ETHER
-	item_attribute  1000, 0,                -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute  500, 0,                -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; ELIXER
-	item_attribute  1500, 0,                10,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute  750, 0,                10,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; RED SCALE
 	item_attribute     0, 0,                 0, CANT_SELECT | CANT_TOSS, KEY_ITEM, ITEMMENU_NOUSE,   ITEMMENU_NOUSE
