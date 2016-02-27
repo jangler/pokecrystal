@@ -1967,7 +1967,6 @@ HealParty: ; c658
 	push hl
 	call HealPartyMon
 	pop hl
-	jr .done
 
 .next
 	ld a, [CurPartyMon]
