@@ -69,33 +69,33 @@ PokeCenterNurseScript:
 	iftrue .morn_comcenter
 	farwritetext NurseMornText
 	buttonsound
-	jump .done
+	jump .ok
 .morn_comcenter
 	farwritetext PokeComNurseMornText
 	buttonsound
-	jump .done
+	jump .ok
 
 .day
 	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	iftrue .day_comcenter
 	farwritetext NurseDayText
 	buttonsound
-	jump .done
+	jump .ok
 .day_comcenter
 	farwritetext PokeComNurseDayText
 	buttonsound
-	jump .done
+	jump .ok
 
 .nite
 	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	iftrue .nite_comcenter
 	farwritetext NurseNiteText
 	buttonsound
-	jump .done
+	jump .ok
 .nite_comcenter
 	farwritetext PokeComNurseNiteText
 	buttonsound
-	jump .done
+	jump .ok
 
 .ok
 	; only do this once
