@@ -267,11 +267,6 @@ ElmDirectionsScript:
 	waitsfx
 	waitbutton
 	closetext
-	spriteface ELMSLAB_ELM, LEFT
-	opentext
-	writetext ElmDirectionsText2
-	waitbutton
-	closetext
 	spriteface ELMSLAB_ELM, DOWN
 	opentext
 	writetext ElmDirectionsText3
@@ -297,19 +292,6 @@ LookAtElmPokeBallScript:
 	end
 
 ElmsLabHealingMachine:
-	opentext
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .CanHeal
-	writetext ElmsLabHealingMachineText1
-	waitbutton
-	closetext
-	end
-
-.CanHeal
-	writetext ElmsLabHealingMachineText2
-	yesorno
-	iftrue ElmsLabHealingMachine_HealParty
-	closetext
 	end
 
 ElmsLabHealingMachine_HealParty:
