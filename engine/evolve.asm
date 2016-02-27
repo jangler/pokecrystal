@@ -430,9 +430,18 @@ Text_WhatEvolving: ; 0x42482
 ; 0x42487
 
 
-LearnLevelMoves: ; 42487
-	ld a, [wd265]
-	ld [CurPartySpecies], a
+FindRandomLearnableMove:
+	; pick random move
+	call Random
+	cp 251
+	jr c, .modded_251
+	sub 251
+.modded_251
+	inc a
+	ld d, a
+
+	; check if move is in learnset
+	ld a, [CurPartySpecies]
 	dec a
 	ld b, 0
 	ld c, a
@@ -443,25 +452,47 @@ endr
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-
 .skip_evos
 	ld a, [hli]
 	and a
 	jr nz, .skip_evos
-
-.find_move
+.check_learnset_move
 	ld a, [hli]
 	and a
-	jr z, .done
-
-	ld b, a
-	ld a, [CurPartyLevel]
-	cp b
+	jr z, .check_tmhm
 	ld a, [hli]
-	jr nz, .find_move
+	cp d
+	jr z, .can_learn
 
-	push hl
-	ld d, a
+	; check if move is learnable by TM/HM
+.check_tmhm
+	ld a, d
+	ld [wPutativeTMHMMove], a
+	push de
+	predef CanLearnTMHMMove
+	pop de
+	and c
+	call z, FindRandomLearnableMove
+
+.can_learn
+	ret
+
+
+LearnLevelMoves: ; 42487
+	; only learn moves on every 5th level
+	ld a, [CurPartyLevel]
+.learn_mod_5
+	sub 5
+	jr nc, .learn_mod_5
+	add 5
+	and a
+	jr nz, .done
+
+.find_move
+	ld a, [wd265]
+	ld [CurPartySpecies], a
+	call FindRandomLearnableMove
+
 	ld hl, PartyMon1Moves
 	ld a, [CurPartyMon]
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -477,7 +508,6 @@ endr
 	jr .learn
 .has_move
 
-	pop hl
 	jr .find_move
 
 .learn
@@ -487,8 +517,7 @@ endr
 	call GetMoveName
 	call CopyName1
 	predef LearnMove
-	pop hl
-	jr .find_move
+	jr .done
 
 .done
 	ld a, [CurPartySpecies]
@@ -503,49 +532,35 @@ FillMoves: ; 424e1
 	push hl
 	push de
 	push bc
-	ld hl, EvosAttacksPointers
-	ld b, 0
-	ld a, [CurPartySpecies]
-	dec a
-	add a
-	rl b
-	ld c, a
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-.GoToAttacks
-	ld a, [hli]
-	and a
-	jr nz, .GoToAttacks
-	jr .GetLevel
+	ld a, [CurPartyLevel]
+	ld b, a
+	push bc
+	jr .GetMove
 
 .NextMove
 	pop de
-.GetMove
-	inc hl
-.GetLevel
-	ld a, [hli]
-	and a
-	jp z, .done
+	pop bc
+	ld a, b
+	sub 5
+	jr c, .done
 	ld b, a
-	ld a, [CurPartyLevel]
-	cp b
-	jp c, .done
-	ld a, [Buffer1]
-	and a
-	jr z, .CheckMove
-	ld a, [wd002]
-	cp b
-	jr nc, .GetMove
+	push bc
+.GetMove
+	push de
+	call FindRandomLearnableMove
+	ld a, d
+	pop de
+	ld [wPutativeTMHMMove], a
 
 .CheckMove
 	push de
 	ld c, NUM_MOVES
 .CheckRepeat
+	ld a, [wPutativeTMHMMove]
+	ld b, a
 	ld a, [de]
 	inc de
-	cp [hl]
+	cp b
 	jr z, .NextMove
 	dec c
 	jr nz, .CheckRepeat
@@ -580,13 +595,13 @@ FillMoves: ; 424e1
 	pop hl
 
 .LearnMove
-	ld a, [hl]
+	ld a, [wPutativeTMHMMove]
 	ld [de], a
 	ld a, [Buffer1]
 	and a
 	jr z, .NextMove
 	push hl
-	ld a, [hl]
+	ld a, [wPutativeTMHMMove]
 	ld hl, MON_PP - MON_MOVES
 	add hl, de
 	push hl
