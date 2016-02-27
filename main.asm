@@ -1965,7 +1965,6 @@ HealParty: ; c658
 	jr z, .next
 
 	push hl
-	call HealPartyMon
 	pop hl
 
 .next
