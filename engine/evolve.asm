@@ -609,7 +609,14 @@ FillMoves: ; 424e1
 	pop hl
 
 .LearnMove
-	ld a, [hl]
+	push hl
+	push de
+	push bc
+	call FindRandomLearnableMove
+	ld a, d
+	pop bc
+	pop de
+	pop hl
 	ld [de], a
 	ld a, [Buffer1]
 	and a
