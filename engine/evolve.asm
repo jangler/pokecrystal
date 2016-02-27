@@ -532,49 +532,35 @@ FillMoves: ; 424e1
 	push hl
 	push de
 	push bc
-	ld hl, EvosAttacksPointers
-	ld b, 0
-	ld a, [CurPartySpecies]
-	dec a
-	add a
-	rl b
-	ld c, a
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-.GoToAttacks
-	ld a, [hli]
-	and a
-	jr nz, .GoToAttacks
-	jr .GetLevel
+	ld a, [CurPartyLevel]
+	ld b, a
+	push bc
+	jr .GetMove
 
 .NextMove
 	pop de
-.GetMove
-	inc hl
-.GetLevel
-	ld a, [hli]
-	and a
-	jp z, .done
+	pop bc
+	ld a, b
+	sub 5
+	jr c, .done
 	ld b, a
-	ld a, [CurPartyLevel]
-	cp b
-	jp c, .done
-	ld a, [Buffer1]
-	and a
-	jr z, .CheckMove
-	ld a, [wd002]
-	cp b
-	jr nc, .GetMove
+	push bc
+.GetMove
+	push de
+	call FindRandomLearnableMove
+	ld a, d
+	pop de
+	ld [wPutativeTMHMMove], a
 
 .CheckMove
 	push de
 	ld c, NUM_MOVES
 .CheckRepeat
+	ld a, [wPutativeTMHMMove]
+	ld b, a
 	ld a, [de]
 	inc de
-	cp [hl]
+	cp b
 	jr z, .NextMove
 	dec c
 	jr nz, .CheckRepeat
@@ -609,20 +595,13 @@ FillMoves: ; 424e1
 	pop hl
 
 .LearnMove
-	push hl
-	push de
-	push bc
-	call FindRandomLearnableMove
-	ld a, d
-	pop bc
-	pop de
-	pop hl
+	ld a, [wPutativeTMHMMove]
 	ld [de], a
 	ld a, [Buffer1]
 	and a
 	jr z, .NextMove
 	push hl
-	ld a, [hl]
+	ld a, [wPutativeTMHMMove]
 	ld hl, MON_PP - MON_MOVES
 	add hl, de
 	push hl
