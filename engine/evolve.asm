@@ -431,6 +431,7 @@ Text_WhatEvolving: ; 0x42482
 
 
 FindRandomLearnableMove:
+.try_random_move_again
 	; pick random move
 	call Random
 	cp 251
@@ -472,7 +473,7 @@ endr
 	predef CanLearnTMHMMove
 	pop de
 	and c
-	call z, FindRandomLearnableMove
+	jr z, .try_random_move_again
 
 .can_learn
 	ret
