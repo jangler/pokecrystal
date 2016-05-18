@@ -108,7 +108,6 @@ endr
 	push af
 	call ClearSprites
 	pop af
-	jp c, CancelEvolution
 
 	ld hl, Text_CongratulationsYourPokemon
 	call PrintText
