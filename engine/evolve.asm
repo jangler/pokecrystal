@@ -190,6 +190,8 @@ endr
 	predef GetUnownLetter
 	callab UpdateUnownDex
 
+	call SavedTheGame
+
 .skip_unown
 	pop de
 	pop hl
