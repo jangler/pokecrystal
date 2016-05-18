@@ -3,8 +3,8 @@ INCLUDE "predef/sgb.asm"
 
 SHINY_ATK_BIT EQU 5
 SHINY_DEF_BIT EQU 1
-SHINY_SPD_BIT EQU 1
-SHINY_SPC_VAL EQU 15
+SHINY_SPD_BIT EQU 5
+SHINY_SPC_BIT EQU 1
 LO_NYBBLE     EQU $0f
 HI_NYBBLE     EQU $f0
 
@@ -32,8 +32,7 @@ CheckShininess: ; 8a68
 
 ; Special
 	ld a, [hl]
-	and LO_NYBBLE
-	cp  SHINY_SPC_VAL
+	and 1 << SHINY_SPC_BIT
 	jr nz, .NotShiny
 
 .Shiny
