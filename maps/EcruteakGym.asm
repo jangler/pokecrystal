@@ -42,7 +42,7 @@ MortyScript_0x99d58:
 	writetext UnknownText_0x9a043
 	playsound SFX_GET_BADGE
 	waitsfx
-	verbosegiveitem GREAT_BALL, 3
+	verbosegiveitem GREAT_BALL
 	setflag ENGINE_FOGBADGE
 	checkcode VAR_BADGES
 	scall EcruteakGymTriggerRockets

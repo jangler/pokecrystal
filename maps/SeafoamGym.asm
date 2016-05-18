@@ -35,7 +35,7 @@ BlaineScript_0x1ab4fb:
 	writetext UnknownText_0x1ab683
 	playsound SFX_GET_BADGE
 	waitsfx
-	verbosegiveitem ULTRA_BALL, 3
+	verbosegiveitem ULTRA_BALL
 	setflag ENGINE_VOLCANOBADGE
 	writetext UnknownText_0x1ab69d
 	waitbutton

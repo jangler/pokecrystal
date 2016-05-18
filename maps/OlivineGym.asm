@@ -26,7 +26,7 @@ JasmineScript_0x9c12f:
 	writetext UnknownText_0x9c33a
 	playsound SFX_GET_BADGE
 	waitsfx
-	verbosegiveitem GREAT_BALL, 3
+	verbosegiveitem GREAT_BALL
 	setflag ENGINE_MINERALBADGE
 	checkcode VAR_BADGES
 	scall OlivineGymTriggerRockets

@@ -62,7 +62,7 @@ WhitneyScript_0x5400c:
 	writetext UnknownText_0x54273
 	playsound SFX_GET_BADGE
 	waitsfx
-	verbosegiveitem GREAT_BALL, 3
+	verbosegiveitem GREAT_BALL
 	setflag ENGINE_PLAINBADGE
 	checkcode VAR_BADGES
 	scall GoldenrodGymTriggerRockets

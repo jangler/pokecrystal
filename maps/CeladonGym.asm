@@ -34,7 +34,7 @@ ErikaScript_0x72a6a:
 	writetext UnknownText_0x72c96
 	playsound SFX_GET_BADGE
 	waitsfx
-	verbosegiveitem ULTRA_BALL, 3
+	verbosegiveitem ULTRA_BALL
 	setflag ENGINE_RAINBOWBADGE
 .FightDone
 	checkevent EVENT_GOT_TM19_GIGA_DRAIN

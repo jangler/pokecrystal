@@ -28,7 +28,7 @@ BrockScript_0x1a2864:
 	writetext UnknownText_0x1a2a3d
 	playsound SFX_GET_BADGE
 	waitsfx
-	verbosegiveitem ULTRA_BALL, 3
+	verbosegiveitem ULTRA_BALL
 	setflag ENGINE_BOULDERBADGE
 	writetext UnknownText_0x1a2a57
 	waitbutton
