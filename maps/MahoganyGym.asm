@@ -31,7 +31,7 @@ PryceScript_0x199a9e:
 	writetext UnknownText_0x199d3b
 	playsound SFX_GET_BADGE
 	waitsfx
-	verbosegiveitem GREAT_BALL, 3
+	verbosegiveitem GREAT_BALL
 	setflag ENGINE_GLACIERBADGE
 	checkcode VAR_BADGES
 	scall MahoganyGymTriggerRockets
