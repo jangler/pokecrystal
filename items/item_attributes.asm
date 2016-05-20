@@ -34,43 +34,43 @@ Item2Attributes:
 	item_attribute     0, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_NOUSE
 
 ; ANTIDOTE
-	item_attribute   100, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   50, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; BURN HEAL
-	item_attribute   250, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   150, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; ICE HEAL
-	item_attribute   250, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   150, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; AWAKENING
-	item_attribute   250, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   150, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; PARLYZ HEAL
-	item_attribute   200, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   100, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; FULL RESTORE
-	item_attribute  3000, 0,                -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute  1500, 0,                -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; MAX POTION
-	item_attribute  2500, 0,                -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute  1250, 0,                -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; HYPER POTION
-	item_attribute  1200, 0,               200,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute  600, 0,               200,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; SUPER POTION
-	item_attribute   700, 0,                50,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   350, 0,                50,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; POTION
-	item_attribute   300, 0,                20,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   150, 0,                20,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; ESCAPE ROPE
 	item_attribute   550, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_CLOSE,   ITEMMENU_NOUSE
 
 ; REPEL
-	item_attribute   350, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_CURRENT, ITEMMENU_NOUSE
+	item_attribute   0, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_CURRENT, ITEMMENU_NOUSE
 
 ; MAX ELIXER
-	item_attribute  4500, 0,                -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute  450, 0,                -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; FIRE STONE
 	item_attribute  2100, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_NOUSE
@@ -121,7 +121,7 @@ Item2Attributes:
 	item_attribute  1000, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
 
 ; FULL HEAL
-	item_attribute   600, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   300, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; REVIVE
 	item_attribute  1500, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
@@ -133,10 +133,10 @@ Item2Attributes:
 	item_attribute   700, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
 
 ; SUPER REPEL
-	item_attribute   500, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_CURRENT, ITEMMENU_NOUSE
+	item_attribute   0, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_CURRENT, ITEMMENU_NOUSE
 
 ; MAX REPEL
-	item_attribute   700, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_CURRENT, ITEMMENU_NOUSE
+	item_attribute   0, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_CURRENT, ITEMMENU_NOUSE
 
 ; DIRE HIT
 	item_attribute   650, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
@@ -145,13 +145,13 @@ Item2Attributes:
 	item_attribute $9999, 0,                 0,                       0, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
 
 ; FRESH WATER
-	item_attribute   200, 0,                50,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   0, 0,                50,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; SODA POP
-	item_attribute   300, 0,                60,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   0, 0,                60,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; LEMONADE
-	item_attribute   350, 0,                80,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   0, 0,                80,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; X ATTACK
 	item_attribute   500, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
@@ -196,13 +196,13 @@ Item2Attributes:
 	item_attribute  9800, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_NOUSE
 
 ; ETHER
-	item_attribute  1200, 0,                10,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute  100, 0,                10,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; MAX ETHER
-	item_attribute  2000, 0,                -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute  200, 0,                -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; ELIXER
-	item_attribute  3000, 0,                10,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute  300, 0,                10,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; RED SCALE
 	item_attribute     0, 0,                 0, CANT_SELECT | CANT_TOSS, KEY_ITEM, ITEMMENU_NOUSE,   ITEMMENU_NOUSE
@@ -223,7 +223,7 @@ Item2Attributes:
 	item_attribute     0, 0,                 0, CANT_SELECT | CANT_TOSS, KEY_ITEM, ITEMMENU_NOUSE,   ITEMMENU_NOUSE
 
 ; MOOMOO MILK
-	item_attribute   500, 0,               100,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   250, 0,               100,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; QUICK CLAW
 	item_attribute   100, HELD_QUICK_CLAW,     60,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
@@ -343,13 +343,13 @@ Item2Attributes:
 	item_attribute  7500, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
 
 ; EVERSTONE
-	item_attribute   200, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
+	item_attribute   0, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
 
 ; SPELL TAG
 	item_attribute   100, HELD_GHOST_BOOST,    10,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
 
 ; RAGECANDYBAR
-	item_attribute   300, 0,                20,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   150, 0,                20,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; GS BALL
 	item_attribute     0, 0,                 0, CANT_SELECT | CANT_TOSS, KEY_ITEM, ITEMMENU_NOUSE,   ITEMMENU_NOUSE
@@ -370,13 +370,13 @@ Item2Attributes:
 	item_attribute $9999, 0,                 0,                       0, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
 
 ; ENERGYPOWDER
-	item_attribute   500, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   250, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; ENERGY ROOT
-	item_attribute   800, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   400, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; HEAL POWDER
-	item_attribute   450, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
+	item_attribute   250, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; REVIVAL HERB
 	item_attribute  2800, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY

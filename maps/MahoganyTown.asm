@@ -60,13 +60,13 @@ UnknownScript_0x190040:
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse UnknownScript_0x190072
-	checkmoney $0, 300
+	checkmoney $0, 150
 	if_equal $2, UnknownScript_0x19006c
 	giveitem RAGECANDYBAR
 	iffalse UnknownScript_0x190078
 	waitsfx
 	playsound SFX_TRANSACTION
-	takemoney $0, 300
+	takemoney $0, 150
 	special PlaceMoneyTopRight
 	writetext UnknownText_0x19014a
 	waitbutton
@@ -158,7 +158,7 @@ UnknownText_0x1900b0:
 
 	para "Right now, it can"
 	line "be yours for just"
-	cont "¥300! Want one?"
+	cont "¥150! Want one?"
 	done
 
 UnknownText_0x19014a:
