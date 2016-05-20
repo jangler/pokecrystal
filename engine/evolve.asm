@@ -108,7 +108,6 @@ endr
 	push af
 	call ClearSprites
 	pop af
-	jp c, CancelEvolution
 
 	ld hl, Text_CongratulationsYourPokemon
 	call PrintText
@@ -260,14 +259,6 @@ UpdateSpeciesNameIfNotNicknamed: ; 42414
 	ld bc, PKMN_NAME_LENGTH
 	jp CopyBytes
 ; 42454
-
-CancelEvolution: ; 42454
-	ld hl, Text_StoppedEvolving
-	call PrintText
-	call ClearTileMap
-	pop hl
-	jp EvolveAfterBattle_MasterLoop
-; 42461
 
 IsMonHoldingEverstone: ; 42461
 	push hl

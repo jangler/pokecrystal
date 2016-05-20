@@ -92,7 +92,6 @@ EvolutionAnimation: ; 4e5e1
 	ld c, $1
 	call .GetSGBLayout
 	call .AnimationSequence
-	jr c, .cancel_evo
 
 	ld a, -7 * 7
 	ld [wd1ec], a
@@ -109,7 +108,6 @@ EvolutionAnimation: ; 4e5e1
 	call .PlayEvolvedSFX
 	callba ClearSpriteAnims
 	call .check_statused
-	jr c, .no_anim
 
 	ld a, [wBoxAlignment]
 	push af
@@ -131,26 +129,6 @@ EvolutionAnimation: ; 4e5e1
 	ld [wBoxAlignment], a
 	ret
 
-.no_anim
-	ret
-
-.cancel_evo
-	ld a, $1
-	ld [Buffer4], a
-
-	ld a, [Buffer1]
-	ld [PlayerHPPal], a
-
-	ld c, $0
-	call .GetSGBLayout
-	call .PlayEvolvedSFX
-	callba ClearSpriteAnims
-	call .check_statused
-	ret c
-
-	ld a, [PlayerHPPal]
-	call PlayCry
-	ret
 ; 4e703
 
 .GetSGBLayout: ; 4e703
@@ -179,10 +157,6 @@ EvolutionAnimation: ; 4e5e1
 	call ClearJoypad
 	lb bc, 1, 2 * 7 ; flash b times, wait c frames in between
 .loop
-	push bc
-	call .WaitFrames_CheckPressedB
-	pop bc
-	jr c, .exit_sequence
 	push bc
 	call .Flash
 	pop bc
