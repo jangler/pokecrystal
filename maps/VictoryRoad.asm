@@ -102,7 +102,7 @@ VictoryRoadTMEarthquake:
 	itemball TM_EARTHQUAKE
 
 VictoryRoadMaxRevive:
-	itemball MAX_REVIVE
+	itemball BIG_MUSHROOM
 
 VictoryRoadFullRestore:
 	itemball FULL_RESTORE

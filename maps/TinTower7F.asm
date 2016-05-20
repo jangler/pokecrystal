@@ -9,7 +9,7 @@ TinTower7F_MapScriptHeader:
 	db 0
 
 TinTower7FMaxRevive:
-	itemball MAX_REVIVE
+	itemball BIG_MUSHROOM
 
 TinTower7F_MapEventHeader:
 	; filler

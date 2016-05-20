@@ -309,13 +309,13 @@ FruitTreeScript_0x19da40:
 	fruittree FRUITTREE_ROUTE_44
 
 Route44MaxRevive:
-	itemball MAX_REVIVE
+	itemball BIG_MUSHROOM
 
 Route44UltraBall:
 	itemball ULTRA_BALL
 
 Route44MaxRepel:
-	itemball MAX_REPEL
+	itemball TINYMUSHROOM
 
 Route44HiddenElixer:
 	dwb EVENT_ROUTE_44_HIDDEN_ELIXER, ELIXER

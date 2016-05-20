@@ -14,7 +14,7 @@ WhirlIslandB2FFullRestore:
 	itemball FULL_RESTORE
 
 WhirlIslandB2FMaxRevive:
-	itemball MAX_REVIVE
+	itemball BIG_MUSHROOM
 
 WhirlIslandB2FMaxElixer:
 	itemball MAX_ELIXER

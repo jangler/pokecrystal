@@ -496,7 +496,7 @@ Route32GreatBall:
 	itemball GREAT_BALL
 
 Route32Repel:
-	itemball REPEL
+	itemball TINYMUSHROOM
 
 Route32Sign:
 	jumptext Route32SignText
