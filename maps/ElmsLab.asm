@@ -298,28 +298,8 @@ LookAtElmPokeBallScript:
 
 ElmsLabHealingMachine:
 	opentext
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .CanHeal
 	writetext ElmsLabHealingMachineText1
 	waitbutton
-	closetext
-	end
-
-.CanHeal
-	writetext ElmsLabHealingMachineText2
-	yesorno
-	iftrue ElmsLabHealingMachine_HealParty
-	closetext
-	end
-
-ElmsLabHealingMachine_HealParty:
-	special Mobile_HealParty
-	special HealParty
-	playmusic MUSIC_NONE
-	writebyte 1 ; Machine is in Elm's Lab
-	special HealMachineAnim
-	pause 30
-	special RestartMapMusic
 	closetext
 	end
 

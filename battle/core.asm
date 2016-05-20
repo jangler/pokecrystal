@@ -2489,7 +2489,6 @@ WinTrainerBattle: ; 3cfa4
 	ld a, [BattleType]
 	cp BATTLETYPE_CANLOSE
 	jr nz, .skip_heal
-	predef HealParty
 .skip_heal
 	ld a, [wMonStatusFlags]
 	bit 0, a

@@ -31,7 +31,6 @@ RedScript_0x18c603:
 	pause 15
 	special Special_FadeInQuickly
 	pause 30
-	special HealParty
 	refreshscreen $0
 	credits
 	end

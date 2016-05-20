@@ -109,18 +109,6 @@ MrPokemonsHouse_OakScript:
 	pause 15
 	spriteface PLAYER, UP
 	opentext
-	writetext MrPokemonsHouse_MrPokemonHealText
-	waitbutton
-	closetext
-	special Special_FadeBlackQuickly
-	special Special_ReloadSpritesNoPalettes
-	playmusic MUSIC_HEAL
-	special Mobile_HealParty
-	special HealParty
-	pause 60
-	special Special_FadeInQuickly
-	special RestartMapMusic
-	opentext
 	writetext MrPokemonText_ImDependingOnYou
 	waitbutton
 	closetext

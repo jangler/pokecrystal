@@ -168,15 +168,6 @@ UnknownScript_0x6d08b:
 	spriteface TEAMROCKETBASEB2F_LANCE, LEFT
 UnknownScript_0x6d091:
 	opentext
-	writetext UnknownText_0x6da97
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Mobile_HealParty
-	playsound SFX_FULL_HEAL
-	special HealParty
-	special FadeInPalettes
-	opentext
 	writetext UnknownText_0x6daf7
 	waitbutton
 	closetext
@@ -791,18 +782,6 @@ UnknownText_0x6d994:
 
 	para "I look forward to"
 	line "seeing you again!"
-	done
-
-UnknownText_0x6da97:
-	text "LANCE: Are you all"
-	line "right?"
-
-	para "Your #MON are"
-	line "hurt and tired."
-
-	para "Here, give them"
-	line "some of my medi-"
-	cont "cine."
 	done
 
 UnknownText_0x6daf7:
