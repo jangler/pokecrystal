@@ -105,7 +105,7 @@ RandomEncounter:: ; 97cc0
 ; Random encounter
 
 	ld a, [TextBoxFrame]
-	and a
+	and 1
 	jr nz, .nope
 	call CheckWildEncounterCooldown
 	jr c, .nope
