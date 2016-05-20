@@ -1,0 +1,2 @@
+- remove repels and revives from overworld
+- try evolution during combat

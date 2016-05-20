@@ -8,10 +8,12 @@ alters many of the game mechanics in order to challenge the player.
   species. Evolution cannot be canceled.
 - All full-party heals such as Pokémon Centers have been removed, except for
   Sacred Ash.
-- Revives, Max Revives, and Revival Herbs cannot be purchased.
+- Revives, Max Revives, and Revival Herbs cannot be purchased and do not appear
+  in the overworld.
 - Ethers, Max Ethers, Elixers, and Max Elixers can be purchased in marts at
   approximately one tenth of their regular values.
 - Other healing and status-curing items can be purchased at half of their
   regular prices.
 - The Goldenrod City vending machines are out of service.
-- Using an even-numbered text box frame prevents random encounters.
+- Repels have been removed, but using an even-numbered text box frame prevents
+  random encounters.

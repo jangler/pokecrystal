@@ -27,11 +27,11 @@ UnknownScript_0x9cec5:
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse UnknownScript_0x9cf02
-	checkmoney $0, 500
+	checkmoney $0, 250
 	if_equal $2, UnknownScript_0x9cef6
 	giveitem MOOMOO_MILK
 	iffalse UnknownScript_0x9cefc
-	takemoney $0, 500
+	takemoney $0, 250
 	special PlaceMoneyTopRight
 	waitsfx
 	playsound SFX_TRANSACTION
@@ -122,7 +122,7 @@ UnknownText_0x9cfe1:
 	line "to restore HP!"
 
 	para "I'll give it to ya"
-	line "fer just ¥500."
+	line "fer just ¥250."
 	done
 
 UnknownText_0x9d05d:
