@@ -267,12 +267,6 @@ ElmDirectionsScript:
 	waitsfx
 	waitbutton
 	closetext
-	spriteface ELMSLAB_ELM, LEFT
-	opentext
-	writetext ElmDirectionsText2
-	waitbutton
-	closetext
-	spriteface ELMSLAB_ELM, DOWN
 	opentext
 	writetext ElmDirectionsText3
 	waitbutton
@@ -900,17 +894,6 @@ ElmDirectionsText1:
 
 	para "number. Call me if"
 	line "anything comes up!"
-	done
-
-ElmDirectionsText2:
-	text "If your #MON is"
-	line "hurt, you should"
-
-	para "heal it with this"
-	line "machine."
-
-	para "Feel free to use"
-	line "it anytime."
 	done
 
 ElmDirectionsText3:
