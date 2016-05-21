@@ -9,10 +9,8 @@ Evolution and experience
 
 - Upon reaching every tenth level, a Pokémon evolves into another random
   species. Evolution cannot be canceled.
-- Experience gain is adjusted by the level differential between the player's
-  Pokémon and the fainting Pokémon. An overleveled Pokémon gains less
-  experience; an underdog gains more.
-- All species level up at the same rate.
+- All species level up at the same rate, which is faster than usual at low
+  levels and slower than usual at high levels.
 
 Healing
 -------

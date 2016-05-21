@@ -14,7 +14,7 @@
 	db 5 ; unknown
 	dn 6, 6 ; frontpic dimensions
 	db 0, 0, 0, 0 ; padding
-	db MEDIUM_SLOW ; growth rate
+	db MEDIUM_FAST ; growth rate
 	dn AMPHIBIAN, FISH ; egg groups
 
 	; tmhm
