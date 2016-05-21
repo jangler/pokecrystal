@@ -31,5 +31,7 @@ Healing
 Other
 -----
 
+- Crits only occur under circumstances that raise critical hit chance (such as
+  using a Dire Hit or a move with a high crit ratio).
 - Repels have been removed, but using an even-numbered text box frame prevents
   random encounters.
