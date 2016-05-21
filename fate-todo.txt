@@ -1,1 +1,2 @@
-- try evolution during combat
+- try evolution during combat, or catch the skip case another way
+- remove vending machines
