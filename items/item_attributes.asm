@@ -106,7 +106,7 @@ Item2Attributes:
 	item_attribute  4800, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_NOUSE
 
 ; X ACCURACY
-	item_attribute   950, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
+	item_attribute   500, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
 
 ; LEAF STONE
 	item_attribute  2100, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_NOUSE
@@ -154,19 +154,19 @@ Item2Attributes:
 	item_attribute   0, 0,                80,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; X ATTACK
-	item_attribute   500, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
+	item_attribute   250, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
 
 ; TERU-SAMA
 	item_attribute $9999, 0,                 0,                       0, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
 
 ; X DEFEND
-	item_attribute   550, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
+	item_attribute   300, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
 
 ; X SPEED
-	item_attribute   350, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
+	item_attribute   200, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
 
 ; X SPECIAL
-	item_attribute   350, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
+	item_attribute   200, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_CLOSE
 
 ; COIN CASE
 	item_attribute     0, 0,                 0, CANT_SELECT | CANT_TOSS, KEY_ITEM, ITEMMENU_CURRENT, ITEMMENU_NOUSE
