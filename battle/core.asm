@@ -7467,7 +7467,32 @@ GiveExperiencePoints: ; 3ee3b
 	ld a, [EnemyMonLevel]
 	ld [hMultiplier], a
 	call Multiply
-	ld a, 7
+
+	; adjust exp based on level differential
+	ld a, [hProduct + 1]
+	ld [hMultiplicand + 0], a
+	ld a, [hProduct + 2]
+	ld [hMultiplicand + 1], a
+	ld a, [hProduct + 3]
+	ld [hMultiplicand + 2], a
+	pop bc
+	push bc
+	push hl
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	pop hl
+	ld b, a                ; b contains your level
+	ld a, [EnemyMonLevel]  ; a contains enemy level
+	add 10
+	sub b
+	jr nc, .no_zero
+	xor a
+.no_zero
+	ld [hMultiplier], a
+	call Multiply
+
+	ld a, 70
 	ld [hDivisor], a
 	ld b, 4
 	call Divide

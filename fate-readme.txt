@@ -9,8 +9,11 @@ Evolution and experience
 
 - Upon reaching every tenth level, a Pokémon evolves into another random
   species. Evolution cannot be canceled.
-- All species level up at the same rate, which is faster than usual at low
-  levels and slower than usual at high levels.
+- Experience gains are adjusted by 10% per level difference between the
+  fainting Pokémon and the Pokémon gaining experience. A KO on a Pokémon 10
+  levels below yours yields no experience; a KO on a Pokémon 10 levels above
+  yours yields double experience.
+- All species level up at the same rate.
 
 Healing
 -------

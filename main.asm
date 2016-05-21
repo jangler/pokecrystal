@@ -9746,7 +9746,7 @@ CalcLevel: ; 50e1b
 	ret
 
 CalcExpAtLevel: ; 50e47
-; (a/25)*n**4 + c*n**2 + d*n - e
+; (a/b)*n**3 + c*n**2 + d*n - e
 	ld a, [BaseGrowthRate]
 	add a
 	add a
@@ -9759,9 +9759,6 @@ CalcExpAtLevel: ; 50e47
 	ld a, d
 	ld [hMultiplier], a
 	call Multiply
-	ld a, d
-	ld [hMultiplier], a
-	call Multiply
 
 ; Multiply by a
 	ld a, [hl]
@@ -9769,9 +9766,9 @@ CalcExpAtLevel: ; 50e47
 	swap a
 	ld [hMultiplier], a
 	call Multiply
-; Divide by 25
+; Divide by b
 	ld a, [hli]
-	ld a, 25
+	and $f
 	ld [hDivisor], a
 	ld b, 4
 	call Divide
@@ -9853,7 +9850,7 @@ CalcExpAtLevel: ; 50e47
 	ld [hMultiplicand], a
 
 .done_quadratic
-; Add (a/25)*n**4 to (d*n - e +/- c*n**2)
+; Add (a/b)*n**3 to (d*n - e +/- c*n**2)
 	pop bc
 	ld a, [hProduct + 3]
 	add b
@@ -9880,7 +9877,7 @@ CalcExpAtLevel: ; 50e47
 GrowthRates: ; 50efa
 
 growth_rate: MACRO
-; [1]/25*n**4 + [3]*n**2 + [4]*n - [5]
+; [1]/[2]*n**3 + [3]*n**2 + [4]*n - [5]
 	dn \1, \2
 	if \3 & $80 ; signed
 		db -\3 | $80
