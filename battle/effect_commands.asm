@@ -1301,9 +1301,9 @@ BattleCommand_Critical: ; 34631
 .Criticals
 	db KARATE_CHOP, RAZOR_WIND, RAZOR_LEAF, CRABHAMMER, SLASH, AEROBLAST, CROSS_CHOP, $ff
 .Chances
-	; 6.25% 12.1% 24.6% 33.2% 49.6% 49.6% 49.6%
-	db $11,  $20,  $40,  $55,  $80,  $80,  $80
-	;   0     1     2     3     4     5     6
+	;  0     3/32  3/16  9/32  3/8   15/32 9/16
+	db $0,   $18,  $30,  $48,  $60,  $78,  $90
+	;  0     1     2     3     4     5     6
 ; 346b2
 
 
