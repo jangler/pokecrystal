@@ -44,5 +44,5 @@ Other
 - Eggs can be released using Bill's PC.
 - Crits only occur under circumstances that raise critical hit chance (such as
   using a Dire Hit or a move with a high crit ratio).
-- Repels have been removed, but using an even-numbered text box frame prevents
-  random encounters.
+- Repels have been removed, but random encounters can be disabled via the
+  options menu.

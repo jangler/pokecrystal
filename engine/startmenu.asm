@@ -384,7 +384,7 @@ endr
 ; 128cb
 
 .IsMenuAccountOn ; 128cb
-	ld a, [Options2]
+	ld a, 1 ; always on (setting used for encounters instead)
 	and 1
 	ret
 ; 128d1

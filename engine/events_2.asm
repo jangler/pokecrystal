@@ -104,9 +104,9 @@ CheckFacingTileEvent:: ; 97c5f
 RandomEncounter:: ; 97cc0
 ; Random encounter
 
-	ld a, [TextBoxFrame]
+	ld a, [Options2]
 	and 1
-	jr nz, .nope
+	jr z, .nope
 	call CheckWildEncounterCooldown
 	jr c, .nope
 	call CanUseSweetScent
