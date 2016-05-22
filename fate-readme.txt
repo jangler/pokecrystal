@@ -4,6 +4,9 @@ Pokémon Crystal Fate
 This ROM hack of Pokémon Crystal does not alter the core content of the game,
 but alters many of the game mechanics in order to challenge the player.
 
+Until countermeasures are implemented, treat a white-out as a permadeath, and
+avoid using the "box trick" to heal Pokémon.
+
 Evolution and experience
 ------------------------
 
@@ -20,11 +23,10 @@ Healing
 
 - All full-party heals such as Pokémon Centers have been removed, except for
   Sacred Ash.
-- Revives, Max Revives, and Revival Herbs cannot be purchased and do not appear
-  in the overworld.
+- Revives, Max Revives, and Revival Herbs have been removed.
 - Ethers, Max Ethers, Elixers, and Max Elixers can be purchased in marts at
   approximately one tenth of their regular values.
-- Other healing and status-curing items can be purchased at approximately one
+- Healing, status-curing, and X items can be purchased at approximately one
   half of their regular prices.
 - The Goldenrod City vending machines are out of service.
 
