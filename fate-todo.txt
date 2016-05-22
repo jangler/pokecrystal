@@ -2,6 +2,7 @@
 - eliminate box trick
 - limit balls, distribute revives
 - handle whiting out
+- remove everstones
 
 how to discourage trainer battles?
 
