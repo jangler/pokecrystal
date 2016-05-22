@@ -48,8 +48,9 @@ DoBattle: ; 3c000
 .player_2
 	call LoadTileMapToTempTileMap
 	call CheckPlayerPartyForFitPkmn
-	ld a, d
-	and a
+	ld a, $1
+	ld [wBattleResult], a
+	and d
 	jp z, LostBattle
 	call Call_LoadTempTileMapToTileMap
 	ld a, [BattleType]

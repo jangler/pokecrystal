@@ -4,8 +4,7 @@ Pokémon Crystal Fate
 This ROM hack of Pokémon Crystal does not alter the core content of the game,
 but alters many of the game mechanics in order to challenge the player.
 
-Most importantly, when you white out, that's game over. For best results, no
-save scumming!
+For best results, no save scumming!
 
 Evolution and experience
 ------------------------
@@ -21,8 +20,8 @@ Evolution and experience
 Healing
 -------
 
-- All full-party heals such as Pokémon Centers have been removed, except for
-  Sacred Ash.
+- All full-party heals such as Pokémon Centers have been removed, including the
+  heal after whiting out. Sacred Ash is the only exception to this rule.
 - Revives, Max Revives, and Revival Herbs have been removed.
 - Ethers, Max Ethers, Elixers, and Max Elixers can be purchased in marts at
   approximately one tenth of their regular values.
