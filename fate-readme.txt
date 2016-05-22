@@ -34,6 +34,7 @@ Other
 
 - Bill's PC can not be used to manually deposit Pokémon. Pokémon that are
   caught when the player's party is full are deposited as usual.
+- Eggs can be released using Bill's PC.
 - Crits only occur under circumstances that raise critical hit chance (such as
   using a Dire Hit or a move with a high crit ratio).
 - Repels have been removed, but using an even-numbered text box frame prevents
