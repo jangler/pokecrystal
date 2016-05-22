@@ -6,6 +6,13 @@ but alters many of the game mechanics in order to challenge the player.
 
 For best results, no save scumming!
 
+Whiting out
+-----------
+
+- All Pokémon in a player's party stay fainted after a white-out. This is
+  effectively a game over unless the player has an egg or a Pokémon stored in
+  Bill's PC.
+
 Evolution and experience
 ------------------------
 
@@ -20,8 +27,8 @@ Evolution and experience
 Healing
 -------
 
-- All full-party heals such as Pokémon Centers have been removed, including the
-  heal after whiting out. Sacred Ash is the only exception to this rule.
+- All full-party heals such as Pokémon Centers have been removed, except for
+  Sacred Ash.
 - Revives, Max Revives, and Revival Herbs have been removed.
 - Ethers, Max Ethers, Elixers, and Max Elixers can be purchased in marts at
   approximately one tenth of their regular values.
