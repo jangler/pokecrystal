@@ -1,7 +1,6 @@
 - try evolution during combat, or catch the skip case another way
 - limit balls, distribute revives
-- remove everstones
-- allow eggs to be released
+- replace everstones
 
 how to discourage trainer battles?
 

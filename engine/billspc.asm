@@ -188,8 +188,6 @@ BillsPCDepositFuncStats: ; e24c8 (38:64c8)
 BillsPCDepositFuncRelease: ; e24e0 (38:64e0)
 	call BillsPC_CheckMail_PreventBlackout
 	jr c, BillsPCDepositFuncCancel
-	call BillsPC_IsMonAnEgg
-	jr c, BillsPCDepositFuncCancel
 	ld a, [wMenuCursorY]
 	push af
 	ld de, PCString_ReleasePKMN
@@ -454,8 +452,6 @@ endr
 .release: ; e26d8 (38:66d8)
 	ld a, [wMenuCursorY]
 	push af
-	call BillsPC_IsMonAnEgg
-	jr c, .FailedRelease
 	ld de, PCString_ReleasePKMN
 	call BillsPC_PlaceString
 	call LoadStandardMenuDataHeader
@@ -1677,24 +1673,6 @@ BillsPC_CheckMail_PreventBlackout: ; e2f18 (38:6f18)
 .ItsYourLastPokemon
 	ld de, PCString_ItsYourLastPKMN
 .NotOkay
-	call BillsPC_PlaceString
-	ld de, SFX_WRONG
-	call WaitPlaySFX
-	call WaitSFX
-	ld c, 50
-	call DelayFrames
-	scf
-	ret
-
-BillsPC_IsMonAnEgg: ; e2f5f (38:6f5f)
-	ld a, [CurPartySpecies]
-	cp EGG
-	jr z, .egg
-	and a
-	ret
-
-.egg
-	ld de, PCString_NoReleasingEGGS
 	call BillsPC_PlaceString
 	ld de, SFX_WRONG
 	call WaitPlaySFX
