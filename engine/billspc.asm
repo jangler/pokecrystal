@@ -152,7 +152,6 @@ endr
 
 BillsPCDepositJumptable: ; e24a1 (38:64a1)
 	
-	dw BillsPCDepositFuncDeposit ; Deposit Pokemon
 	dw BillsPCDepositFuncStats ; Pokemon Stats
 	dw BillsPCDepositFuncRelease ; Release Pokemon
 	dw BillsPCDepositFuncCancel ; Cancel
@@ -234,7 +233,7 @@ BillsPCDepositFuncCancel: ; e2537 (38:6537)
 
 BillsPCDepositMenuDataHeader: ; 0xe253d (38:653d)
 	db $40 ; flags
-	db 04, 09 ; start coords
+	db 06, 09 ; start coords
 	db 13, 19 ; end coords
 	dw .MenuData2
 	db 1 ; default option
@@ -242,8 +241,7 @@ BillsPCDepositMenuDataHeader: ; 0xe253d (38:653d)
 
 .MenuData2: ; 0xe2545 (38:6545)
 	db $80 ; flags
-	db 4 ; items
-	db "DEPOSIT@"
+	db 3 ; items
 	db "STATS@"
 	db "RELEASE@"
 	db "CANCEL@"

@@ -4,8 +4,8 @@ Pokémon Crystal Fate
 This ROM hack of Pokémon Crystal does not alter the core content of the game,
 but alters many of the game mechanics in order to challenge the player.
 
-Until countermeasures are implemented, treat a white-out as a permadeath, and
-avoid using the "box trick" to heal Pokémon.
+Most importantly, when you white out, that's game over. For best results, no
+save scumming!
 
 Evolution and experience
 ------------------------
@@ -33,6 +33,8 @@ Healing
 Other
 -----
 
+- Bill's PC can not be used to manually deposit Pokémon. Pokémon that are
+  caught when the player's party is full are deposited as usual.
 - Crits only occur under circumstances that raise critical hit chance (such as
   using a Dire Hit or a move with a high crit ratio).
 - Repels have been removed, but using an even-numbered text box frame prevents

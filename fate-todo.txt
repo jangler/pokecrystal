@@ -1,5 +1,4 @@
 - try evolution during combat, or catch the skip case another way
-- eliminate box trick
 - limit balls, distribute revives
 - handle whiting out
 - remove everstones
@@ -14,3 +13,6 @@ more streamlined game where the player doesn't feel like they have to grind.
 however, this principle directly contradicts the fundamental rpg-ness of
 pokémon games. fighting makes you stronger, not weaker, and you win money from
 it.
+
+remove level influence entirely? or mostly? that gives you an incentive to
+carry a full party, and makes restrictions on balls more pressing.

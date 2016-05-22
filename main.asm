@@ -4630,7 +4630,7 @@ _BillsPC: ; e3fd
 
 .strings: ; e47f
 	db "WITHDRAW <PK><MN>@"
-	db "DEPOSIT <PK><MN>@"
+	db "RELEASE <PK><MN>@"
 	db "CHANGE BOX@"
 	db "MOVE <PK><MN> W/O MAIL@"
 	db "SEE YA!@"
