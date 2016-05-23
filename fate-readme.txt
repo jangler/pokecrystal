@@ -22,7 +22,7 @@ Evolution and experience
   fainting Pokémon and the Pokémon gaining experience. A KO on a Pokémon 10
   levels below yours yields no experience; a KO on a Pokémon 10 levels above
   yours yields double experience.
-- All species level up at the same rate.
+- All species are in the Fast experience group.
 
 Healing
 -------
@@ -30,19 +30,18 @@ Healing
 - All full-party heals such as Pokémon Centers have been removed, except for
   Sacred Ash.
 - Revives, Max Revives, and Revival Herbs have been removed.
-- Ethers, Max Ethers, Elixers, and Max Elixers can be purchased in marts at
-  approximately one tenth of their regular values.
-- Healing, status-curing, and X items can be purchased at approximately one
-  half of their regular prices.
+- Ethers, Max Ethers, Elixers, and Max Elixers can be purchased in marts.
+- HP-restoring, PP-restoring, status-curing, and battle items can be purchased
+  at approximately one half of their regular prices.
 - The Goldenrod City vending machines are out of service.
 
 Other
 -----
 
-- Bill's PC can not be used to manually deposit Pokémon. Pokémon that are
-  caught when the player's party is full are deposited as usual.
+- Bill's PC cannot be used to manually deposit Pokémon. Pokémon that are caught
+  when the player's party is full are deposited as usual.
 - Eggs can be released using Bill's PC.
 - Crits only occur under circumstances that raise critical hit chance (such as
   using a Dire Hit or a move with a high crit ratio).
-- Repels have been removed, but random encounters can be disabled via the
-  options menu.
+- Repels have been removed, but wild encounters can be disabled via the options
+  menu.
