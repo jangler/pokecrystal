@@ -31,8 +31,9 @@ Healing
   Sacred Ash.
 - Revives, Max Revives, and Revival Herbs have been removed.
 - Ethers, Max Ethers, Elixers, and Max Elixers can be purchased in marts.
-- HP-restoring, PP-restoring, status-curing, and battle items can be purchased
-  at approximately one half of their regular prices.
+- HP-restoring, PP-restoring, and battle items can be purchased at
+  approximately one half of their regular prices.
+- Status-curing items can be purchased at double their regular prices.
 - The Goldenrod City vending machines are out of service.
 
 Other
