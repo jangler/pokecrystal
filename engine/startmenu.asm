@@ -384,8 +384,7 @@ endr
 ; 128cb
 
 .IsMenuAccountOn: ; 128cb
-	ld a, [Options2]
-	and 1
+	and 0 ; always off (option used for wild encounters instead)
 	ret
 ; 128d1
 
