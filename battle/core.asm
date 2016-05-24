@@ -50,7 +50,11 @@ DoBattle: ; 3c000
 	call CheckPlayerPartyForFitPkmn
 	ld a, d
 	and a
-	jp z, LostBattle
+	jr nz, .no_loss
+	ld a, 1
+	ld [wBattleResult], a
+	jp LostBattle
+.no_loss
 	call Call_LoadTempTileMapToTileMap
 	ld a, [BattleType]
 	cp BATTLETYPE_DEBUG
