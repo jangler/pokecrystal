@@ -2486,11 +2486,6 @@ WinTrainerBattle: ; 3cfa4
 	call BattleWinSlideInEnemyTrainerFrontpic
 	ld c, 40
 	call DelayFrames
-	ld a, [BattleType]
-	cp BATTLETYPE_CANLOSE
-	jr nz, .skip_heal
-	predef HealParty
-.skip_heal
 	ld a, [wMonStatusFlags]
 	bit 0, a
 	jr nz, .skip_win_loss_text

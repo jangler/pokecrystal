@@ -109,18 +109,6 @@ MrPokemonsHouse_OakScript:
 	pause 15
 	spriteface PLAYER, UP
 	opentext
-	writetext MrPokemonsHouse_MrPokemonHealText
-	waitbutton
-	closetext
-	special Special_FadeBlackQuickly
-	special Special_ReloadSpritesNoPalettes
-	playmusic MUSIC_HEAL
-	special Mobile_HealParty
-	special HealParty
-	pause 60
-	special Special_FadeInQuickly
-	special RestartMapMusic
-	opentext
 	writetext MrPokemonText_ImDependingOnYou
 	waitbutton
 	closetext
@@ -219,15 +207,6 @@ MrPokemonIntroText5:
 	text "If my assumption"
 	line "is correct, PROF."
 	cont "ELM will know it."
-	done
-
-MrPokemonsHouse_MrPokemonHealText:
-	text "You are returning"
-	line "to PROF.ELM?"
-
-	para "Here. Your #MON"
-	line "should have some"
-	cont "rest."
 	done
 
 MrPokemonText_ImDependingOnYou:
