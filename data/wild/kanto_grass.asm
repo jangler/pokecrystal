@@ -333,7 +333,7 @@
 	db 18, RATICATE
 	db 18, JIGGLYPUFF
 	db 16, ABRA
-	db 16, ABRA
+	db 18, VULPIX
 	; day
 	db 17, RATTATA
 	db 17, SPEAROW
@@ -341,7 +341,7 @@
 	db 18, RATICATE
 	db 18, JIGGLYPUFF
 	db 16, ABRA
-	db 16, ABRA
+	db 18, VULPIX
 	; nite
 	db 17, MEOWTH
 	db 17, MURKROW
@@ -349,7 +349,7 @@
 	db 18, PERSIAN
 	db 18, JIGGLYPUFF
 	db 16, ABRA
-	db 16, ABRA
+	db 18, VULPIX
 
 	map ROUTE_8
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -360,7 +360,7 @@
 	db 17, GROWLITHE
 	db 16, JIGGLYPUFF
 	db 18, KADABRA
-	db 18, KADABRA
+	db 18, VULPIX
 	; day
 	db 17, SNUBBULL
 	db 19, PIDGEOTTO
@@ -368,7 +368,7 @@
 	db 17, GROWLITHE
 	db 16, JIGGLYPUFF
 	db 18, KADABRA
-	db 18, KADABRA
+	db 18, VULPIX
 	; nite
 	db 17, MEOWTH
 	db 20, NOCTOWL
@@ -376,7 +376,7 @@
 	db 17, HAUNTER
 	db 16, JIGGLYPUFF
 	db 18, KADABRA
-	db 18, KADABRA
+	db 18, VULPIX
 
 	map ROUTE_9
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
