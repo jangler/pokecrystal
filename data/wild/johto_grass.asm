@@ -1494,7 +1494,7 @@
 	db 16, RATICATE
 	db 15, ARBOK
 	db 16, FEAROW
-	db 16, FEAROW
+	db 16, MANKEY
 	; day
 	db 13, EKANS
 	db 14, SPEAROW
@@ -1502,7 +1502,7 @@
 	db 16, RATICATE
 	db 15, ARBOK
 	db 16, FEAROW
-	db 16, FEAROW
+	db 16, MANKEY
 	; nite
 	db 13, RATTATA
 	db 14, ZUBAT
@@ -1510,7 +1510,7 @@
 	db 16, GOLBAT
 	db 15, MARILL
 	db 16, GOLBAT
-	db 16, GOLBAT
+	db 16, MANKEY
 
 	map ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

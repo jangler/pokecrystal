@@ -385,25 +385,25 @@
 	db 15, SPEAROW
 	db 15, RATICATE
 	db 15, FEAROW
-	db 15, FEAROW
+	db 15, MANKEY
 	db 18, MAROWAK
-	db 18, MAROWAK
+	db 18, PRIMEAPE
 	; day
 	db 15, RATTATA
 	db 15, SPEAROW
 	db 15, RATICATE
 	db 15, FEAROW
-	db 15, FEAROW
+	db 15, MANKEY
 	db 18, MAROWAK
-	db 18, MAROWAK
+	db 18, PRIMEAPE
 	; nite
 	db 15, RATTATA
 	db 15, VENONAT
 	db 15, RATICATE
 	db 15, VENOMOTH
 	db 15, ZUBAT
-	db 18, RATICATE
-	db 18, RATICATE
+	db 18, MANKEY
+	db 18, PRIMEAPE
 
 	map ROUTE_10_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
