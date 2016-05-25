@@ -152,7 +152,6 @@ endr
 
 BillsPCDepositJumptable: ; e24a1 (38:64a1)
 
-	dw BillsPCDepositFuncDeposit ; Deposit Pokemon
 	dw BillsPCDepositFuncStats ; Pokemon Stats
 	dw BillsPCDepositFuncRelease ; Release Pokemon
 	dw BillsPCDepositFuncCancel ; Cancel
@@ -188,8 +187,6 @@ BillsPCDepositFuncStats: ; e24c8 (38:64c8)
 
 BillsPCDepositFuncRelease: ; e24e0 (38:64e0)
 	call BillsPC_CheckMail_PreventBlackout
-	jr c, BillsPCDepositFuncCancel
-	call BillsPC_IsMonAnEgg
 	jr c, BillsPCDepositFuncCancel
 	ld a, [wMenuCursorY]
 	push af
@@ -234,7 +231,7 @@ BillsPCDepositFuncCancel: ; e2537 (38:6537)
 
 BillsPCDepositMenuDataHeader: ; 0xe253d (38:653d)
 	db $40 ; flags
-	db 04, 09 ; start coords
+	db 06, 09 ; start coords
 	db 13, 19 ; end coords
 	dw .MenuData2
 	db 1 ; default option
@@ -242,8 +239,7 @@ BillsPCDepositMenuDataHeader: ; 0xe253d (38:653d)
 
 .MenuData2: ; 0xe2545 (38:6545)
 	db $80 ; flags
-	db 4 ; items
-	db "DEPOSIT@"
+	db 3 ; items
 	db "STATS@"
 	db "RELEASE@"
 	db "CANCEL@"
@@ -456,8 +452,6 @@ endr
 .release ; e26d8 (38:66d8)
 	ld a, [wMenuCursorY]
 	push af
-	call BillsPC_IsMonAnEgg
-	jr c, .FailedRelease
 	ld de, PCString_ReleasePKMN
 	call BillsPC_PlaceString
 	call LoadStandardMenuDataHeader
@@ -1679,24 +1673,6 @@ BillsPC_CheckMail_PreventBlackout: ; e2f18 (38:6f18)
 .ItsYourLastPokemon:
 	ld de, PCString_ItsYourLastPKMN
 .NotOkay:
-	call BillsPC_PlaceString
-	ld de, SFX_WRONG
-	call WaitPlaySFX
-	call WaitSFX
-	ld c, 50
-	call DelayFrames
-	scf
-	ret
-
-BillsPC_IsMonAnEgg: ; e2f5f (38:6f5f)
-	ld a, [CurPartySpecies]
-	cp EGG
-	jr z, .egg
-	and a
-	ret
-
-.egg
-	ld de, PCString_NoReleasingEGGS
 	call BillsPC_PlaceString
 	ld de, SFX_WRONG
 	call WaitPlaySFX
