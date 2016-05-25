@@ -1,3 +1,27 @@
+HealPartyPP:
+	xor a
+	ld [CurPartyMon], a
+	ld hl, PartySpecies
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .done
+	cp EGG
+	jr z, .next
+
+	push hl
+	call HealPartyMonPP
+	pop hl
+
+.next
+	ld a, [CurPartyMon]
+	inc a
+	ld [CurPartyMon], a
+	jr .loop
+
+.done
+	ret
+
 HealParty: ; c658
 	xor a
 	ld [CurPartyMon], a
@@ -20,6 +44,28 @@ HealParty: ; c658
 	jr .loop
 
 .done
+	ret
+
+HealPartyMonPP:
+	ld a, MON_SPECIES
+	call GetPartyParamLocation
+	ld d, h
+	ld e, l
+
+	ld hl, MON_MAXHP
+	add hl, de
+
+	; bc = MON_HP
+	ld b, h
+	ld c, l
+	dec bc
+	dec bc
+
+	ld a, [hli]
+	inc bc
+	ld a, [hl]
+
+	callba RestoreAllPP
 	ret
 
 HealPartyMon: ; c677
