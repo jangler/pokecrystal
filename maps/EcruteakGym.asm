@@ -62,6 +62,7 @@ MortyScript_0x99d58:
 	setevent EVENT_GOT_TM30_SHADOW_BALL
 	writetext UnknownText_0x9a0ec
 	waitbutton
+	verbosegiveitem GREAT_BALL
 	closetext
 	end
 

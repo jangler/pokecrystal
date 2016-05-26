@@ -481,7 +481,7 @@ AideScript_GiveYouBalls:
 	buttonsound
 	itemtotext POKE_BALL, $1
 	scall AideScript_ReceiveTheBalls
-	giveitem POKE_BALL, 5
+	giveitem POKE_BALL, 3
 	writetext AideText_ExplainBalls
 	buttonsound
 	itemnotify

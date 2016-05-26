@@ -14,7 +14,7 @@ SilverCaveRoom2Calcium:
 	itemball CALCIUM
 
 SilverCaveRoom2UltraBall:
-	itemball ULTRA_BALL
+	itemball SILVER_LEAF
 
 SilverCaveRoom2PPUp:
 	itemball PP_UP

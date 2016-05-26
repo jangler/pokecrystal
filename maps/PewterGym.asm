@@ -37,6 +37,7 @@ BrockScript_0x1a2864:
 .FightDone:
 	writetext UnknownText_0x1a2ada
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 

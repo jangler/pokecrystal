@@ -21,14 +21,14 @@ SilverCaveRoom1EscapeRope:
 	itemball ESCAPE_ROPE
 
 SilverCaveRoom1UltraBall:
-	itemball ULTRA_BALL
+	itemball SILVER_LEAF
 
 SilverCaveRoom1HiddenDireHit:
 	dwb EVENT_SILVER_CAVE_ROOM_1_HIDDEN_DIRE_HIT, DIRE_HIT
 
 
 SilverCaveRoom1HiddenUltraBall:
-	dwb EVENT_SILVER_CAVE_ROOM_1_HIDDEN_ULTRA_BALL, ULTRA_BALL
+	dwb EVENT_SILVER_CAVE_ROOM_1_HIDDEN_ULTRA_BALL, SILVER_LEAF
 
 
 SilverCaveRoom1_MapEventHeader:

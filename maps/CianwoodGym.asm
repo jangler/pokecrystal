@@ -65,6 +65,7 @@ ChuckScript_0x9d60f:
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
 	writetext ChuckExplainTMText
 	waitbutton
+	verbosegiveitem GREAT_BALL
 	closetext
 	end
 

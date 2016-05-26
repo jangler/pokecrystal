@@ -493,7 +493,7 @@ FriedaScript:
 	end
 
 Route32GreatBall:
-	itemball GREAT_BALL
+	itemball TINYMUSHROOM
 
 Route32Repel:
 	itemball REPEL
@@ -511,7 +511,7 @@ Route32PokeCenterSign:
 	jumpstd pokecentersign
 
 Route32HiddenGreatBall:
-	dwb EVENT_ROUTE_32_HIDDEN_GREAT_BALL, GREAT_BALL
+	dwb EVENT_ROUTE_32_HIDDEN_GREAT_BALL, TINYMUSHROOM
 
 
 Route32HiddenSuperPotion:

@@ -48,6 +48,7 @@ BugsyScript:
 	setevent EVENT_GOT_TM49_FURY_CUTTER
 	writetext BugsyText_FuryCutterSpeech
 	waitbutton
+	verbosegiveitem POKE_BALL
 	closetext
 	end
 

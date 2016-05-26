@@ -91,6 +91,7 @@ BlackthornGymClairScript:
 .GotTM24:
 	writetext BlackthornGymClairText_League
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 

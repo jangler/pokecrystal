@@ -43,6 +43,7 @@ SabrinaScript_0x189c2e:
 .FightDone:
 	writetext UnknownText_0x189f6c
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 
