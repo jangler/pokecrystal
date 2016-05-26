@@ -101,6 +101,7 @@ AzaleaTownRivalBattleScript:
 	opentext
 	writetext AzaleaTownRivalAfterText
 	waitbutton
+	verbosegiveitem REVIVE
 	closetext
 	spriteface PLAYER, LEFT
 	applymovement AZALEATOWN_SILVER, AzaleaTownRivalBattleExitMovement
