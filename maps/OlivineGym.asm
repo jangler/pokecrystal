@@ -39,6 +39,7 @@ JasmineScript_0x9c12f:
 	setevent EVENT_GOT_TM23_IRON_TAIL
 	writetext UnknownText_0x9c3a5
 	waitbutton
+	verbosegiveitem GREAT_BALL
 	closetext
 	end
 

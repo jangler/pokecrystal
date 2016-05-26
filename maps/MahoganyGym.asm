@@ -49,6 +49,7 @@ PryceScript_0x199a9e:
 	setevent EVENT_GOT_TM16_ICY_WIND
 	writetext UnknownText_0x199def
 	waitbutton
+	verbosegiveitem GREAT_BALL
 	closetext
 	end
 

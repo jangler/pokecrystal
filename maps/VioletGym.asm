@@ -45,6 +45,7 @@ FalknerScript_0x683c2:
 	setevent EVENT_GOT_TM31_MUD_SLAP
 	writetext UnknownText_0x68648
 	waitbutton
+	verbosegiveitem POKE_BALL
 	closetext
 	end
 

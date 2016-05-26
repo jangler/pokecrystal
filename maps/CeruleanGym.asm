@@ -84,6 +84,7 @@ MistyScript_0x188432:
 .FightDone:
 	writetext UnknownText_0x188782
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 

@@ -73,6 +73,7 @@ UnknownScript_0x54064:
 	setevent EVENT_GOT_TM45_ATTRACT
 	writetext UnknownText_0x54302
 	waitbutton
+	verbosegiveitem GREAT_BALL
 	closetext
 	end
 
