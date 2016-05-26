@@ -12,7 +12,7 @@ PokefanMScript_0x74002:
 	jumptextfaceplayer UnknownText_0x74008
 
 DiglettsCaveHiddenMaxRevive:
-	dwb EVENT_DIGLETTS_CAVE_HIDDEN_MAX_REVIVE, MAX_REVIVE
+	dwb EVENT_DIGLETTS_CAVE_HIDDEN_MAX_REVIVE, BIG_PEARL
 
 
 UnknownText_0x74008:
