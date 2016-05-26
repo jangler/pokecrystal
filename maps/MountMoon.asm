@@ -65,6 +65,7 @@ MountMoon_MapScriptHeader:
 	opentext
 	writetext MountMoonSilverTextAfter
 	waitbutton
+	verbosegiveitem REVIVE
 	closetext
 	applymovement MOUNTMOON_SILVER, MountMoonSilverMovementAfter
 	disappear MOUNTMOON_SILVER

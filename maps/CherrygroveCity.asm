@@ -160,6 +160,7 @@ CherrygroveSilverTriggerNorth:
 	opentext
 	writetext CherrygroveRivalText_YouWon
 	waitbutton
+	verbosegiveitem REVIVE
 	closetext
 	jump .FinishRival
 
@@ -168,6 +169,7 @@ CherrygroveSilverTriggerNorth:
 	opentext
 	writetext CherrygroveRivalText_YouLost
 	waitbutton
+	verbosegiveitem REVIVE
 	closetext
 .FinishRival:
 	playsound SFX_TACKLE

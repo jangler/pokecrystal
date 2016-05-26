@@ -131,6 +131,7 @@ PlateauRivalPostBattle:
 	opentext
 	writetext PlateauRivalText2
 	waitbutton
+	verbosegiveitem REVIVE
 	closetext
 	spriteface PLAYER, DOWN
 	applymovement INDIGOPLATEAUPOKECENTER1F_SILVER, PlateauRivalLeavesMovement
