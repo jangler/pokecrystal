@@ -149,7 +149,7 @@ CianwoodCityRock:
 	jumpstd smashrock
 
 CianwoodCityHiddenRevive:
-	dwb EVENT_CIANWOOD_CITY_HIDDEN_REVIVE, REVIVE
+	dwb EVENT_CIANWOOD_CITY_HIDDEN_REVIVE, PEARL
 
 CianwoodCityHiddenMaxEther:
 	dwb EVENT_CIANWOOD_CITY_HIDDEN_MAX_ETHER, MAX_ETHER

@@ -105,7 +105,6 @@ RooftopSaleData1: ; 15aee
 	dbw GREAT_BALL,    500
 	dbw SUPER_POTION,  500
 	dbw FULL_HEAL,     500
-	dbw REVIVE,       1200
 	db -1
 RooftopSaleData2: ; 15aff
 	db 5

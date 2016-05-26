@@ -28,7 +28,7 @@ UnknownScript_0x18c739:
 	end
 
 DarkCaveBlackthornEntranceRevive:
-	itemball REVIVE
+	itemball PEARL
 
 DarkCaveBlackthornEntranceTMSnore:
 	itemball TM_SNORE
