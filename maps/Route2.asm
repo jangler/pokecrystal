@@ -79,7 +79,7 @@ Route2HiddenFullRestore:
 	dwb EVENT_ROUTE_2_HIDDEN_FULL_RESTORE, FULL_RESTORE
 
 Route2HiddenRevive:
-	dwb EVENT_ROUTE_2_HIDDEN_REVIVE, REVIVE
+	dwb EVENT_ROUTE_2_HIDDEN_REVIVE, PEARL
 
 Bug_catcherRobSeenText:
 	text "My bug #MON are"

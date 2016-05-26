@@ -18,7 +18,7 @@ RuinsofAlphHoOhItemRoomMysteryberry:
 	itemball MYSTERYBERRY
 
 RuinsofAlphHoOhItemRoomRevivalHerb:
-	itemball REVIVAL_HERB
+	itemball BIG_PEARL
 
 RuinsofAlphHoOhItemRoomCharcoal:
 	itemball CHARCOAL

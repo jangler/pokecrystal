@@ -405,7 +405,7 @@ IlexForestLassScript:
 	jumptextfaceplayer Text_IlexForestLass
 
 IlexForestRevive:
-	itemball REVIVE
+	itemball PEARL
 
 IlexForestXAttack:
 	itemball X_ATTACK

@@ -545,7 +545,7 @@ TeamRocketBaseB1FGuardSpec:
 	itemball GUARD_SPEC
 
 TeamRocketBaseB1FHiddenRevive:
-	dwb EVENT_TEAM_ROCKET_BASE_B1F_HIDDEN_REVIVE, REVIVE
+	dwb EVENT_TEAM_ROCKET_BASE_B1F_HIDDEN_REVIVE, PEARL
 
 
 SecurityCameraMovement1:
