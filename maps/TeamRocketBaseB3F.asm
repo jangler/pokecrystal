@@ -223,7 +223,7 @@ TeamRocketBaseB3FIceHeal:
 	itemball ICE_HEAL
 
 TeamRocketBaseB3FUltraBall:
-	itemball ULTRA_BALL
+	itemball SILVER_LEAF
 
 MovementData_0x6e12a:
 	step_right

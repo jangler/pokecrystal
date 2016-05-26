@@ -11,7 +11,7 @@ TinTower4F_MapScriptHeader:
 	db 0
 
 TinTower4FUltraBall:
-	itemball ULTRA_BALL
+	itemball SILVER_LEAF
 
 TinTower4FPPUp:
 	itemball PP_UP

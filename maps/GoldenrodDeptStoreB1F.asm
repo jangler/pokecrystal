@@ -77,7 +77,7 @@ GoldenrodDeptStoreB1FBurnHeal:
 	itemball BURN_HEAL
 
 GoldenrodDeptStoreB1FUltraBall:
-	itemball ULTRA_BALL
+	itemball SILVER_LEAF
 
 UnknownText_0x7d7cb:
 	text "Hey, kid! You're"

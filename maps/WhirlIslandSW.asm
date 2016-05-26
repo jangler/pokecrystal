@@ -9,7 +9,7 @@ WhirlIslandSW_MapScriptHeader:
 	db 0
 
 WhirlIslandSWUltraBall:
-	itemball ULTRA_BALL
+	itemball SILVER_LEAF
 
 WhirlIslandSW_MapEventHeader:
 	; filler

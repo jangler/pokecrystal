@@ -199,7 +199,7 @@ Route42Sign2:
 	jumptext Route42Sign2Text
 
 Route42UltraBall:
-	itemball ULTRA_BALL
+	itemball SILVER_LEAF
 
 Route42SuperPotion:
 	itemball SUPER_POTION
