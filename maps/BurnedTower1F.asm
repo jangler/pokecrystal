@@ -102,6 +102,7 @@ BurnedTowerRivalBattleScript:
 	opentext
 	writetext BurnedTowerSilver_AfterText1
 	waitbutton
+	verbosegiveitem REVIVE
 	closetext
 	dotrigger $2
 	setevent EVENT_RIVAL_BURNED_TOWER

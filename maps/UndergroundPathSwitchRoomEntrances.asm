@@ -207,6 +207,7 @@ UndergroundSilverBattleScript:
 	opentext
 	writetext UndergroundSilverAfterText
 	waitbutton
+	verbosegiveitem REVIVE
 	closetext
 	end
 
