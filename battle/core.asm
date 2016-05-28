@@ -6896,7 +6896,7 @@ BattleWinSlideInEnemyTrainerFrontpic: ; 3ebd8
 
 	ld a, $1
 	ld [hBGMapMode], a
-	ld c, 4
+	ld c, 2
 	call DelayFrames
 	pop hl
 	pop bc
