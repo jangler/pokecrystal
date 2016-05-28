@@ -120,4 +120,7 @@ hMobile            EQU $ffe9
 hFFEA              EQU $ffea
 hClockResetTrigger EQU $ffeb
 
+hDelayCounter      EQU $ffec
+hFastBattleAnim    EQU $ffed
+
 HRAM_END EQU $ffff

@@ -54,9 +54,9 @@ endr
 	pop de
 
 .skip1
-	ld a, [wDelayCounter]
+	ld a, [hDelayCounter]
 	inc a
-	ld [wDelayCounter], a
+	ld [hDelayCounter], a
 	and $1
 	jr nz, .nodelay
 	call DelayFrame

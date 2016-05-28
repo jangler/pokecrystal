@@ -2338,7 +2338,6 @@ GameTimeSeconds:: ; d4c7
 GameTimeFrames:: ; d4c8
 	ds 1
 
-wDelayCounter::
 	ds 1
 wObjectIsPlayer::
 	ds 1

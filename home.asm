@@ -339,9 +339,9 @@ PrintLetterDelay:: ; 313d
 ; halve text delay. if delay is zero, delay every other frame.
 	srl a
 	jr nz, .normaldelay
-	ld a, [wDelayCounter]
+	ld a, [hDelayCounter]
 	inc a
-	ld [wDelayCounter], a
+	ld [hDelayCounter], a
 	and 1
 	jr z, .end
 .normaldelay
