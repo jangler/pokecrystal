@@ -393,7 +393,6 @@ endr
 	ld a, $1
 	ld [hBGMapMode], a
 	call DelayFrame
-	call DelayFrame
 	ld hl, wcf64
 	inc [hl]
 	ret
@@ -401,8 +400,6 @@ endr
 .end
 	ld a, $1
 	ld [hBGMapMode], a
-	call DelayFrame
-	call DelayFrame
 	call DelayFrame
 	xor a
 	ld [hBGMapMode], a
@@ -526,8 +523,6 @@ StartTrainerBattle_SpeckleToBlack: ; 8c58f (23:458f)
 	ld a, $1
 	ld [hBGMapMode], a
 	call DelayFrame
-	call DelayFrame
-	call DelayFrame
 	xor a
 	ld [hBGMapMode], a
 	ld a, $20
@@ -633,7 +628,6 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	jr nz, .cgb
 	ld a, $1
 	ld [hBGMapMode], a
-	call DelayFrame
 	call DelayFrame
 	jr .nextscene
 
