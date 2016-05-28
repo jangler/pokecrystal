@@ -65,7 +65,12 @@ BattleAnimRunScript: ; cc11c
 	jr c, .disabled
 
 	call BattleAnimClearHud
+
+	ld a, 1
+	ld [hFastBattleAnim], a
 	call RunBattleAnimScript
+	xor a
+	ld [hFastBattleAnim], a
 
 	call BattleAnimAssignPals
 	call BattleAnimRequestPals
@@ -205,6 +210,17 @@ BattleAnimRequestPals: ; cc1e2
 
 BattleAnimDelayFrame: ; cc1fb
 ; Like DelayFrame but wastes battery life.
+
+; only delay one in every two times if the fast animation flag is on
+	ld a, [hFastBattleAnim]
+	and a
+	jr z, .noskip
+	ld a, [hDelayCounter]
+	inc a
+	ld [hDelayCounter], a
+	and $1
+	ret nz
+.noskip
 
 	ld a, 1
 	ld [VBlankOccurred], a
