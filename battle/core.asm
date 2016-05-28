@@ -6896,7 +6896,7 @@ BattleWinSlideInEnemyTrainerFrontpic: ; 3ebd8
 
 	ld a, $1
 	ld [hBGMapMode], a
-	ld c, 4
+	ld c, 2
 	call DelayFrames
 	pop hl
 	pop bc
@@ -8002,8 +8002,6 @@ AnimateExpBar: ; 3f136
 	pop de
 	ld a, $1
 	ld [hBGMapMode], a
-	ld c, d
-	call DelayFrames
 	xor a
 	ld [hBGMapMode], a
 	dec d

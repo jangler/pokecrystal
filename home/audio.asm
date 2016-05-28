@@ -203,15 +203,6 @@ PlaySFX:: ; 3c23
 	push bc
 	push af
 
-	; Is something already playing?
-	call CheckSFX
-	jr nc, .play
-
-	; Does it have priority?
-	ld a, [CurSFX]
-	cp e
-	jr c, .done
-
 .play
 	ld a, [hROMBank]
 	push af
@@ -245,6 +236,8 @@ WaitPlaySFX:: ; 3c4e
 
 WaitSFX:: ; 3c55
 ; infinite loop until sfx is done playing
+
+	ret ; or not
 
 	push hl
 

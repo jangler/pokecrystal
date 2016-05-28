@@ -748,6 +748,12 @@ DoPlayerMovement:: ; 80000
 
 .BikeCheck: ; 803ca
 
+	ld a, [hJoyDown]
+	and $2
+	jr z, .notRunning
+	xor a
+	ret
+.notRunning
 	ld a, [PlayerState]
 	cp PLAYER_BIKE
 	ret z

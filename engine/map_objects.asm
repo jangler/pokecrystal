@@ -35,6 +35,16 @@ Function437b: ; 437b
 	ret c
 	call .HandleStepType
 	call .HandleObjectAction
+	ld a, [wObjectIsPlayer]
+	and a
+	ret z
+	ld a, [hJoyDown]
+	and $2
+	ret z
+	ld a, [PlayerState]
+	cp PLAYER_BIKE
+	ret z
+	call .HandleObjectAction
 	ret
 
 .CheckObjectStillVisible:
@@ -2486,6 +2496,8 @@ HandleNPCStep:: ; 576a
 
 .DoStepsForAllObjects:
 	ld bc, ObjectStructs
+	ld a, 1
+	ld [wObjectIsPlayer], a
 	xor a
 .loop
 	ld [hMapObjectIndexBuffer], a
@@ -2493,6 +2505,8 @@ HandleNPCStep:: ; 576a
 	jr z, .next
 	call Function437b
 .next
+	xor a
+	ld [wObjectIsPlayer], a
 	ld hl, OBJECT_STRUCT_LENGTH
 	add hl, bc
 	ld b, h
