@@ -95,6 +95,7 @@ UnknownScript_0x7451f:
 	opentext
 	writetext UnknownText_0x746ce
 	waitbutton
+	verbosegiveitem REVIVE
 	closetext
 	end
 
