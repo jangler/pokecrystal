@@ -3469,7 +3469,7 @@ BattleCommand_DamageCalc: ; 35612
 	ld [hl], a
 
 ; Level * 2
-	ld a, e
+	ld a, 50
 	add a
 	jr nc, .level_not_overflowing
 	ld [hl], $1
