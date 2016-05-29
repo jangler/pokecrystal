@@ -91,7 +91,6 @@ SailorScript_0x755f1:
 	loadtrainer SAILOR, STANLY
 	startbattle
 	reloadmap
-	special HealParty
 	setevent EVENT_BEAT_SAILOR_STANLY
 	opentext
 	writetext UnknownText_0x758b1

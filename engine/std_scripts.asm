@@ -101,43 +101,6 @@ PokeCenterNurseScript:
 	; only do this once
 	clearevent EVENT_WELCOMED_TO_POKECOM_CENTER
 
-	farwritetext NurseAskHealText
-	yesorno
-	iffalse .done
-
-	farwritetext NurseTakePokemonText
-	pause 20
-	special Mobile_HealParty
-	spriteface LAST_TALKED, LEFT
-	pause 10
-	special HealParty
-	playmusic MUSIC_NONE
-	writebyte 0 ; Machine is at a Pokemon Center
-	special HealMachineAnim
-	pause 30
-	special RestartMapMusic
-	spriteface LAST_TALKED, DOWN
-	pause 10
-
-	checkphonecall ; elm already called about pokerus
-	iftrue .no
-	checkflag ENGINE_POKERUS ; nurse already talked about pokerus
-	iftrue .no
-	special SpecialCheckPokerus
-	iftrue .pokerus
-.no
-
-	farwritetext NurseReturnPokemonText
-	pause 20
-
-.done
-	farwritetext NurseGoodbyeText
-
-	spriteface LAST_TALKED, UP
-	pause 10
-	spriteface LAST_TALKED, DOWN
-	pause 10
-
 	waitbutton
 	closetext
 	end

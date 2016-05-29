@@ -640,7 +640,7 @@ UndergroundPathSwitchRoomEntrancesHiddenMaxPotion:
 
 
 UndergroundPathSwitchRoomEntrancesHiddenRevive:
-	dwb EVENT_UNDERGROUND_PATH_SWITCH_ROOM_ENTRANCES_HIDDEN_REVIVE, REVIVE
+	dwb EVENT_UNDERGROUND_PATH_SWITCH_ROOM_ENTRANCES_HIDDEN_REVIVE, PEARL
 
 
 UndergroundSilverApproachMovement1:

@@ -1626,8 +1626,7 @@ UnknownText_0x1bdaa7::
 
 UnknownText_0x1bdaa9::
 	text "I'm the DAY-CARE"
-	line "MAN. Want me to"
-	cont "raise a #MON?"
+	line "MAN."
 	done
 
 UnknownText_0x1bdad8::
@@ -1644,17 +1643,11 @@ UnknownText_0x1bdad8::
 
 	para "How incredible is"
 	line "that?"
-
-	para "So, want me to"
-	line "raise a #MON?"
 	done
 
 UnknownText_0x1bdb85::
 	text "I'm the DAY-CARE"
 	line "LADY."
-
-	para "Should I raise a"
-	line "#MON for you?"
 	done
 
 UnknownText_0x1bdbbb::
@@ -1671,9 +1664,6 @@ UnknownText_0x1bdbbb::
 
 	para "How incredible"
 	line "could that be?"
-
-	para "Should I raise a"
-	line "#MON for you?"
 	done
 
 UnknownText_0x1bdc79::

@@ -50,7 +50,11 @@ DoBattle: ; 3c000
 	call CheckPlayerPartyForFitPkmn
 	ld a, d
 	and a
-	jp z, LostBattle
+	jr nz, .no_loss
+	ld a, 1
+	ld [wBattleResult], a
+	jp LostBattle
+.no_loss
 	call Call_LoadTempTileMapToTileMap
 	ld a, [BattleType]
 	cp BATTLETYPE_DEBUG
@@ -2486,11 +2490,6 @@ WinTrainerBattle: ; 3cfa4
 	call BattleWinSlideInEnemyTrainerFrontpic
 	ld c, 40
 	call DelayFrames
-	ld a, [BattleType]
-	cp BATTLETYPE_CANLOSE
-	jr nz, .skip_heal
-	predef HealParty
-.skip_heal
 	ld a, [wMonStatusFlags]
 	bit 0, a
 	jr nz, .skip_win_loss_text

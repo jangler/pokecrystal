@@ -103,7 +103,7 @@ VictoryRoadTMEarthquake:
 	itemball TM_EARTHQUAKE
 
 VictoryRoadMaxRevive:
-	itemball MAX_REVIVE
+	itemball BIG_PEARL
 
 VictoryRoadFullRestore:
 	itemball FULL_RESTORE

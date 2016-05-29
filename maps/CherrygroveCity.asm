@@ -178,7 +178,6 @@ CherrygroveSilverTriggerNorth:
 	applymovement CHERRYGROVECITY_SILVER, CherrygroveCity_RivalExitsStageLeft
 	disappear CHERRYGROVECITY_SILVER
 	dotrigger $0
-	special HealParty
 	playmapmusic
 	end
 

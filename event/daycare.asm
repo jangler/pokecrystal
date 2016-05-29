@@ -54,8 +54,6 @@ Special_DayCareMan: ; 166d6
 	call PrintDayCareText
 
 .cancel
-	ld a, DAYCARETEXT_13
-	call PrintDayCareText
 	ret
 ; 1672a
 
@@ -94,8 +92,6 @@ Special_DayCareLady: ; 1672a
 	call PrintDayCareText
 
 .cancel
-	ld a, DAYCARETEXT_13
-	call PrintDayCareText
 	ret
 ; 16781
 
@@ -106,14 +102,14 @@ DayCareLadyIntroText: ; 16781
 	inc a
 .okay
 	call PrintDayCareText
-	call YesNoBox
+	scf
 	ret
 ; 1678f
 
 DayCareManIntroText: ; 1678f
 	set 7, [hl]
 	call PrintDayCareText
-	call YesNoBox
+	scf
 	ret
 ; 16798
 
