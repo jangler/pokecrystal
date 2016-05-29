@@ -7,7 +7,7 @@ move: MACRO
 	db \3 ; power
 	db \4 ; type
 	db \5 percent ; accuracy
-	db \6 ; pp
+	db \6 / 5 ; pp
 	db \7 percent ; effect chance
 ENDM
 
