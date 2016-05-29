@@ -12,6 +12,9 @@ GoldenrodDeptStore6F_MapScriptHeader:
 GoldenrodVendingMachine:
 	opentext
 	writetext GoldenrodVendingText
+	waitbutton
+	closetext
+	end
 .Start:
 	special PlaceMoneyTopRight
 	loadmenudata .MenuData
@@ -98,7 +101,7 @@ GoldenrodDeptStore6FElevatorButton:
 
 GoldenrodVendingText:
 	text "A vending machine!"
-	line "Here's the menu."
+	line "It's out of order…"
 	done
 
 GoldenrodClangText:
@@ -134,12 +137,11 @@ UnknownText_0x5654b:
 	done
 
 UnknownText_0x565ca:
-	text "If you're tired,"
-	line "try the vending"
-	cont "machine's drinks."
+	text "Bet you expected"
+	line "some cheap drinks,"
+	cont "huh?"
 
-	para "Your #MON will"
-	line "love them too."
+	para "Well, me too…"
 	done
 
 GoldenrodDeptStore6FDirectoryText:
