@@ -72,7 +72,7 @@ FirebreatherRayScript:
 	end
 
 UnionCave1FGreatBall:
-	itemball GREAT_BALL
+	itemball TINYMUSHROOM
 
 UnionCave1FXAttack:
 	itemball X_ATTACK

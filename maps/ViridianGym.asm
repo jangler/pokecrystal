@@ -35,6 +35,7 @@ BlueScript_0x9aa26:
 .FightDone:
 	writetext LeaderBlueEpilogueText
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 

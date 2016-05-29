@@ -36,7 +36,7 @@ WhirlIslandB1FHiddenRareCandy:
 
 
 WhirlIslandB1FHiddenUltraBall:
-	dwb EVENT_WHIRL_ISLAND_B1F_HIDDEN_ULTRA_BALL, ULTRA_BALL
+	dwb EVENT_WHIRL_ISLAND_B1F_HIDDEN_ULTRA_BALL, SILVER_LEAF
 
 
 WhirlIslandB1FHiddenFullRestore:

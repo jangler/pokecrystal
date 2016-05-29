@@ -46,6 +46,7 @@ ErikaScript_0x72a6a:
 UnknownScript_0x72aae:
 	writetext UnknownText_0x72d8f
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 

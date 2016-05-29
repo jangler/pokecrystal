@@ -41,6 +41,7 @@ SurgeScript_0x1920a5:
 .FightDone:
 	writetext UnknownText_0x192303
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 

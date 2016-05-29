@@ -267,7 +267,7 @@ Route31Potion:
 	itemball POTION
 
 Route31PokeBall:
-	itemball POKE_BALL
+	itemball BRICK_PIECE
 
 Route31CooltrainerMText:
 	text "DARK CAVE…"

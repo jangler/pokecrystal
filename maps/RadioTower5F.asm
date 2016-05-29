@@ -144,7 +144,7 @@ Ben:
 	jumptextfaceplayer BenText
 
 RadioTower5FUltraBall:
-	itemball ULTRA_BALL
+	itemball SILVER_LEAF
 
 MapRadioTower5FSignpost0Script:
 	jumptext SignpostRadioTower5FOffice

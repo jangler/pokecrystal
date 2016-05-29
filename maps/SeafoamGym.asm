@@ -44,6 +44,7 @@ BlaineScript_0x1ab4fb:
 .FightDone:
 	writetext UnknownText_0x1ab71c
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 

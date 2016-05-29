@@ -98,7 +98,7 @@ UndergroundWarehouseTMSleepTalk:
 	itemball TM_SLEEP_TALK
 
 UndergroundWarehouseUltraBall:
-	itemball ULTRA_BALL
+	itemball SILVER_LEAF
 
 GruntM24SeenText:
 	text "How did you get"

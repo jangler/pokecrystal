@@ -56,6 +56,7 @@ UnknownScript_0x195e02:
 UnknownScript_0x195e15:
 	writetext UnknownText_0x196074
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 
