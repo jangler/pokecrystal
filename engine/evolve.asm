@@ -40,6 +40,16 @@ EvolveAfterBattle_MasterLoop
 	ld a, c
 	and a
 	jp z, EvolveAfterBattle_MasterLoop
+; prevent fainted pokémon from evolving in order to avoid revival
+	ld a, MON_HP
+	call GetPartyParamLocation
+	ld a, [hli]
+	and a
+	jr nz, .not_fnt
+	ld a, [hl]
+	and a
+	jp z, EvolveAfterBattle_MasterLoop
+.not_fnt
 
 	ld a, [Buffer1]
 	dec a
