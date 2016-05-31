@@ -1241,6 +1241,10 @@ Calcium: ; ee3d
 
 	call GetStatExpRelativePointer
 
+; disallow usage on fainted pokémon to prevent revival exploit
+	call GetFainted
+	jr z, NoEffectMessage
+
 	ld a, MON_STAT_EXP
 	call GetPartyParamLocation
 
@@ -1364,6 +1368,18 @@ RareCandy_StatBooster_GetParameters: ; eef5
 ; 0xef14
 
 
+GetFainted:
+; set z flag iff pokémon has zero HP
+	ld a, MON_HP
+	call GetPartyParamLocation
+	ld a, [hli]
+	and a
+	ret nz
+	ld a, [hl]
+	and a
+	ret
+
+
 RareCandy: ; ef14
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
@@ -1371,6 +1387,10 @@ RareCandy: ; ef14
 	jp c, RareCandy_StatBooster_ExitMenu
 
 	call RareCandy_StatBooster_GetParameters
+
+; disallow usage on fainted pokémon to prevent revival exploit
+	call GetFainted
+	jp z, NoEffectMessage
 
 	ld a, MON_LEVEL
 	call GetPartyParamLocation
