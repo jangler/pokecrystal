@@ -80,6 +80,7 @@ BlackthornGymClairScript:
 	setevent EVENT_GOT_TM24_DRAGONBREATH
 	writetext BlackthornGymClairText_DescribeTM24
 	buttonsound
+	verbosegiveitem ULTRA_BALL
 	jump .GotTM24
 
 .BagFull:
@@ -91,7 +92,6 @@ BlackthornGymClairScript:
 .GotTM24:
 	writetext BlackthornGymClairText_League
 	waitbutton
-	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 

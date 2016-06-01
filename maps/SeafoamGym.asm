@@ -38,13 +38,13 @@ BlaineScript_0x1ab4fb:
 	setflag ENGINE_VOLCANOBADGE
 	writetext UnknownText_0x1ab69d
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 
 .FightDone:
 	writetext UnknownText_0x1ab71c
 	waitbutton
-	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 

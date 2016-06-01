@@ -53,10 +53,10 @@ UnknownScript_0x195e02:
 	verbosegiveitem TM_TOXIC
 	iffalse UnknownScript_0x195e15
 	setevent EVENT_GOT_TM06_TOXIC
+	verbosegiveitem ULTRA_BALL
 UnknownScript_0x195e15:
 	writetext UnknownText_0x196074
 	waitbutton
-	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 

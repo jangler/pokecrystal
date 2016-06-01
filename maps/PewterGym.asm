@@ -31,13 +31,13 @@ BrockScript_0x1a2864:
 	setflag ENGINE_BOULDERBADGE
 	writetext UnknownText_0x1a2a57
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 
 .FightDone:
 	writetext UnknownText_0x1a2ada
 	waitbutton
-	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 

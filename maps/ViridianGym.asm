@@ -29,13 +29,13 @@ BlueScript_0x9aa26:
 	setflag ENGINE_EARTHBADGE
 	writetext LeaderBlueAfterText
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 
 .FightDone:
 	writetext LeaderBlueEpilogueText
 	waitbutton
-	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 
