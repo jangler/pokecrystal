@@ -70,6 +70,7 @@ DragonsDenB1F_ClairTrigger:
 	setevent EVENT_GOT_TM24_DRAGONBREATH
 	writetext ClairText_DescribeDragonbreathDragonDen
 	buttonsound
+	verbosegiveitem ULTRA_BALL
 	writetext ClairText_WhatsTheMatterDragonDen
 	waitbutton
 	closetext
