@@ -37,13 +37,13 @@ SabrinaScript_0x189c2e:
 	setflag ENGINE_MARSHBADGE
 	writetext UnknownText_0x189ead
 	waitbutton
+	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 
 .FightDone:
 	writetext UnknownText_0x189f6c
 	waitbutton
-	verbosegiveitem ULTRA_BALL
 	closetext
 	end
 
