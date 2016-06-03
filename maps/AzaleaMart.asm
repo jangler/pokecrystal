@@ -27,7 +27,8 @@ UnknownText_0x18e04d:
 	line "BALL here."
 
 	para "In fact, there's "
-	line "no # BALL either."
+	line "no # BALL"
+	cont "either."
 
 	para "I wish KURT would"
 	line "make me some of"
