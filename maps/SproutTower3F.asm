@@ -160,46 +160,29 @@ UnknownText_0x184a27:
 	line "deed skilled as a"
 	cont "trainer."
 
+	para "What's more, you"
+	line "treat both people"
+	cont "and #MON with"
+	cont "compassion."
+
+	para "You understand"
+	line "that #MON are"
+	cont "not tools of war."
+
 	para "As promised, here"
 	line "is your HM."
-
-	para "But let me say"
-	line "this: You should"
-
-	para "treat your"
-	line "#MON better."
-
-	para "The way you battle"
-	line "is far too harsh."
-
-	para "#MON are not"
-	line "tools of war…"
 	done
 
 UnknownText_0x184aec:
-	text "…"
-	line "…Humph!"
+	text "Hello again! Here"
+	line "to challenge the"
+	cont "ELDER?"
 
-	para "He claims to be"
-	line "the ELDER but"
-	cont "he's weak."
+	para "We had a nice chat"
+	line "about ethics and"
+	cont "#MON."
 
-	para "It stands to"
-	line "reason."
-
-	para "I'd never lose to"
-	line "fools who babble"
-
-	para "about being nice"
-	line "to #MON."
-
-	para "I only care about"
-	line "strong #MON"
-	cont "that can win."
-
-	para "I really couldn't"
-	line "care less about"
-	cont "weak #MON."
+	para "Good luck!"
 	done
 
 UnknownText_0x184bc8:

@@ -932,8 +932,8 @@ ElmsLabHealingMachineText1:
 	done
 
 ElmAfterTheftText1:
-	text "ELM: <PLAY_G>, this"
-	line "is terrible…"
+	text "ELM: <PLAY_G>, that"
+	line "was close…"
 
 	para "Oh, yes, what was"
 	line "MR.#MON's big"
@@ -1102,11 +1102,9 @@ ElmText_CallYou:
 	done
 
 AideText_AfterTheft:
-	text "…sigh… That"
-	line "stolen #MON."
-
-	para "I wonder how it's"
-	line "doing."
+	text "I'm glad that"
+	line "#MON is in good"
+	cont "hands."
 
 	para "They say a #MON"
 	line "raised by a bad"
@@ -1197,22 +1195,24 @@ AideText_AlwaysBusy:
 	done
 
 AideText_TheftTestimony:
-	text "There was a loud"
-	line "noise outside…"
+	text "Someone tried to"
+	line "steal one of our"
+	cont "#MON while we"
+	cont "were distracted."
 
-	para "When we went to"
-	line "look, someone"
-	cont "stole a #MON."
+	para "Luckily, a red-"
+	line "haired trainer"
+	cont "fended them off."
 
-	para "It's unbelievable"
-	line "that anyone would"
-	cont "do that!"
+	para "We were so"
+	line "grateful that we"
+	cont "gave him one of"
+	cont "our #MON"
+	cont "instead!"
 
-	para "…sigh… That"
-	line "stolen #MON."
-
-	para "I wonder how it's"
-	line "doing."
+	para "I'm glad that"
+	line "#MON is in good"
+	cont "hands."
 
 	para "They say a #MON"
 	line "raised by a bad"
@@ -1239,21 +1239,29 @@ AideText_ExplainBalls:
 	done
 
 ElmsLabOfficerText1:
-	text "I heard a #MON"
-	line "was stolen here…"
+	text "I heard there was"
+	line "a theft attempt"
+	cont "here."
 
 	para "I was just getting"
 	line "some information"
 	cont "from PROF.ELM."
 
-	para "Apparently, it was"
-	line "a young male with"
-	cont "long, red hair…"
+	para "We don't know who"
+	line "tried it, but it"
+	cont "seems the attempt"
+	cont "was thwarted by a"
+	cont "young male with"
+	cont "long, red hair."
+
+	para "As thanks,"
+	line "PROF.ELM gave him"
+	cont "a #MON instead."
 
 	para "What?"
 
-	para "You battled a"
-	line "trainer like that?"
+	para "You met a trainer"
+	line "like that?"
 
 	para "Did you happen to"
 	line "get his name?"
@@ -1275,8 +1283,10 @@ ElmsLabWindowText1:
 	done
 
 ElmsLabWindowText2:
-	text "He broke in"
-	line "through here!"
+	text "The window's open."
+
+	para "A pleasant breeze"
+	line "is blowing in."
 	done
 
 ElmsLabTravelTip1Text:
