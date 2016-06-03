@@ -126,8 +126,9 @@ DayCareManText_GiveOddEgg:
 	para "Well, wouldn't you"
 	line "like this EGG?"
 
-	para "Then fine, this is"
-	line "yours to keep!"
+	para "What kind of EGG"
+	line "do you think it"
+	cont "is?"
 	done
 
 DayCareText_ComeAgain:

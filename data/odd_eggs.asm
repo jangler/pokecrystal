@@ -2,6 +2,20 @@ GiveOddEgg: ; 1fb4b6
 
 	; Figure out which egg to give.
 
+	ld hl, StringBuffer1
+	ld de, wMonOrItemNameBuffer
+	ld bc, PKMN_NAME_LENGTH
+	call CopyBytes
+	push de
+	call LoadStandardMenuDataHeader
+	call DisableSpriteUpdates
+	pop de
+	ld b, $7
+	callba NamingScreen
+	ld de, StringBuffer1
+	ld hl, ExitAllMenus
+	rst FarCall
+
 	; Compare a random word to
 	; probabilities out of 0xffff.
 	call Random
