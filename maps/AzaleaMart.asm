@@ -24,10 +24,10 @@ BugCatcherScript_0x18e04a:
 
 UnknownText_0x18e04d:
 	text "There's no GREAT"
-	line "BALL here. #"
+	line "BALL here."
 
-	para "BALLS will have"
-	line "to do."
+	para "In fact, there's "
+	line "no # BALL either."
 
 	para "I wish KURT would"
 	line "make me some of"
