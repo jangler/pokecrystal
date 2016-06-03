@@ -361,16 +361,14 @@ GuideGentTourText1:
 
 GuideGentPokeCenterText:
 	text "This is a #MON"
-	line "CENTER. They heal"
+	line "CENTER. Each one"
 
-	para "your #MON in no"
-	line "time at all."
+	para "has a PC for"
+	line "storing items and"
+	cont "releasing #MON."
 
-	para "You'll be relying"
-	line "on them a lot, so"
-
-	para "you better learn"
-	line "about them."
+	para "A whole building"
+	line "just for a PC!"
 	done
 
 GuideGentMartText:
