@@ -172,7 +172,6 @@ CherrygroveSilverTriggerNorth:
 	verbosegiveitem REVIVE
 	closetext
 .FinishRival:
-	playsound SFX_TACKLE
 	applymovement PLAYER, CherrygroveCity_RivalPushesYouOutOfTheWay
 	spriteface PLAYER, LEFT
 	applymovement CHERRYGROVECITY_SILVER, CherrygroveCity_RivalExitsStageLeft
@@ -439,56 +438,55 @@ GuideGentNoText:
 	done
 
 UnknownText_0x19c4e2:
-	text "<......> <......> <......>"
+	text "Oh, you got a #MON"
+	line "at the LAB?"
 
-	para "You got a #MON"
-	line "at the LAB."
+	para "You didn't steal"
+	line "it, did you?"
 
-	para "What a waste."
-	line "A wimp like you."
+	para "Sorry for the"
+	line "suspicion."
 
-	para "<......> <......> <......>"
+	para "Someone else just"
+	line "tried to steal a"
+	cont "#MON there."
 
-	para "Don't you get what"
-	line "I'm saying?"
+	para "Oh, you want to"
+	line "battle?"
 
-	para "Well, I too, have"
-	line "a good #MON."
-
-	para "I'll show you"
-	line "what I mean!"
+	para "OK, I'm game!"
 	done
 
 SilverCherrygroveWinText:
-	text "Humph. Are you"
-	line "happy you won?"
+	text "Nice job! Looks"
+	line "like you'll make"
+	cont "a good trainer."
 	done
 
 CherrygroveRivalText_YouLost:
-	text "<......> <......> <......>"
+	text "My name's ???."
+	line "Nice to meet you!"
 
-	para "My name's ???."
-
-	para "I'm going to be"
-	line "the world's great-"
-	cont "est #MON"
-	cont "trainer."
+	para "Here, you should"
+	line "take this. It"
+	cont "will revive a"
+	cont "fainted #MON."
 	done
 
 SilverCherrygroveLossText:
-	text "Humph. That was a"
-	line "waste of time."
+	text "Don't worry."
+	line "Learning to battle"
+	cont "takes time."
 	done
 
 CherrygroveRivalText_YouWon:
-	text "<......> <......> <......>"
+	text "My name's ???."
+	line "Nice to meet you!"
 
-	para "My name's ???."
-
-	para "I'm going to be"
-	line "the world's great-"
-	cont "est #MON"
-	cont "trainer."
+	para "Here, you should"
+	line "take this. It"
+	cont "will revive a"
+	cont "fainted #MON."
 	done
 
 CherrygroveTeacherText_NoMapCard:
