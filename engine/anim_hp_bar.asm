@@ -1,6 +1,6 @@
 _AnimateHPBar: ; d627
-	call .IsMaximumMoreThan48Pixels
-	jr c, .MoreThan48Pixels
+	; call .IsMaximumMoreThan48Pixels
+	; jr c, .MoreThan48Pixels
 	call .ComputePixels
 .ShortAnimLoop:
 	push bc
@@ -141,9 +141,19 @@ ShortAnim_UpdateVariables: ; d6e2
 	ret
 
 .not_finished
+	push bc
+	ld b, 2 ; slide by up to 2 pixels at a time
+.loop
 	ld a, c
 	add [hl]
 	ld [hl], a
+	ld a, [wNewHPBarPixels]
+	cp [hl]
+	jr z, .done
+	dec b
+	jr nz, .loop
+.done
+	pop bc
 	call ShortHPBar_CalcPixelFrame
 	and a
 	ret

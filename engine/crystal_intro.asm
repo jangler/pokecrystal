@@ -20,7 +20,13 @@ Copyright_GFPresents: ; e4579
 	call DelayFrames
 	callab Copyright
 	call WaitBGMap
-	ld c, 100
+	ld c, 15
+	call DelayFrames
+	ld c, 15
+	call DelayFrames
+	ld c, 15
+	call DelayFrames
+	ld c, 15
 	call DelayFrames
 	call ClearTileMap
 	callba GBCOnlyScreen
