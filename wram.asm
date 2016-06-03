@@ -2345,7 +2345,7 @@ wObjectIsPlayer::
 
 CurDay:: ; d4cb
 	ds 1
-
+wPlayerIsRunning::
 	ds 1
 wObjectFollow_Leader:: ds 1
 wObjectFollow_Follower:: ds 1

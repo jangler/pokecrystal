@@ -38,11 +38,8 @@ Function437b: ; 437b
 	ld a, [wObjectIsPlayer]
 	and a
 	ret z
-	ld a, [hJoyDown]
-	and $2
-	ret z
-	ld a, [PlayerState]
-	cp PLAYER_BIKE
+	ld a, [wPlayerIsRunning]
+	and a
 	ret z
 	call .HandleObjectAction
 	ret

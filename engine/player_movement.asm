@@ -342,6 +342,15 @@ DoPlayerMovement:: ; 80000
 	and a
 	jr nz, .ExitWater
 
+	ld a, [hJoyDown]
+	and $2
+	jr z, .notSurfRunning
+	ld [wPlayerIsRunning], a
+	ld a, STEP_BIKE
+	call .DoStep
+	scf
+	ret
+.notSurfRunning
 	ld a, STEP_WALK
 	call .DoStep
 	scf
@@ -748,16 +757,19 @@ DoPlayerMovement:: ; 80000
 
 .BikeCheck: ; 803ca
 
-	ld a, [hJoyDown]
-	and $2
-	jr z, .notRunning
-	xor a
-	ret
-.notRunning
 	ld a, [PlayerState]
 	cp PLAYER_BIKE
 	ret z
 	cp PLAYER_SLIP
+	ret z
+	ld a, [hJoyDown]
+	and $2
+	ld a, 1
+	jr z, .notRunning
+	ld [wPlayerIsRunning], a
+	xor a
+.notRunning
+	and a
 	ret
 ; 803d3
 
