@@ -468,8 +468,9 @@ CherrygroveRivalText_YouLost:
 	line "Nice to meet you!"
 
 	para "Here, you should"
-	line "take this. It"
-	cont "will revive a"
+	line "take this. It's a"
+	cont "device I invented"
+	cont "that will revive a"
 	cont "fainted #MON."
 	done
 

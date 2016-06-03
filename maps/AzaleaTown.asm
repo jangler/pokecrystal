@@ -261,58 +261,44 @@ AzaleaTownRivalBeforeText:
 	cont "returned?"
 
 	para "What? You beat"
-	line "them? Hah! Quit"
-	cont "lying."
+	line "them? That's"
+	cont "amazing!"
 
-	para "You're not joking?"
-	line "Then let's see how"
-	cont "good you are."
+	para "Another battle?"
+	line "If you insist!"
 	done
 
 AzaleaTownRivalWinText:
-	text "… Humph! Useless"
-	line "#MON!"
-
-	para "Listen, you. You"
-	line "only won because"
-
-	para "my #MON were"
-	line "weak."
+	text "You know your"
+	line "#MON well!"
 	done
 
 AzaleaTownRivalAfterText:
-	text "I hate the weak."
+	text "Thanks again for"
+	line "taking care of"
+	cont "TEAM ROCKET. I"
+	cont "hate to see"
+	cont "#MON abused."
 
-	para "#MON, trainers."
-	line "It doesn't matter"
-	cont "who or what."
+	para "Anyway, I have to"
+	line "get going."
 
-	para "I'm going to be"
-	line "strong and wipe"
-	cont "out the weak."
+	para "I'm headed to"
+	line "GOLDENROD to con-"
+	cont "tinue my research"
+	cont "on #MON"
+	cont "resuscitation."
 
-	para "That goes for TEAM"
-	line "ROCKET too."
-
-	para "They act big and"
-	line "tough in a group."
-
-	para "But get them"
-	line "alone, and they're"
-	cont "weak."
-
-	para "I hate them all."
-
-	para "You stay out of my"
-	line "way. A weakling"
-
-	para "like you is only a"
-	line "distraction."
+	para "Which reminds me:"
+	line "have another one"
+	cont "of these!"
 	done
 
 AzaleaTownRivalLossText:
-	text "…Humph! I knew"
-	line "you were lying."
+	text "Shoot, I'm sorry!"
+	line "But you shouldn't"
+	cont "battle unless"
+	cont "you're prepared!"
 	done
 
 GoodSamaritanRocketText:
