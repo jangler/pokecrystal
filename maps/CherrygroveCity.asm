@@ -376,8 +376,8 @@ GuideGentMartText:
 	text "This is a #MON"
 	line "MART."
 
-	para "They sell BALLS"
-	line "for catching wild"
+	para "They sell medicine"
+	line "for healing your"
 
 	para "#MON and other"
 	line "useful items."

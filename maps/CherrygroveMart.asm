@@ -51,9 +51,9 @@ UnknownText_0x196834:
 	done
 
 UnknownText_0x196873:
-	text "# BALLS are in"
-	line "stock! Now I can"
-	cont "catch #MON!"
+	text "Turns out that"
+	line "marts don't stock"
+	cont "# BALLS."
 	done
 
 UnknownText_0x1968a0:
