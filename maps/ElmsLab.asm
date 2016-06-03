@@ -1236,6 +1236,13 @@ AideText_ExplainBalls:
 	para "Throw # BALLS"
 	line "at wild #MON"
 	cont "to get them."
+
+	para "Use them wisely."
+	line "You can't buy"
+	cont "BALLS, but a GYM"
+	cont "leader will give"
+	cont "you one if you"
+	cont "earn a BADGE."
 	done
 
 ElmsLabOfficerText1:
