@@ -1278,7 +1278,7 @@ AideText_ExplainBalls:
 	para "Use them wisely."
 	line "You can't buy"
 	cont "BALLS, but a GYM"
-	cont "leader will give"
+	cont "LEADER will give"
 	cont "you one if you"
 	cont "earn a BADGE."
 	done
