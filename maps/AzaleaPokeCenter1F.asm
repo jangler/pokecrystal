@@ -47,15 +47,19 @@ UnknownText_0x18db88:
 	para "for storing"
 	line "#MON in a PC."
 
-	para "BILL's PC can"
-	line "store up to 20"
-	cont "#MON per BOX."
+	para "But that only"
+	line "happens if you"
+	cont "catch them when"
+	cont "your party is"
+	cont "full."
 	done
 
 UnknownText_0x18dbee:
-	text "BILL's PC can"
-	line "store up to 20"
-	cont "#MON per BOX."
+	text "BILL's PC only"
+	line "stores #MON if"
+	cont "you catch them"
+	cont "when your party"
+	cont "is full."
 	done
 
 UnknownText_0x18dc19:
