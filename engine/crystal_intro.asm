@@ -24,6 +24,10 @@ Copyright_GFPresents: ; e4579
 	call DelayFrames
 	ld c, 15
 	call DelayFrames
+	ld c, 15
+	call DelayFrames
+	ld c, 15
+	call DelayFrames
 	call ClearTileMap
 	callba GBCOnlyScreen
 	call .GetGFLogoGFX
