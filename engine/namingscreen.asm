@@ -83,7 +83,7 @@ endr
 	dw .Box
 	dw .Tomodachi
 	dw .Pokemon
-	dw .Pokemon
+	dw .Egg
 
 .Pokemon: ; 1173e (4:573e)
 	ld a, [CurPartySpecies]
@@ -213,6 +213,22 @@ endr
 
 .oTomodachi_no_namae_sutoringu ; 11839
 	db "おともだち の なまえは?@"
+
+.Egg:
+	ld a, EGG
+	ld [wd265], a
+	ld hl, LoadMenuMonIcon
+	ld a, BANK(LoadMenuMonIcon)
+	ld e, $1
+	rst FarCall ;  ; indirect jump to LoadMenuMonIcon (8e83f (23:683f))
+	hlcoord 5, 2
+	ld de, .EggNameString
+	call PlaceString
+	call .StoreMonIconParams
+	ret
+
+.EggNameString: ; 11822
+	db "EGG SPECIES?@"
 
 ; 11847
 
