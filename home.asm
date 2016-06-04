@@ -502,6 +502,25 @@ CompareLong:: ; 31e4
 	ret
 ; 31f3
 
+CompareStrings::
+; Compare bytes at de and hl until encountering a string terminator.
+; Return carry if they all match.
+	ld a, [de]
+	cp [hl]
+	jr nz, .Diff
+	cp "@"
+	jr z, .NoDiff
+	inc de
+	inc hl
+	jr CompareStrings
+.NoDiff
+	scf
+	ret
+.Diff:
+	and a
+	ret
+; 31f3
+
 ClearBGPalettes:: ; 31f3
 	call ClearPalettes
 WaitBGMap:: ; 31f6

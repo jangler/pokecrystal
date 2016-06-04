@@ -1,109 +1,65 @@
 GiveOddEgg: ; 1fb4b6
 
-	; Figure out which egg to give.
-
-	ld hl, StringBuffer1
-	ld de, wMonOrItemNameBuffer
-	ld bc, PKMN_NAME_LENGTH
-	call CopyBytes
-	push de
+	; Ask player for species name (stored in StringBuffer2)
 	call LoadStandardMenuDataHeader
 	call DisableSpriteUpdates
-	pop de
+	ld de, StringBuffer2
 	ld b, $7
 	callba NamingScreen
-	ld de, StringBuffer1
 	ld hl, ExitAllMenus
 	rst FarCall
 
-	; Compare a random word to
-	; probabilities out of 0xffff.
-	call Random
-	ld hl, .Probabilities
-	ld c, 0
-	ld b, c
-.loop
-	ld a, [hli]
-	ld e, a
-	ld a, [hli]
-	ld d, a
-
-	; Break on $ffff.
-	ld a, d
-	cp $ffff / $100
-	jr nz, .not_done
-	ld a, e
-	cp $ffff % $100
-	jr z, .done
-.not_done
-
-	; Break when [hRandom] <= de.
-	ld a, [hRandom + 1]
-	cp d
-	jr c, .done
-	jr z, .ok
-	jr .next
-.ok
-	ld a, [hRandom + 0]
-	cp e
-	jr c, .done
-	jr z, .done
+	; Try to find a species with that name
+	xor a
+	ld [ScriptVar], a ; return false by default
+	inc a
+.species_loop
+	ld [wd265], a
+	call GetPokemonName
+	ld hl, StringBuffer1
+	ld de, StringBuffer2
+	call CompareStrings
+	jr c, .got_species
+	ld a, [wd265]
 .next
-	inc bc
-	jr .loop
-.done
-
-	ld hl, OddEggs
-	ld a, OddEgg2 - OddEgg1
-	call AddNTimes
-
-	ld de, OddEggSpecies
-	ld bc, PARTYMON_STRUCT_LENGTH + 2 * PKMN_NAME_LENGTH
-	call CopyBytes
-
-	ld a, EGG_TICKET
-	ld [CurItem], a
-	ld a, 1
-	ld [wItemQuantityChangeBuffer], a
-	ld a, -1
-	ld [CurItemQuantity], a
-	ld hl, NumItems
-	call TossItem
-
-	; load species in wcd2a
-	ld a, EGG
-	ld [wMobileMonSpeciesBuffer], a
-
-	; load pointer to (wMobileMonSpeciesBuffer - 1) in wMobileMonSpeciesPointerBuffer
-	ld a, (wMobileMonSpeciesBuffer - 1) % $100
-	ld [wMobileMonSpeciesPointerBuffer], a
-	ld a, (wMobileMonSpeciesBuffer - 1) / $100
-	ld [wMobileMonSpeciesPointerBuffer + 1], a
-	; load pointer to OddEggSpecies in wMobileMonStructurePointerBuffer
-	ld a, OddEggSpecies % $100
-	ld [wMobileMonStructurePointerBuffer], a
-	ld a, OddEggSpecies / $100
-	ld [wMobileMonStructurePointerBuffer + 1], a
-
-	; load Odd Egg Name in wTempOddEggNickname
-	ld hl, .Odd
-	ld de, wTempOddEggNickname
-	ld bc, PKMN_NAME_LENGTH
-	call CopyBytes
-
-	; load pointer to wTempOddEggNickname in wMobileMonOTNamePointerBuffer
-	ld a, wTempOddEggNickname % $100
-	ld [wMobileMonOTNamePointerBuffer], a
-	ld a, wTempOddEggNickname / $100
-	ld [wMobileMonOTNamePointerBuffer + 1], a
-	; load pointer to wOddEggName in wMobileMonNicknamePointerBuffer
-	ld a, wOddEggName % $100
-	ld [wMobileMonNicknamePointerBuffer], a
-	ld a, wOddEggName / $100
-	ld [wMobileMonNicknamePointerBuffer + 1], a
-	callba AddMobileMonToParty
+	inc a
+	; check evo lines that can't breed
+	cp ARTICUNO
+	jr z, .next
+	cp ZAPDOS
+	jr z, .next
+	cp MOLTRES
+	jr z, .next
+	cp MEWTWO
+	jr z, .next
+	cp MEW
+	jr z, .next
+	cp UNOWN
+	jr z, .next
+	cp RAIKOU
+	jr z, .next
+	cp ENTEI
+	jr z, .next
+	cp SUICUNE
+	jr z, .next
+	cp 249 ; all legendary after 248
+	jr c, .species_loop
 	ret
-; 1fb546
+
+	; Give level 5 egg of selected species (at earliest evolution)
+.got_species
+	xor a ; PARTYMON
+	ld [MonType], a
+	ld a, [wd265]
+	ld [CurPartySpecies], a
+	callab GetPreEvolution
+	callab GetPreEvolution
+	ld a, 5
+	ld [CurPartyLevel], a
+	callba GiveEgg
+	ld a, 1
+	ld [ScriptVar], a ; return true
+	ret
 
 .Odd:
 	db "ODD@@@@@@@@@"

@@ -36,6 +36,7 @@ DayCareManScript_Inside:
 	checkcode VAR_PARTYCOUNT
 	if_equal PARTY_LENGTH, .PartyFull
 	special Special_GiveOddEgg
+	iffalse .BadSpeciesName
 	opentext
 	writetext DayCareText_GotOddEgg
 	playsound SFX_KEY_ITEM
@@ -55,6 +56,13 @@ DayCareManScript_Inside:
 
 .AlreadyHaveOddEgg:
 	special Special_DayCareMan
+	waitbutton
+	closetext
+	end
+
+.BadSpeciesName
+	opentext
+	writetext DayCareText_BadSpeciesName
 	waitbutton
 	closetext
 	end
@@ -136,7 +144,10 @@ DayCareText_ComeAgain:
 	done
 
 DayCareText_GotOddEgg:
-	text "<PLAYER> received"
+	text "Maybe you're"
+	line "right!"
+
+	para "<PLAYER> received"
 	line "ODD EGG!"
 	done
 
@@ -157,6 +168,18 @@ DayCareText_DescribeOddEgg:
 DayCareText_PartyFull:
 	text "You've no room for"
 	line "this."
+	done
+
+DayCareText_BadSpeciesName:
+	text "Hm? I've never"
+	line "heard of that sort"
+	cont "of EGG."
+
+	para "<......>"
+
+	para "Maybe we should"
+	line "keep the EGG for"
+	cont "now."
 	done
 
 DayCare_MapEventHeader:
