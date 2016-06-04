@@ -144,15 +144,15 @@ DayCareText_ComeAgain:
 	done
 
 DayCareText_GotOddEgg:
-	text "Maybe you're"
-	line "right!"
-
-	para "<PLAYER> received"
+	text "<PLAYER> received"
 	line "ODD EGG!"
 	done
 
 DayCareText_DescribeOddEgg:
-	text "I found that when"
+	text "Maybe you're"
+	line "right!"
+
+	para "I found that when"
 	line "I was caring for"
 
 	para "someone's #MON"
