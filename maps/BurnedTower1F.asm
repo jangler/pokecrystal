@@ -195,12 +195,8 @@ BurnedTowerSilver_BeforeText:
 	done
 
 BurnedTowerSilver_WinText:
-	text "Now do you"
-	line "understand?"
-
-	para "Your aggression"
-	line "led to your own"
-	cont "downfall."
+	text "Well played yet"
+	line "again."
 	done
 
 BurnedTowerSilver_AfterText1:
@@ -209,23 +205,27 @@ BurnedTowerSilver_AfterText1:
 
 	para "want one of"
 	line "these."
-	done
 
-BurnedTowerSilver_LossText:
-	text "Well played yet"
-	line "again."
-	done
-
-BurnedTowerSilver_AfterText2:
-	text "You know, you"
+	para "You know, you"
 	line "don't have to"
 
 	para "fight me for a"
 	line "REVIVE."
 
 	para "You can just ask."
+	done
 
-	para "Wait, <PLAYER>!"
+BurnedTowerSilver_LossText:
+	text "Now do you"
+	line "understand?"
+
+	para "Your aggression"
+	line "led to your own"
+	cont "downfall."
+	done
+
+BurnedTowerSilver_AfterText2:
+	text "Wait, <PLAYER>!"
 	line "Look out!"
 	done
 
