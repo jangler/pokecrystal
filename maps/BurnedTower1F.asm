@@ -168,69 +168,65 @@ BurnedTower1FEusineMovement:
 	step_end
 
 BurnedTowerSilver_BeforeText:
-	text "<......> <......> <......>"
-
-	para "…Oh, it's you."
+	text "…Oh, hi again."
 
 	para "I came looking for"
-	line "some legendary"
+	line "injured #MON to"
+	cont "heal."
 
-	para "#MON that they"
-	line "say roosts here."
+	para "But it turns out"
+	line "that the fire"
 
-	para "But there's"
-	line "nothing here!"
+	para "happened quite a"
+	line "long time ago."
 
-	para "Nothing after all"
-	line "the trouble of"
+	para "<......> <......> <......>"
 
-	para "coming to this"
-	line "dump? No way!"
+	para "You want to battle"
+	line "again? At a time"
+	cont "like this?"
 
-	para "It's all your"
-	line "fault!"
+	para "#MON aren't"
+	line "just weapons, you"
+	cont "know."
+
+	para "But as a trainer,"
+	line "I must accept!"
 	done
 
 BurnedTowerSilver_WinText:
-	text "…Humph!"
+	text "Now do you"
+	line "understand?"
 
-	para "This is why I hate"
-	line "battling wimps."
-
-	para "There's no"
-	line "challenge in it."
+	para "Your aggression"
+	line "led to your own"
+	cont "downfall."
 	done
 
 BurnedTowerSilver_AfterText1:
-	text "…Aw, whatever."
+	text "Here, you look"
+	line "like you might"
 
-	para "You would never be"
-	line "able to catch a"
-
-	para "legendary #MON"
-	line "anyway."
+	para "want one of"
+	line "these."
 	done
 
 BurnedTowerSilver_LossText:
-	text "…Humph!"
-
-	para "This is why I hate"
-	line "battling wimps."
-
-	para "It's just a waste"
-	line "of my time."
+	text "Well played yet"
+	line "again."
 	done
 
 BurnedTowerSilver_AfterText2:
-	text "Humph!"
+	text "You know, you"
+	line "don't have to"
 
-	para "What are you doing"
-	line "falling into a"
+	para "fight me for a"
+	line "REVIVE."
 
-	para "hole? Some genius"
-	line "you are!"
+	para "You can just ask."
 
-	para "Serves you right!"
+	para "Wait, <PLAYER>!"
+	line "Look out!"
 	done
 
 BurnedTower1FEusineIntroText:

@@ -43,6 +43,9 @@ UnknownText_0x99cd5:
 
 	para "fainted will wake"
 	line "right up."
+
+	para "<RIVAL> invented"
+	line "it!"
 	done
 
 EcruteakMart_MapEventHeader:
