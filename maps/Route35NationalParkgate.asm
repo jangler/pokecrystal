@@ -253,14 +253,14 @@ UnknownText_0x6a2eb:
 	done
 
 UnknownText_0x6a39d:
-	text "Here are the PARK"
-	line "BALLS for the"
+	text "Here is the PARK"
+	line "BALL for the"
 	cont "Contest."
 	done
 
 UnknownText_0x6a3c7:
 	text "<PLAYER> received"
-	line "20 PARK BALLS."
+	line "PARK BALL."
 	done
 
 UnknownText_0x6a3e2:
