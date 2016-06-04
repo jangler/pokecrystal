@@ -55,7 +55,7 @@ UnknownText_0x55f52:
 
 UnknownText_0x55f74:
 	text "People used to"
-	line "thik that certain"
+	line "think that certain"
 
 	para "#MON only"
 	line "evolved by trade."
