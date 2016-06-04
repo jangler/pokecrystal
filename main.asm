@@ -406,7 +406,7 @@ INCLUDE "event/elevator.asm"
 Special_GiveParkBalls: ; 135db
 	xor a
 	ld [wContestMon], a
-	ld a, 20
+	ld a, 1
 	ld [wParkBallsRemaining], a
 	callba StartBugContestTimer
 	ret
