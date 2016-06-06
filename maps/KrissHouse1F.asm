@@ -72,6 +72,16 @@ UnknownScript_0x7a531:
 UnknownScript_0x7a549:
 	writetext UnknownText_0x7a850
 	waitbutton
+	givepoke CHARIZARD, 50
+	givepoke STARMIE, 50
+	verbosegiveitem HM_CUT
+	verbosegiveitem HM_FLY
+	verbosegiveitem HM_SURF
+	verbosegiveitem HM_STRENGTH
+	verbosegiveitem HM_FLASH
+	verbosegiveitem HM_WHIRLPOOL
+	verbosegiveitem HM_WATERFALL
+	verbosegiveitem TM_ROCK_SMASH
 	closetext
 	checkevent EVENT_GAVE_KURT_APRICORNS
 	iftrue UnknownScript_0x7a55d

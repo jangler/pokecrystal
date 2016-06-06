@@ -36,16 +36,7 @@ GetPartyNick: ; c706
 CheckEngineFlag: ; c721
 ; Check engine flag de
 ; Return carry if flag is not set
-	ld b, CHECK_FLAG
-	callba EngineFlagAction
-	ld a, c
-	and a
-	jr nz, .isset
-	scf
-	ret
-.isset
-	xor a
-	ret
+	ret nc ; bypass this
 
 CheckBadge: ; c731
 ; Check engine flag a (ENGINE_ZEPHYRBADGE thru ENGINE_EARTHBADGE)
