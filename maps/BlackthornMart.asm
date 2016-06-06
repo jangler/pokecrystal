@@ -23,17 +23,20 @@ BlackBeltScript_0x195a67:
 	jumptextfaceplayer UnknownText_0x195ae9
 
 UnknownText_0x195a6a:
-	text "You can't buy MAX"
-	line "REVIVE, but it"
+	text "There's a legend"
+	line "about an artifact"
 
-	para "fully restores a"
-	line "fainted #MON."
+	para "called MAX REVIVE."
 
-	para "Beware--it won't"
-	line "restore PP, the"
+	para "The artifact"
+	line "supposedly revives"
 
-	para "POWER POINTS"
-	line "needed for moves."
+	para "a fainted #MON"
+	line "and restores all"
+	cont "HP."
+
+	para "But it's probably"
+	line "just a legend."
 	done
 
 UnknownText_0x195ae9:
