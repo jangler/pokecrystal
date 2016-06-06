@@ -172,43 +172,42 @@ MovementData_0x1a88f7:
 	step_end
 
 UnknownText_0x1a88fa:
-	text "…"
+	text "Oh, hi again."
 
-	para "You again?"
+	para "I was just in the"
+	line "GYM keeping that"
 
-	para "There's no need to"
-	line "panic. I don't"
+	para "guy in the glasses"
+	line "company."
 
-	para "bother with wimps"
-	line "like you."
+	para "The GYM LEADER,"
+	line "JANINE, is taking"
 
-	para "Speaking of weak-"
-	line "lings, the city's"
+	para "care of her sick"
+	line "#MON at the"
+	cont "LIGHTHOUSE."
 
-	para "GYM LEADER isn't"
-	line "here."
+	para "I tried to cure"
+	line "it, but there was"
 
-	para "Supposedly taking"
-	line "care of a sick"
+	para "nothing I could"
+	line "do…"
 
-	para "#MON at the"
-	line "LIGHTHOUSE."
+	para "Apprently the"
+	line "#MON needs a"
 
-	para "Humph! Boo-hoo!"
-	line "Just let sick"
-	cont "#MON go!"
+	para "special sort of"
+	line "medicine that I"
+	cont "can't provide."
 
-	para "A #MON that"
-	line "can't battle is"
-	cont "worthless!"
+	para "I hope the #MON"
+	line "gets better."
 
-	para "Why don't you go"
-	line "train at the"
-	cont "LIGHTHOUSE?"
+	para "See you around,"
+	line "<PLAYER>."
 
-	para "Who knows. It may"
-	line "make you a bit"
-	cont "less weak!"
+	para "I don't have time"
+	line "to battle now."
 	done
 
 UnknownText_0x1a8a58:
