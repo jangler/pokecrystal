@@ -333,18 +333,31 @@ UnknownText_0x1a50d7:
 	done
 
 CooltrainerfBeth1SeenText:
-	text "I lost to a train-"
-	line "er named <RIVAL>."
+	text "A guy named"
+	line "<RIVAL> passed"
+	cont "through here."
+
+	para "He said he was"
+	line "going to wait for"
+
+	para "someone at the"
+	line "end of VICTORY"
+	cont "ROAD."
 
 	para "He was really"
-	line "strong, but…"
+	line "strong, but what"
+
+	para "really left an"
+	line "impact on me was"
+	cont "his compassion."
 
 	para "It was as if he"
-	line "absolutely had to"
-	cont "win at any cost."
+	line "cared more about"
 
-	para "I felt sorry for"
-	line "his #MON."
+	para "#MON themselves"
+	line "than winning."
+
+	para "What about you?"
 	done
 
 CooltrainerfBeth1BeatenText:

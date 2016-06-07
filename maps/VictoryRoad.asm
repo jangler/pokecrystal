@@ -169,78 +169,60 @@ MovementData_0x74555:
 	step_end
 
 UnknownText_0x7455f:
-	text "Hold it."
+	text "<PLAYER>!"
 
-	para "…Are you going to"
-	line "take the #MON"
-	cont "LEAGUE challenge?"
+	para "I've been waiting"
+	line "for you. I knew"
 
-	para "…Don't make me"
-	line "laugh."
+	para "you'd end up here"
+	line "sooner or later."
 
-	para "You're so much"
-	line "weaker than I am."
+	para "If you're taking"
+	line "the #MON LEAGUE"
 
-	para "I'm not like I was"
-	line "before."
+	para "challenge, you"
+	line "should have"
+	cont "another REVIVE."
 
-	para "I now have the"
-	line "best and strongest"
+	para "But first, it's"
+	line "not every day"
 
-	para "#MON with me."
-	line "I'm invincible!"
+	para "that I can battle"
+	line "someone with your"
+	cont "skills."
 
 	para "<PLAYER>!"
 	line "I challenge you!"
 	done
 
 UnknownText_0x7463d:
-	text "…I couldn't win…"
+	text "I'm impressed!"
+	line "Thanks, <PLAYER>."
 
-	para "I gave it every-"
-	line "thing I had…"
+	para "That's the most"
+	line "fun I've had"
 
-	para "What you possess,"
-	line "and what I lack…"
-
-	para "I'm beginning to"
-	line "understand what"
-
-	para "that dragon master"
-	line "said to me…"
+	para "battling in quite"
+	line "a while."
 	done
 
 UnknownText_0x746ce:
-	text "…I haven't given up"
-	line "on becoming the"
-	cont "greatest trainer…"
+	text "Good luck with the"
+	line "ELITE FOUR."
 
-	para "I'm going to find"
-	line "out why I can't"
+	para "I'm guessing you"
+	line "might benefit"
+	cont "from this."
 
-	para "win and become"
-	line "stronger…"
-
-	para "When I do, I will"
-	line "challenge you."
-
-	para "And I'll beat you"
-	line "down with all my"
-	cont "power."
-
-	para "…Humph! You keep"
-	line "at it until then."
+	para "See you on the"
+	line "other side!"
 	done
 
 UnknownText_0x747aa:
-	text "…Humph!"
+	text "…Well, shoot!"
 
-	para "When it comes down"
-	line "to it, nothing can"
-	cont "beat power."
-
-	para "I don't need any-"
-	line "thing else."
+	para "I didn't mean for"
+	line "that to happen."
 	done
 
 VictoryRoad_MapEventHeader:
