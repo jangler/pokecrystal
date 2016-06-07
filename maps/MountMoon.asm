@@ -91,76 +91,67 @@ MountMoonSilverMovementAfter:
 	step_end
 
 MountMoonSilverTextBefore:
-	text "<......> <......> <......>"
+	text "Heya, <PLAYER>."
+	line "I didn't expect"
 
-	para "It's been a while,"
-	line "<PLAYER>."
+	para "to meet you here"
+	line "in KANTO."
 
-	para "…Since I lost to"
-	line "you, I thought"
+	para "I'm sure you've"
+	line "shot ahead of me"
 
-	para "about what I was"
-	line "lacking with my"
-	cont "#MON…"
+	para "since I've been"
+	line "spending all my"
 
-	para "And we came up"
-	line "with an answer."
+	para "time doing re-"
+	line "search, but sure."
 
-	para "<PLAYER>, now we'll"
-	line "show you!"
+	para "I can have a"
+	line "battle for old"
+	cont "times' sake."
 	done
 
 MountMoonSilverTextWin:
-	text "<......> <......> <......>"
+	text "Ah, just as I"
+	line "expected."
 
-	para "I thought I raised"
-	line "my #MON to be"
+	para "Kudos, <PLAYER>."
 
-	para "the best they"
-	line "could be…"
-
-	para "…But it still "
-	line "wasn't enough…"
+	para "You're a stronger"
+	line "trainer than I."
 	done
 
 MountMoonSilverTextAfter:
-	text "<......> <......> <......>"
+	text "My #MON have"
+	line "all fainted, but"
 
-	para "…You won, fair"
-	line "and square."
+	para "that doesn't mat-"
+	line "ter so much now."
 
-	para "I admit it. But"
-	line "this isn't the"
-	cont "end."
+	para "My dream is for my"
+	line "REVIVE system to"
 
-	para "I'm going to be"
-	line "the greatest #-"
-	cont "MON trainer ever."
+	para "be installed in"
+	line "every #MON CENTER,"
 
-	para "Because these guys"
-	line "are behind me."
+	para "so that everyone"
+	line "can afford for"
 
-	para "…Listen, <PLAYER>."
+	para "their #MON to"
+	line "be completely"
 
-	para "One of these days"
-	line "I'm going to prove"
+	para "healed, free of"
+	line "charge."
 
-	para "how good I am by"
-	line "beating you."
+	para "Until then…"
+	line "Take this."
 	done
 
 MountMoonSilverTextLoss:
-	text "<......> <......> <......>"
+	text "…"
 
-	para "I've repaid my"
-	line "debt to you."
-
-	para "With my #MON,"
-	line "I'm going to beat"
-
-	para "the CHAMPION and"
-	line "become the world's"
-	cont "greatest trainer."
+	para "I'm not sure what"
+	line "to say."
 	done
 
 MountMoon_MapEventHeader:

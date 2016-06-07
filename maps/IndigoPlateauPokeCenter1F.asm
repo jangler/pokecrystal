@@ -224,53 +224,48 @@ UnknownText_0x180178:
 	done
 
 PlateauRivalText1:
-	text "Hold it."
+	text "<PLAYER>!"
 
 	para "You're going to"
 	line "take the #MON"
 
 	para "LEAGUE challenge"
-	line "now?"
+	line "too?"
 
-	para "That's not going"
-	line "to happen."
-
-	para "My super-well-"
-	line "trained #MON"
-
-	para "are going to pound"
-	line "you."
-
-	para "<PLAYER>!"
-	line "I challenge you!"
+	para "How about we have"
+	line "a warm-up battle"
+	cont "first?"
 	done
 
 PlateauRivalWinText:
-	text "…"
-
-	para "OK--I lost…"
+	text "Looks like you're"
+	line "more prepared than"
+	cont "I am!"
 	done
 
 PlateauRivalText2:
-	text "…Darn… I still"
-	line "can't win…"
+	text "Good luck with the"
+	line "#MON LEAGUE,"
+	cont "<PLAYER>."
 
-	para "I… I have to think"
-	line "more about my"
-	cont "#MON…"
+	para "After that battle,"
+	line "I think I'm going"
 
-	para "Humph! Try not to"
-	line "lose!"
+	para "to train more"
+	line "before I challenge"
+	cont "the LEAGUE."
+
+	para "After all, by that"
+	line "time, you might be"
+	cont "CHAMPION!"
 	done
 
 PlateauRivalLoseText:
 	text "…"
 
-	para "Whew…"
-	line "With my partners,"
-
-	para "I'm going to be"
-	line "the CHAMPION!"
+	para "Who's going to"
+	line "see this dialogue"
+	cont "anyway?"
 	done
 
 TeleportGuyText1:

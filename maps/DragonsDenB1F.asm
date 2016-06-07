@@ -298,29 +298,26 @@ SilverText_Training1:
 	text "…"
 	line "What? <PLAYER>?"
 
-	para "…No, I won't"
-	line "battle you now…"
+	para "Sorry, I can't"
+	line "battle now."
 
-	para "My #MON aren't"
-	line "ready to beat you."
+	para "I'm here to re-"
+	line "search the life"
 
-	para "I can't push them"
-	line "too hard now."
+	para "energy of dragon"
+	line "#MON."
 
-	para "I have to be dis-"
-	line "ciplined to become"
+	para "I'm hoping it will"
+	line "help me develop a"
 
-	para "the greatest #-"
-	line "MON trainer…"
+	para "new medicine that"
+	line "I want to call MAX"
+	cont "REVIVE."
 	done
 
 SilverText_Training2:
-	text "…"
-
-	para "Whew…"
-
-	para "Learn to stay out"
-	line "of my way…"
+	para "Some other time,"
+	line "OK?"
 	done
 
 CooltrainermDarinSeenText:
