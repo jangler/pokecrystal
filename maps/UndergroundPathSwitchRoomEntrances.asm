@@ -674,87 +674,69 @@ UndergroundSilverRetreatMovement2:
 	step_end
 
 UndergroundSilverBeforeText:
-	text "Hold it!"
+	text "Hey, wait up!"
 
-	para "I saw you, so I"
-	line "tailed you."
+	para "<PLAYER>, we"
+	line "should take on"
 
-	para "I don't need you"
-	line "underfoot while I"
+	para "TEAM ROCKET"
+	line "together!"
 
-	para "take care of TEAM"
-	line "ROCKET."
+	para "…"
 
-	para "…Wait a second."
-	line "You beat me be-"
-	cont "fore, didn't you?"
+	para "What? You want to"
+	line "battle me again?"
 
-	para "That was just a"
-	line "fluke."
+	para "I think there are"
+	line "really more"
 
-	para "But I repay my"
-	line "debts!"
+	para "pressing matters"
+	line "at hand, but as a"
+
+	para "trainer, I guess"
+	line "I can't decline…"
 	done
 
 UndergroundSilverWinText:
-	text "…Why…"
-	line "Why do I lose?"
+	text "You win! But why"
+	line "fight amongst"
+	cont "ourselves?"
 
-	para "I've assembled the"
-	line "toughest #MON."
-
-	para "I didn't ease up"
-	line "on the gas."
-
-	para "So why do I lose?"
+	para "This isn't what"
+	line "LANCE would have"
+	cont "wanted."
 	done
 
 UndergroundSilverAfterText:
-	text "…I don't under-"
-	line "stand…"
+	text "OK. Listen. I'm"
+	line "in no shape to"
+	cont "fight after that."
 
-	para "Is what that LANCE"
-	line "guy said true?"
+	para "You should take"
+	line "this. TEAM ROCKET"
 
-	para "That I don't treat"
-	line "#MON properly?"
+	para "is your respon-"
+	line "sibility now, and"
 
-	para "Love…"
+	para "I don't want to"
+	line "see you fail."
 
-	para "Trust…"
+	para "I'll come back"
+	line "to help if I can"
 
-	para "Are they really"
-	line "what I lack?"
-
-	para "Are they keeping"
-	line "me from winning?"
-
-	para "I… I just don't"
-	line "understand."
-
-	para "But it's not going"
-	line "to end here."
-
-	para "Not now. Not"
-	line "because of this."
-
-	para "I won't give up my"
-	line "dream of becoming"
-
-	para "the world's best"
-	line "#MON trainer!"
+	para "once my party is"
+	line "healed."
 	done
 
 UndergroundSilverLossText:
-	text "Humph. This is my"
-	line "real power, wimp."
+	text "Alright. We could"
+	line "have done this"
 
-	para "I'll make TEAM"
-	line "ROCKET history."
+	para "together, but I"
+	line "guess I'll be"
 
-	para "And I'm going to"
-	line "grind that LANCE"
-	cont "under my heels."
+	para "taking on TEAM"
+	line "ROCKET alone now."
 	done
 
 UndergroundPathSwitchRoomEntrances_SuperNerdText:

@@ -350,45 +350,31 @@ UnknownText_0x6e235:
 	done
 
 RocketBaseRivalText:
-	text "…"
+	text "<PLAYER>! Are you"
+	line "working with LANCE"
+	cont "too?"
 
-	para "Didn't I tell you"
-	line "that I was going"
+	para "Together we can"
+	line "clean up this"
+	cont "awful mess."
 
-	para "to destroy TEAM"
-	line "ROCKET?"
+	para "You take care of"
+	line "business down"
 
-	para "…Tell me, who was"
-	line "the guy in the"
+	para "here, and I'll"
+	line "head back up-"
 
-	para "cape who used"
-	line "dragon #MON?"
+	para "stairs to watch"
+	line "your back."
 
-	para "My #MON were no"
-	line "match at all."
+	para "These ROCKETS"
+	line "have no qualms"
 
-	para "I don't care that"
-	line "I lost. I can beat"
+	para "about fighting"
+	line "dirty, so I'll"
 
-	para "him by getting"
-	line "stronger #MON."
-
-	para "It's what he said"
-	line "that bothers me…"
-
-	para "He told me that"
-	line "I don't love and"
-
-	para "trust my #MON"
-	line "enough."
-
-	para "I'm furious that I"
-	line "lost to a bleeding"
-	cont "heart like him."
-
-	para "…Humph! I don't"
-	line "have the time for"
-	cont "the likes of you!"
+	para "make sure you're"
+	line "not ambushed."
 	done
 
 UnknownText_0x6e400:

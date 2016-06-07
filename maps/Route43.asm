@@ -372,11 +372,10 @@ PokemaniacRonSeenText:
 	line "this?"
 
 	para "Some <RIVAL> guy"
-	line "made fun of my"
-	cont "#MON!"
+	line "congratulated me"
+	cont "on my #MON!"
 
-	para "Darn it! My #-"
-	line "MON's great!"
+	para "<RIVAL>'s great!"
 	done
 
 PokemaniacRonBeatenText:
