@@ -663,11 +663,15 @@ UnknownText_0x6d5d8:
 	para "all the ROCKETS"
 	line "here."
 
-	para "But I'm concerned"
-	line "about the young"
+	para "And I'm inspired"
+	line "by the young guy"
 
-	para "guy I battled in"
-	line "the process…"
+	para "who fought along-"
+	line "side us."
+
+	para "He would be a"
+	line "great role model"
+	cont "for you, <PLAYER>."
 	done
 
 UnknownText_0x6d64e:
@@ -856,10 +860,15 @@ UnknownText_0x6dc1a:
 	line "ducting #MON,"
 
 	para "this kid with long"
-	line "red hair and mean-"
+	line "red hair was"
+	cont "furious with me."
 
-	para "looking eyes just"
-	line "creamed me…"
+	para "I didn't stand a"
+	line "chance."
+
+	para "His #MON seemed"
+	line "to trust him"
+	cont "absolutely."
 	done
 
 GruntM19SeenText:
