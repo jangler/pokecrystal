@@ -108,19 +108,30 @@ ManiaText_AskLookAfterShuckle:
 	para "eyes and long hair"
 	line "came in."
 
-	para "He scared me into"
-	line "giving him my"
-	cont "prized #MON!"
+	para "He revived my"
+	line "prized #MON!"
 
-	para "I still have one"
-	line "left, but what if"
-	cont "he comes back?"
+	para "It made me real-"
+	line "ize the value of"
+	cont "life."
 
-	para "You look strong."
-	line "Could you look"
+	para "I want my #MON"
+	line "to see the world,"
 
-	para "after my #MON"
-	line "for a while?"
+	para "but I'm not strong"
+	line "enough to take"
+
+	para "care of it out"
+	line "there…"
+
+	para "You look like the"
+	line "kind of trainer"
+
+	para "who could give it"
+	line "that opportunity."
+
+	para "Could you take my"
+	line "#MON with you?"
 	done
 
 ManiaText_TakeCareOfShuckle:
@@ -141,18 +152,23 @@ ManiaText_PartyFull:
 	done
 
 ManiaText_IfHeComesBack:
-	text "Oh, no… What'll"
-	line "I do if he comes"
-	cont "back?"
+	text "Oh, alright…"
+
+	para "Let me know if"
+	line "you change your"
+	cont "mind…"
 	done
 
 ManiaText_CanIHaveMyMonBack:
 	text "Hi! How's my #-"
 	line "MON?"
 
-	para "I think I'm safe"
-	line "now, so may I have"
-	cont "it back?"
+	para "Are you here to"
+	line "give it back?"
+
+	para "I understand if"
+	line "it's too much of"
+	cont "a burden."
 	done
 
 ManiaText_ThankYou:
