@@ -435,8 +435,9 @@ GuideGentNoText:
 	done
 
 UnknownText_0x19c4e2:
-	text "Oh, you got a #MON"
-	line "at the LAB?"
+	text "Oh, you got a"
+	line "#MON at the"
+	cont "LAB?"
 
 	para "You didn't steal"
 	line "it, did you?"
