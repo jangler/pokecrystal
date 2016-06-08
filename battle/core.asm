@@ -7377,6 +7377,8 @@ FinishBattleAnim: ; 3ee27
 GiveExperiencePoints: ; 3ee3b
 ; Give experience.
 ; Don't give experience if linked or in the Battle Tower.
+	ret ; or under any other circumstances
+
 	ld a, [wLinkMode]
 	and a
 	ret nz
