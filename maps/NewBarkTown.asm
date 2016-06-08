@@ -126,7 +126,6 @@ NewBarkTownSilverScript:
 	pause 5
 	spriteface NEWBARKTOWN_SILVER, DOWN
 	pause 5
-	playsound SFX_TACKLE
 	applymovement PLAYER, Movement_SilverShovesYouOut_NBT
 	applymovement NEWBARKTOWN_SILVER, Movement_SilverReturnsToTheShadows_NBT
 	end
@@ -261,8 +260,8 @@ NewBarkTownRivalText1:
 	done
 
 NewBarkTownRivalText2:
-	text "…What are you"
-	line "staring at?"
+	text "I'm too shy to go"
+	line "inside…"
 	done
 
 NewBarkTownSignText:
