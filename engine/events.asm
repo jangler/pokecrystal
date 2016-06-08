@@ -270,6 +270,7 @@ _CheckObjectEnteringVisibleRange: ; 96812
 
 PlayerEvents: ; 9681f
 	xor a
+	ld [wPlayerIsRunning], a
 ; If there's already a player event, don't interrupt it.
 	ld a, [ScriptRunning]
 	and a
