@@ -66,18 +66,7 @@ UnknownScript_0x7a52a:
 	iffalse UnknownScript_0x7a519
 UnknownScript_0x7a531:
 	writetext UnknownText_0x7a763
-	yesorno
-	iffalse UnknownScript_0x7a542
-	jump UnknownScript_0x7a53b
-
-UnknownScript_0x7a53b:
-	writetext UnknownText_0x7a7cb
-	buttonsound
-	jump UnknownScript_0x7a549
-
-UnknownScript_0x7a542:
-	writetext UnknownText_0x7a807
-	buttonsound
+	waitbutton
 	jump UnknownScript_0x7a549
 
 UnknownScript_0x7a549:
@@ -264,23 +253,6 @@ UnknownText_0x7a763:
 	para "By the way, do you"
 	line "know how to use"
 	cont "the PHONE?"
-	done
-
-UnknownText_0x7a7cb:
-	text "Don't you just"
-	line "turn the #GEAR"
-
-	para "on and select the"
-	line "PHONE icon?"
-	done
-
-UnknownText_0x7a807:
-	text "I'll read the"
-	line "instructions."
-
-	para "Turn the #GEAR"
-	line "on and select the"
-	cont "PHONE icon."
 	done
 
 UnknownText_0x7a850:

@@ -196,7 +196,7 @@ PokeAnim_Setup: ; d010b
 
 PokeAnim_Setup2: ; d011d
 	ld c, FALSE
-	ld b, 4
+	ld b, 0
 	call Functiond0228
 	call Functiond0504
 	ld a, [wPokeAnimSceneIndex]
