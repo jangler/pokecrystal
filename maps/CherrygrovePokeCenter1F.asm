@@ -40,7 +40,7 @@ UnknownText_0x19698a:
 	text "It's great. I can"
 	line "store any number"
 
-	para "of #MON, and"
+	para "of items, and"
 	line "it's all free."
 	done
 

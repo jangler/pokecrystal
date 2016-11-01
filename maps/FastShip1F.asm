@@ -236,16 +236,15 @@ UnknownText_0x752f9:
 	line "are hurt, take a"
 	cont "nap in the bed."
 
-	para "That will heal"
-	line "them."
+	para "After all, it's"
+	line "not your problem."
 	done
 
 UnknownText_0x7534f:
 	text "Here's your cabin."
 
-	para "You can heal your"
-	line "#MON by taking"
-	cont "a nap in the bed."
+	para "You can take a nap"
+	line "in the bed."
 
 	para "The ship will"
 	line "arrive while"
