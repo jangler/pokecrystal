@@ -1,13 +1,19 @@
 NurseMornText:
 	text "Good morning!"
+	line "Welcome to our"
+	cont "#MON CENTER."
 	done
 
 NurseDayText:
 	text "Hello!"
+	line "Welcome to our"
+	cont "#MON CENTER."
 	done
 
 NurseNiteText:
 	text "Good evening!"
+	line "Welcome to our"
+	cont "#MON CENTER."
 	done
 
 PokeComNurseMornText:
