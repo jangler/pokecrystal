@@ -7468,7 +7468,43 @@ GiveExperiencePoints: ; 3ee3b
 	ld [hMultiplicand + 1], a
 	ld a, [EnemyMonBaseExp]
 	ld [hMultiplicand + 2], a
+
+; add party levels to enemy mon level
+	push bc
+	push hl
+	ld a, [CurPartyMon]
+	ld [wd265], a
 	ld a, [EnemyMonLevel]
+	ld c, a  ; c is level counter
+	xor a
+.partyexploop
+	ld [CurPartyMon], a
+	ld a, MON_HP
+	call GetPartyParamLocation
+	ld a, [hli]
+	or [hl]
+	jp z, .skipmon ; fainted
+	ld a, MON_LEVEL
+	call GetPartyParamLocation
+	ld a, [hl]
+	sra a  ; divide
+	sra a  ; by
+	sra a  ; eight
+	add c
+	ld c, a  ; add to level counter
+.skipmon
+	ld a, [PartyCount]
+	ld b, a
+	ld a, [CurPartyMon]
+	inc a
+	cp b
+	jp nz, .partyexploop
+	ld a, [wd265]
+	ld [CurPartyMon], a
+	ld a, c  ; store result level in a
+	pop hl
+	pop bc
+
 	ld [hMultiplier], a
 	call Multiply
 	ld a, 7
