@@ -7471,7 +7471,7 @@ GiveExperiencePoints: ; 3ee3b
 	ld a, [EnemyMonLevel]
 	ld [hMultiplier], a
 	call Multiply
-	ld a, 7
+	ld a, 70
 	ld [hDivisor], a
 	ld b, 4
 	call Divide
