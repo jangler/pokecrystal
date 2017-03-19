@@ -644,6 +644,11 @@ UnknownText_0x1c5dd0::
 	line "blocked the BALL!"
 	prompt
 
+NotAnAipomText::
+	text "That's not an"
+	line "AIPOM."
+	prompt
+
 UnknownText_0x1c5def::
 	text "Don't be a thief!"
 	prompt

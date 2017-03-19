@@ -212,6 +212,10 @@ ParkBall: ; e8a2
 	dec a
 	jp nz, UseBallInTrainerBattle
 
+	ld a, [EnemyMonSpecies]
+	cp AIPOM
+	jp nz, NotAipom
+
 	ld a, [PartyCount]
 	cp PARTY_LENGTH
 	jr nz, .room_in_party
@@ -2953,6 +2957,23 @@ UseBallInTrainerBattle: ; f7a0
 	jr UseDisposableItem
 ; f7ca
 
+NotAipom: ; f7a0
+	call ReturnToBattle_UseBall
+	ld de, ANIM_THROW_POKE_BALL
+	ld a, e
+	ld [FXAnimIDLo], a
+	ld a, d
+	ld [FXAnimIDHi], a
+	xor a
+	ld [wBattleAnimParam], a
+	ld [hBattleTurn], a
+	ld [wNumHits], a
+	predef PlayBattleAnim
+	ld hl, NotAipomText
+	call PrintText
+	jr UseDisposableItem
+; f7ca
+
 WontHaveAnyEffect_NotUsedMessage: ; f7ca
 	ld hl, WontHaveAnyEffectText
 	call PrintText
@@ -3041,6 +3062,12 @@ WontHaveAnyEffectText: ; 0xf81f
 BlockedTheBallText: ; 0xf824
 	; The trainer blocked the BALL!
 	text_jump UnknownText_0x1c5dd0
+	db "@"
+; 0xf829
+
+NotAipomText: ; 0xf824
+	; That's not an AIPOM.
+	text_jump NotAnAipomText
 	db "@"
 ; 0xf829
 
