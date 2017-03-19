@@ -2638,6 +2638,7 @@ Script_givepoke: ; 97932
 ;     pkmn_nickname (MultiByteParam)
 
 	call GetScriptByte
+	ld a, AIPOM
 	ld [CurPartySpecies], a
 	call GetScriptByte
 	ld [CurPartyLevel], a
