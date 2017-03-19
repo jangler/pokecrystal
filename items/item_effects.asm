@@ -2146,10 +2146,10 @@ endr
 	dbw FRESH_WATER,   50
 	dbw SODA_POP,      60
 	dbw LEMONADE,      80
-	dbw HYPER_POTION, 200
-	dbw SUPER_POTION,  50
-	dbw POTION,        20
-	dbw MAX_POTION,   999
+	dbw HYPER_POTION,   0
+	dbw SUPER_POTION,   0
+	dbw POTION,         0
+	dbw MAX_POTION,     0
 	dbw FULL_RESTORE, 999
 	dbw MOOMOO_MILK,  100
 	dbw BERRY,         10
