@@ -217,7 +217,7 @@ ElderScript_0x18d1a5:
 	writetext UnknownText_0x18d697
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke DRATINI, 15
+	givepoke AIPOM, 15
 	checkevent EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
 	special SpecialDratini
 	setevent EVENT_GOT_DRATINI
@@ -518,7 +518,7 @@ UnknownText_0x18d604:
 	para "I have something"
 	line "for you."
 
-	para "Take this DRATINI"
+	para "Take this AIPOM"
 	line "as proof that I"
 
 	para "have recognized"
@@ -527,7 +527,7 @@ UnknownText_0x18d604:
 
 UnknownText_0x18d697:
 	text "<PLAYER> received"
-	line "DRATINI!"
+	line "AIPOM!"
 	done
 
 UnknownText_0x18d6ac:

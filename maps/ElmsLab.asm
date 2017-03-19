@@ -167,8 +167,8 @@ CyndaquilPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	spriteface ELMSLAB_ELM, DOWN
 	refreshscreen $0
-	pokepic CYNDAQUIL
-	cry CYNDAQUIL
+	pokepic AIPOM
+	cry AIPOM
 	waitbutton
 	closepokepic
 	opentext
@@ -180,12 +180,12 @@ CyndaquilPokeBallScript:
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
-	pokenamemem CYNDAQUIL, $0
+	pokenamemem AIPOM, $0
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke CYNDAQUIL, 5, BERRY
+	givepoke AIPOM, 5, BERRY
 	closetext
 	checkcode VAR_FACING
 	if_equal RIGHT, ElmDirectionsScript
@@ -197,8 +197,8 @@ TotodilePokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	spriteface ELMSLAB_ELM, DOWN
 	refreshscreen $0
-	pokepic TOTODILE
-	cry TOTODILE
+	pokepic AIPOM
+	cry AIPOM
 	waitbutton
 	closepokepic
 	opentext
@@ -210,12 +210,12 @@ TotodilePokeBallScript:
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
-	pokenamemem TOTODILE, $0
+	pokenamemem AIPOM, $0
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke TOTODILE, 5, BERRY
+	givepoke AIPOM, 5, BERRY
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	jump ElmDirectionsScript
@@ -225,8 +225,8 @@ ChikoritaPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	spriteface ELMSLAB_ELM, DOWN
 	refreshscreen $0
-	pokepic CHIKORITA
-	cry CHIKORITA
+	pokepic AIPOM
+	cry AIPOM
 	waitbutton
 	closepokepic
 	opentext
@@ -238,12 +238,12 @@ ChikoritaPokeBallScript:
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
-	pokenamemem CHIKORITA, $0
+	pokenamemem AIPOM, $0
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke CHIKORITA, 5, BERRY
+	givepoke AIPOM, 5, BERRY
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	jump ElmDirectionsScript
@@ -865,20 +865,20 @@ LabWhereGoingText:
 
 TakeCyndaquilText:
 	text "ELM: You'll take"
-	line "CYNDAQUIL, the"
-	cont "fire #MON?"
+	line "AIPOM, the"
+	cont "normal #MON?"
 	done
 
 TakeTotodileText:
 	text "ELM: Do you want"
-	line "TOTODILE, the"
-	cont "water #MON?"
+	line "AIPOM, the"
+	cont "normal #MON?"
 	done
 
 TakeChikoritaText:
 	text "ELM: So, you like"
-	line "CHIKORITA, the"
-	cont "grass #MON?"
+	line "AIPOM, the"
+	cont "normal #MON?"
 	done
 
 DidntChooseStarterText:

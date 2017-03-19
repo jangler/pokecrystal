@@ -142,16 +142,16 @@ GoldenrodGameCornerPokemonVendor:
 	if_equal $2, CeladonPrizeRoom_notenoughcoins
 	checkcode VAR_PARTYCOUNT
 	if_equal $6, CeladonPrizeRoom_notenoughroom
-	pokenamemem PIKACHU, $0
+	pokenamemem AIPOM, $0
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_cancel
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext CeladonPrizeRoom_HereYouGoText
 	waitbutton
-	writebyte PIKACHU
+	writebyte AIPOM
 	special Special_GameCornerPrizeMonCheckDex
-	givepoke PIKACHU, 25
+	givepoke AIPOM, 25
 	takecoins 2222
 	jump .loop
 
@@ -160,16 +160,16 @@ GoldenrodGameCornerPokemonVendor:
 	if_equal $2, CeladonPrizeRoom_notenoughcoins
 	checkcode VAR_PARTYCOUNT
 	if_equal $6, CeladonPrizeRoom_notenoughroom
-	pokenamemem PORYGON, $0
+	pokenamemem AIPOM, $0
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_cancel
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext CeladonPrizeRoom_HereYouGoText
 	waitbutton
-	writebyte PORYGON
+	writebyte AIPOM
 	special Special_GameCornerPrizeMonCheckDex
-	givepoke PORYGON, 15
+	givepoke AIPOM, 15
 	takecoins 5555
 	jump .loop
 
@@ -178,16 +178,16 @@ GoldenrodGameCornerPokemonVendor:
 	if_equal $2, CeladonPrizeRoom_notenoughcoins
 	checkcode VAR_PARTYCOUNT
 	if_equal $6, CeladonPrizeRoom_notenoughroom
-	pokenamemem LARVITAR, $0
+	pokenamemem AIPOM, $0
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_cancel
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext CeladonPrizeRoom_HereYouGoText
 	waitbutton
-	writebyte LARVITAR
+	writebyte AIPOM
 	special Special_GameCornerPrizeMonCheckDex
-	givepoke LARVITAR, 40
+	givepoke AIPOM, 40
 	takecoins 8888
 	jump .loop
 
@@ -202,9 +202,9 @@ GoldenrodGameCornerPokemonVendor:
 .MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "PIKACHU    2222@"
-	db "PORYGON    5555@"
-	db "LARVITAR   8888@"
+	db "AIPOM      2222@"
+	db "AIPOM      5555@"
+	db "AIPOM      8888@"
 	db "CANCEL@"
 
 

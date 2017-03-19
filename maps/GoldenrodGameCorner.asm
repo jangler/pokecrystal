@@ -181,16 +181,16 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	if_equal $2, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	checkcode VAR_PARTYCOUNT
 	if_equal $6, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	pokenamemem ABRA, $0
+	pokenamemem AIPOM, $0
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	writebyte ABRA
+	writebyte AIPOM
 	special Special_GameCornerPrizeMonCheckDex
-	givepoke ABRA, 5
+	givepoke AIPOM, 5
 	takecoins 100
 	jump .loop
 
@@ -199,16 +199,16 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	if_equal $2, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	checkcode VAR_PARTYCOUNT
 	if_equal $6, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	pokenamemem CUBONE, $0
+	pokenamemem AIPOM, $0
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	writebyte CUBONE
+	writebyte AIPOM
 	special Special_GameCornerPrizeMonCheckDex
-	givepoke CUBONE, 15
+	givepoke AIPOM, 15
 	takecoins 800
 	jump .loop
 
@@ -217,16 +217,16 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	if_equal $2, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	checkcode VAR_PARTYCOUNT
 	if_equal $6, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	pokenamemem WOBBUFFET, $0
+	pokenamemem AIPOM, $0
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	writebyte WOBBUFFET
+	writebyte AIPOM
 	special Special_GameCornerPrizeMonCheckDex
-	givepoke WOBBUFFET, 15
+	givepoke AIPOM, 15
 	takecoins 1500
 	jump .loop
 
@@ -241,9 +241,9 @@ GoldenrodGameCornerPrizeMonVendorScript:
 .MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "ABRA        100@"
-	db "CUBONE      800@"
-	db "WOBBUFFET  1500@"
+	db "AIPOM       100@"
+	db "AIPOM       800@"
+	db "AIPOM      1500@"
 	db "CANCEL@"
 
 

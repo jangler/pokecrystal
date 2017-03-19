@@ -26,7 +26,7 @@ BillsHouseBill:
 	writetext UnknownText_0x54dae
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke EEVEE, 20
+	givepoke AIPOM, 20
 	setevent EVENT_GOT_EEVEE
 	writetext UnknownText_0x54dc1
 	waitbutton
@@ -111,7 +111,7 @@ BillsHouseRadio:
 UnknownText_0x54c74:
 	text "BILL: Hi, <PLAYER>!"
 	line "Do us a favor and"
-	cont "take this EEVEE."
+	cont "take this AIPOM."
 
 	para "It came over when"
 	line "I was adjusting"
@@ -144,7 +144,7 @@ UnknownText_0x54d3f:
 
 UnknownText_0x54dae:
 	text "<PLAYER> received"
-	line "EEVEE!"
+	line "AIPOM!"
 	done
 
 UnknownText_0x54dc1:
