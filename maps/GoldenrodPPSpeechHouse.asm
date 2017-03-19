@@ -45,10 +45,9 @@ UnknownText_0x556ca:
 	para "may be unable to"
 	line "use its moves."
 
-	para "If that happens,"
-	line "heal it at a #-"
-	cont "MON CENTER or use"
-	cont "an item."
+	para "After a battle,"
+	line "it will rest to"
+	cont "resotre its PP."
 	done
 
 GoldenrodPPSpeechHouse_MapEventHeader:

@@ -3154,43 +3154,18 @@ ApplyPPUp: ; f84c
 
 ComputeMaxPP: ; f881
 	push bc
-	; Divide the base PP by 5.
-	ld a, [de]
-	ld [hDividend + 3], a
-	xor a
-	ld [hDividend], a
-	ld [hDividend + 1], a
-	ld [hDividend + 2], a
-	ld a, 5
-	ld [hDivisor], a
-	ld b, 4
-	call Divide
-	; Get the number of PP, which are bits 6 and 7 of the PP value stored in RAM.
 	ld a, [hl]
-	ld b, a
+	ld b, a ; b = current PP value
 	swap a
 	and $f
 	srl a
 	srl a
-	ld c, a
-	; If this value is 0, we are done
+	ld c, a ; c = # of PP ups used
 	and a
 	jr z, .NoPPUp
-
 .loop
-	; Normally, a move with 40 PP would have 64 PP with three PP Ups.
-	; Since this would overflow into bit 6, we prevent that from happening
-	; by decreasing the extra amount of PP each PP Up provides, resulting
-	; in a maximum of 61.
-	ld a, [hQuotient + 2]
-	cp $8
-	jr c, .okay
-	ld a, $7
-
-.okay
-	add b
-	ld b, a
-	ld a, [wd265]
+	inc b
+	ld a, [wd265] ; a = ???
 	dec a
 	jr z, .NoPPUp
 	dec c

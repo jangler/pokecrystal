@@ -231,6 +231,7 @@ BattleTurn: ; 3c12f
 	jp .loop
 
 .quit
+	callba HealPartyPP
 	ret
 ; 3c1bf
 
