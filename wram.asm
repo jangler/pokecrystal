@@ -2338,11 +2338,14 @@ GameTimeSeconds:: ; d4c7
 GameTimeFrames:: ; d4c8
 	ds 1
 
-	ds 2
+wDelayCounter::
+	ds 1
+wObjectIsPlayer::
+	ds 1
 
 CurDay:: ; d4cb
 	ds 1
-
+wPlayerIsRunning::
 	ds 1
 wObjectFollow_Leader:: ds 1
 wObjectFollow_Follower:: ds 1

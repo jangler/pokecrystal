@@ -100,7 +100,6 @@ PokeCenterNurseScript:
 .ok
 	; only do this once
 	clearevent EVENT_WELCOMED_TO_POKECOM_CENTER
-
 	waitbutton
 	closetext
 	end

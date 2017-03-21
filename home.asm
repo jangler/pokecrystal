@@ -336,6 +336,15 @@ PrintLetterDelay:: ; 313d
 	ld a, 1
 
 .updatedelay
+; halve text delay. if delay is zero, delay every other frame.
+	srl a
+	jr nz, .normaldelay
+	ld a, [wDelayCounter]
+	inc a
+	ld [wDelayCounter], a
+	and 1
+	jr z, .end
+.normaldelay
 	ld [TextDelayFrames], a
 
 .checkjoypad

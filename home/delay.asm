@@ -14,7 +14,11 @@ DelayFrame:: ; 45a
 
 
 DelayFrames:: ; 468
-; Wait c frames
+; Wait c frames, max 15
+	ld a, c
+	and $f
+	ld c, a
+
 	call DelayFrame
 	dec c
 	jr nz, DelayFrames
