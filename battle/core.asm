@@ -7475,24 +7475,25 @@ GiveExperiencePoints: ; 3ee3b
 	ld [hDivisor], a
 	ld b, 4
 	call Divide
-; Boost Experience for traded Pokemon
+; Boost Experience for underleveled Pokemon
 	pop bc
-	ld hl, MON_ID
+	ld hl, MON_LEVEL
 	add hl, bc
-	ld a, [PlayerID]
-	cp [hl]
-	jr nz, .boosted
-	inc hl
-	ld a, [PlayerID + 1]
-	cp [hl]
+	push bc
+	ld a, [EnemyMonLevel]
+	ld b, a
+	ld a, [hl]
+	cp b
+	jr c, .boosted
 	ld a, $0
-	jr z, .no_boost
+	jr .no_boost
 
 .boosted
 	call BoostExp
 	ld a, $1
 
 .no_boost
+	pop bc
 ; Boost experience for a Trainer Battle
 	ld [StringBuffer2 + 2], a
 	ld a, [wBattleMode]
