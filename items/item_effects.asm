@@ -1808,11 +1808,6 @@ ItemRestoreHP: ; f1a9 (3:71a9)
 	xor a
 	ld [Danger], a
 	call GetHealingItemAmount
-	and [hl]
-	jr nz, .non_potion
-	ld a, 1
-	ret
-.non_potion
 	call RestoreHealth
 	call BattlemonRestoreHealth
 	call HealHP_SFX_GFX
