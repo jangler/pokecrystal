@@ -5,7 +5,7 @@ SpecialGiveShuckle: ; 7305
 	ld [MonType], a
 
 ; Level 15 Shuckle.
-	ld a, SHUCKLE
+	ld a, AIPOM
 	ld [CurPartySpecies], a
 	ld a, 15
 	ld [CurPartyLevel], a
@@ -75,7 +75,7 @@ SpecialReturnShuckle: ; 737e
 	jr c, .refused
 
 	ld a, [CurPartySpecies]
-	cp SHUCKLE
+	cp AIPOM
 	jr nz, .DontReturn
 
 	ld a, [CurPartyMon]
