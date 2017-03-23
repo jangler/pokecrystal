@@ -168,15 +168,6 @@ LanceHealsScript2:
 	spriteface TEAMROCKETBASEB2F_LANCE, LEFT
 LanceHealsCommon:
 	opentext
-	writetext LanceHealsText1
-	waitbutton
-	closetext
-	special FadeOutPalettes
-	special Mobile_HealParty
-	playsound SFX_FULL_HEAL
-	special HealParty
-	special FadeInPalettes
-	opentext
 	writetext LanceHealsText2
 	waitbutton
 	closetext
@@ -791,18 +782,6 @@ UnknownText_0x6d994:
 
 	para "I look forward to"
 	line "seeing you again!"
-	done
-
-LanceHealsText1:
-	text "LANCE: Are you all"
-	line "right?"
-
-	para "Your #MON are"
-	line "hurt and tired."
-
-	para "Here, give them"
-	line "some of my medi-"
-	cont "cine."
 	done
 
 LanceHealsText2:

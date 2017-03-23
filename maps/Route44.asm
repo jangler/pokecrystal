@@ -309,7 +309,7 @@ FruitTreeScript_0x19da40:
 	fruittree FRUITTREE_ROUTE_44
 
 Route44MaxRevive:
-	itemball MAX_REVIVE
+	itemball BIG_PEARL
 
 Route44UltraBall:
 	itemball ULTRA_BALL

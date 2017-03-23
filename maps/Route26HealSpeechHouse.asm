@@ -11,18 +11,6 @@ Route26HealSpeechHouse_MapScriptHeader:
 TeacherScript_0x7b125:
 	faceplayer
 	opentext
-	writetext UnknownText_0x7b14d
-	waitbutton
-	closetext
-	special Special_FadeBlackQuickly
-	special Special_ReloadSpritesNoPalettes
-	special Mobile_HealParty
-	playmusic MUSIC_HEAL
-	special HealParty
-	pause 60
-	special Special_FadeInQuickly
-	special RestartMapMusic
-	opentext
 	writetext UnknownText_0x7b18b
 	waitbutton
 	closetext
@@ -31,18 +19,8 @@ TeacherScript_0x7b125:
 Route26HealHouseBookshelf:
 	jumpstd picturebookshelf
 
-UnknownText_0x7b14d:
-	text "Your #MON look"
-	line "a little tired."
-
-	para "You should rest"
-	line "them a while."
-	done
-
 UnknownText_0x7b18b:
-	text "There!"
-
-	para "Your #MON are"
+	text "Your #MON are"
 	line "looking good!"
 
 	para "Keep at it!"
