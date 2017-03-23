@@ -28,6 +28,7 @@ CeladonVendingMachine:
 	writetext CeladonVendingText
 	waitbutton
 	closetext
+	end
 .Start:
 	special PlaceMoneyTopRight
 	loadmenudata .MenuData
