@@ -1277,7 +1277,7 @@
 	db 7, BELLSPROUT
 	db 6, HOPPIP
 	db 7, PIDGEY
-	db 7, HOPPIP
+	db 7, MAREEP
 	db 7, HOPPIP
 	; day
 	db 4, EKANS
@@ -1285,7 +1285,7 @@
 	db 7, BELLSPROUT
 	db 6, HOPPIP
 	db 7, PIDGEY
-	db 7, HOPPIP
+	db 7, MAREEP
 	db 7, HOPPIP
 	; nite
 	db 4, WOOPER
@@ -1294,7 +1294,7 @@
 	db 6, ZUBAT
 	db 7, HOOTHOOT
 	db 7, GASTLY
-	db 7, GASTLY
+	db 7, MAREEP
 
 	map ROUTE_33
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1410,7 +1410,7 @@
 	db 13, LEDYBA
 	db 14, GROWLITHE
 	db 15, PIDGEY
-	db 16, GROWLITHE
+	db 14, VULPIX
 	db 15, PIDGEOTTO
 	db 15, LEDIAN
 	db 15, LEDIAN
@@ -1418,7 +1418,7 @@
 	db 13, PIDGEY
 	db 14, GROWLITHE
 	db 15, PIDGEY
-	db 16, GROWLITHE
+	db 15, VULPIX
 	db 15, PIDGEOTTO
 	db 15, PIDGEY
 	db 15, PIDGEY
@@ -1426,7 +1426,7 @@
 	db 13, SPINARAK
 	db 14, STANTLER
 	db 15, HOOTHOOT
-	db 16, STANTLER
+	db 14, VULPIX
 	db 15, NOCTOWL
 	db 15, ARIADOS
 	db 15, ARIADOS
@@ -1492,25 +1492,25 @@
 	db 14, SPEAROW
 	db 15, RATTATA
 	db 16, RATICATE
-	db 15, ARBOK
-	db 16, FEAROW
-	db 16, FEAROW
+	db 14, MAREEP
+	db 15, MANKEY
+	db 16, FLAAFFY
 	; day
 	db 13, EKANS
 	db 14, SPEAROW
 	db 15, RATTATA
 	db 16, RATICATE
-	db 15, ARBOK
-	db 16, FEAROW
-	db 16, FEAROW
+	db 14, MAREEP
+	db 15, MANKEY
+	db 16, FLAAFFY
 	; nite
 	db 13, RATTATA
 	db 14, ZUBAT
 	db 15, RATICATE
-	db 16, GOLBAT
+	db 14, MAREEP
 	db 15, MARILL
-	db 16, GOLBAT
-	db 16, GOLBAT
+	db 15, MANKEY
+	db 16, FLAAFFY
 
 	map ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1518,25 +1518,25 @@
 	db 15, SENTRET
 	db 16, PIDGEOTTO
 	db 16, FARFETCH_D
-	db 15, FURRET
+	db 15, FLAAFFY
 	db 17, RATICATE
-	db 17, FURRET
-	db 17, FURRET
+	db 15, GIRAFARIG
+	db 15, MAREEP
 	; day
 	db 15, SENTRET
 	db 16, PIDGEOTTO
 	db 16, FARFETCH_D
-	db 15, FURRET
+	db 15, FLAAFFY
 	db 17, RATICATE
-	db 17, FURRET
-	db 17, FURRET
+	db 15, GIRAFARIG
+	db 15, MAREEP
 	; nite
 	db 15, VENONAT
 	db 16, NOCTOWL
 	db 16, RATICATE
-	db 17, VENONAT
-	db 17, RATICATE
-	db 17, VENOMOTH
+	db 15, FLAAFFY
+	db 15, GIRAFARIG
+	db 17, MAREEP
 	db 17, VENOMOTH
 
 	map ROUTE_44
