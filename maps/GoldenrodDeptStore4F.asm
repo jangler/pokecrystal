@@ -54,20 +54,18 @@ UnknownText_0x55f52:
 	done
 
 UnknownText_0x55f74:
-	text "Some #MON"
-	line "evolve only by"
+	text "People used to"
+	line "think that certain"
 
-	para "being traded via a"
-	line "Game Link cable."
+	para "#MON only"
+	line "evolved by trade."
 
-	para "I know of four:"
-	line "MACHOKE, KADABRA,"
+	para "MACHOKE, KADABRA,"
+	line "HAUNTER, GRAVELER…"
 
-	para "HAUNTER and, um,"
-	line "GRAVELER."
-
-	para "I heard there are"
-	line "others too."
+	para "Turns out those"
+	line "people were just"
+	cont "impatient!"
 	done
 
 GoldenrodDeptStore4FDirectoryText:
