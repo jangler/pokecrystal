@@ -26,6 +26,9 @@ YoungsterScript_0x7117d:
 CeladonVendingMachine:
 	opentext
 	writetext CeladonVendingText
+	waitbutton
+	closetext
+	end
 .Start:
 	special PlaceMoneyTopRight
 	loadmenudata .MenuData
@@ -106,7 +109,7 @@ UnknownScript_0x7124d:
 
 CeladonVendingText:
 	text "A vending machine!"
-	line "Here's the menu."
+	line "It's out of order…"
 	done
 
 CeladonClangText:
