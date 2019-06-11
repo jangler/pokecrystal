@@ -1,8 +1,6 @@
 # generated
 *.tx
 *.o
-*.1bpp
-*.2bpp
 
 # precompiled python
 *.pyc
@@ -36,3 +34,13 @@ pokecrystal.txt
 # swap files for gedit
 *~
 
+*.dimensions
+*.gbcpal
+*.2bpp
+*.1bpp
+*.lz
+*.pal
+*.animated.tilemap
+gfx/pokemon/*/bitmask.asm
+gfx/pokemon/*/frames.asm
+!gfx/pokemon/*/shiny.pal
