@@ -1541,6 +1541,7 @@ MoveScreenLoop: ; 12fd5
 	call Function132d3
 	ld de, MoveScreenAttributes
 	call SetMenuAttributes
+MoveScreenInnerLoop:
 .loop
 	call SetUpMoveList
 	ld hl, w2DMenuFlags1
@@ -1553,6 +1554,12 @@ MoveScreenLoop: ; 12fd5
 	jp nz, .b_button
 	bit 0, a
 	jp nz, .a_button
+	bit 2, a
+	ld b, $ff
+	jp nz, CustomIncrementMove
+	bit 3, a
+	ld b, $01
+	jp nz, CustomIncrementMove
 	bit 4, a
 	jp nz, .d_right
 	bit 5, a
@@ -1743,12 +1750,224 @@ MoveScreenLoop: ; 12fd5
 	jp ClearTileMap
 ; 13163
 
+AddSelectedMoveOffset:
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [CurPartyMon]
+	call AddNTimes
+	ld a, [wMenuCursorY]
+	dec a
+	ld c, a
+	ld b, $0
+	add hl, bc
+	ret
+
+CustomIncrementMove:
+	; get new index
+	ld a, $21 ; unused byte in pkmn data used for index
+	call GetPartyParamLocation
+	ld a, [hl]
+	add b
+
+	; get new move from index
+	push hl
+	call GetLearnsetMoveAtIndex
+	pop hl
+	ld [hl], a
+	ld hl, PartyMon1Moves
+	call AddSelectedMoveOffset
+	ld a, e
+	ld [hl], a
+
+	; also, clear the PP of the move
+	ld hl, PartyMon1PP
+	call AddSelectedMoveOffset
+	xor a
+	ld [hl], a
+
+	; clear move names before being redrawn
+	hlcoord 1, 2
+	ld b, 8
+	ld c, 18
+	call ClearBox
+
+	jp MoveScreenInnerLoop
+
+TM_SELECT_ENABLED EQU 0
+
+; returns the move at a given index in the pokémon's complete learnset,
+; including level-up moves, TMs, and egg moves, but *NOT* HMs.
+; a = new index, e = new move.
+GetLearnsetMoveAtIndex:
+	ld b, 0 ; stored last move
+	ld d, a ; stored index
+	ld e, a ; current index
+	inc e
+
+	; first loop through level-up moves
+	call GetMonAttacksStart
+.levelupMovesLoop
+	ld a, BANK(EvosAttacks)
+	call GetFarByte ; this byte is level, or 0 == end
+	inc hl
+	or a
+	jr z, .doneLevelupMoves
+	ld a, BANK(EvosAttacks)
+	call GetFarByte ; this byte is move id
+	inc hl
+	ld b, a
+	dec e
+	jr nz, .levelupMovesLoop
+	ld e, a
+	ld a, d
+	ret
+.doneLevelupMoves
+
+	; this might be necessary for the eggs later, not sure
+	ld a, [CurPartySpecies]
+	ld [CurSpecies], a
+
+	; then loop through TMs / HMs / tutor moves, if enabled
+	ld a, TM_SELECT_ENABLED
+	or a
+	jr z, .doneTMs
+	ld a, [CurPartySpecies]
+	call GetBaseData
+	ld hl, TMHMMoves
+	ld c, $ff
+.TMsLoop
+	inc c
+	ld a, [hl]
+	or a
+	jr z, .doneTMs
+	push bc
+	push de
+	push hl
+	ld hl, BaseTMHM
+	ld b, CHECK_FLAG
+	ld d, 0
+	predef FlagPredef
+	pop hl
+	pop de
+	pop bc
+	ldi a, [hl]
+	jr z, .TMsLoop
+	ld b, a
+	dec e
+	jr nz, .TMsLoop
+	ld e, b
+	ld a, d
+	ret
+.doneTMs
+
+	; then loop through egg moves
+	push bc
+	push hl
+	callab GetPreEvolution
+	callab GetPreEvolution
+	ld a, [CurPartySpecies]
+	ld b, a
+	ld a, [CurSpecies]
+	ld [CurPartySpecies], a
+	ld a, b ; now a = base evo
+	pop hl
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, EggMovePointers
+	add hl, bc
+	add hl, bc
+	pop bc
+	ld a, BANK(EggMovePointers)
+	call GetFarHalfword
+.eggMovesLoop
+	ld a, BANK(EggMoves)
+	call GetFarByte
+	cp $ff
+	jr z, .doneEggMoves
+	inc hl
+	ld b, a
+	dec e
+	jr nz, .eggMovesLoop
+	ld e, a
+	ld a, d
+	ret
+.doneEggMoves
+
+	; if e is exactly 1 at this point, overflow back to the first move in
+	; the natural learnset.
+	dec e
+	jr nz, .underflow
+	call GetMonAttacksStart
+	inc hl
+	ld a, BANK(EvosAttacks)
+	call GetFarByte
+	ld e, a
+	xor a
+	ret
+
+	; otherwise return the last move and index evaluated.
+.underflow
+	ld a, $fe
+	sub e
+	ld e, b
+	ret
+
+; sets hl = the start of CurPartyMon's attack data (not evo data!).
+GetMonAttacksStart:
+	push bc
+	push de
+
+	ld a, [CurPartySpecies]
+	dec a
+	ld b, 0
+	ld c, a
+	ld hl, EvosAttacksPointers
+	add hl, bc
+	add hl, bc
+	ld de, StringBuffer1
+	ld a, BANK(EvosAttacksPointers)
+	call GetFarHalfword
+
+.skipEvosLoop
+	ld a, BANK(EvosAttacks)
+	call GetFarByte
+	inc hl
+	or a
+	jr nz, .skipEvosLoop
+
+	pop de
+	pop bc
+	ret
+
+; returns z iff CurPartyMon knows move a.
+CheckKnowsMove:
+	push bc
+	push de
+	push hl
+	ld e, a
+	ld a, MON_MOVES
+	call GetPartyParamLocation
+	ld a, e
+	ld b, NUM_MOVES
+.loop
+	cp [hl]
+	jr z, .done
+	inc hl
+	dec b
+	jr nz, .loop
+	or a
+.done
+	pop hl
+	pop de
+	pop bc
+	ret
+
 MoveScreenAttributes: ; 13163
 	db 3, 1
 	db 3, 1
 	db $40, $00
 	dn 2, 0
-	db D_UP | D_DOWN | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON
+	db D_UP | D_DOWN | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON | SELECT | START
 ; 1316b
 
 String_1316b: ; 1316b
