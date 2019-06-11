@@ -15,8 +15,7 @@ _AlreadySurfingText::
 	prompt
 
 _AskSurfText::
-	text "The water is calm."
-	line "Want to SURF?"
+	text "Want to SURF?"
 	done
 
 UnknownText_0x1c068e::
@@ -81,10 +80,7 @@ UnknownText_0x1c0788::
 	prompt
 
 UnknownText_0x1c07a0::
-	text "A #MON may be"
-	line "able to move this."
-
-	para "Want to use"
+	text "Want to use"
 	line "STRENGTH?"
 	done
 
@@ -113,10 +109,7 @@ UnknownText_0x1c082b::
 	done
 
 UnknownText_0x1c0864::
-	text "A whirlpool is in"
-	line "the way."
-
-	para "Want to use"
+	text "Want to use"
 	line "WHIRLPOOL?"
 	done
 
@@ -131,11 +124,8 @@ UnknownText_0x1c08ac::
 	done
 
 UnknownText_0x1c08bc::
-	text "A #MON could be"
-	line "in this tree."
-
-	para "Want to HEADBUTT"
-	line "it?"
+	text "Want to use"
+	line "HEADBUTT?"
 	done
 
 UnknownText_0x1c08f0::
@@ -150,10 +140,7 @@ UnknownText_0x1c0906::
 	done
 
 UnknownText_0x1c0924::
-	text "This rock looks"
-	line "breakable."
-
-	para "Want to use ROCK"
+	text "Want to use ROCK"
 	line "SMASH?"
 	done
 
@@ -191,10 +178,7 @@ UnknownText_0x1c09c7::
 	done
 
 UnknownText_0x1c09dd::
-	text "This tree can be"
-	line "CUT!"
-
-	para "Want to use CUT?"
+	text "Want to use CUT?"
 	done
 
 UnknownText_0x1c0a05::

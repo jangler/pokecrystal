@@ -106,10 +106,10 @@ PokeCenterNurseScript:
 	iffalse .done
 
 	farwritetext NurseTakePokemonText
-	pause 20
+	pause 5
 	special Mobile_HealParty
 	spriteface LAST_TALKED, LEFT
-	pause 10
+	pause 5
 	special HealParty
 	playmusic MUSIC_NONE
 	writebyte 0 ; Machine is at a Pokemon Center
@@ -117,7 +117,7 @@ PokeCenterNurseScript:
 	pause 30
 	special RestartMapMusic
 	spriteface LAST_TALKED, DOWN
-	pause 10
+	pause 5
 
 	checkphonecall ; elm already called about pokerus
 	iftrue .no
@@ -128,7 +128,7 @@ PokeCenterNurseScript:
 .no
 
 	farwritetext NurseReturnPokemonText
-	pause 20
+	buttonsound
 
 .done
 	farwritetext NurseGoodbyeText

@@ -915,6 +915,10 @@ ElmDirectionsText1:
 	para "there, so you"
 	line "can't miss it."
 
+	para "You can even hold"
+	line "B to run if you're"
+	cont "in a hurry."
+
 	para "But just in case,"
 	line "here's my phone"
 
