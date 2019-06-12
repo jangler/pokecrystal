@@ -4002,7 +4002,9 @@ TryToRunAwayFromBattle: ; 3d8b3
 	jr .print_inescapable_text
 
 .cant_run_from_trainer
-	ld hl, BattleText_TheresNoEscapeFromTrainerBattle
+	ld a, $1
+	ld [wBattleResult], a
+	jp LostBattle
 
 .print_inescapable_text
 	call StdBattleTextBox
