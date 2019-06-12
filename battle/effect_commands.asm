@@ -1524,7 +1524,6 @@ BattleCommand_Stab: ; 346d2
 
 .end
 	call BattleCheckTypeMatchup
-	call CheckNullifyPlayerDamage
 	ld a, [wTypeMatchup]
 	ld b, a
 	ld a, [TypeModifier]
@@ -1536,19 +1535,20 @@ BattleCommand_Stab: ; 346d2
 ; 347c8
 
 
-; only allow super-effective moves to hit when used by the player
-CheckNullifyPlayerDamage:
+; returns c if it's the players turn and they're using a move that isn't super
+; effective.
+CheckNullifyPlayerMove:
 	ld a, [hBattleTurn]
 	or a
 	ret nz
-	ld a, [TypeModifier]
-	and $7f ; strip stab bit
+	call BattleCheckTypeMatchup
+	ld a, [wTypeMatchup]
 	cp 11 ; less than 11 = not super effective
 	ret nc
 	xor a
 	ld [wTypeMatchup], a
-	inc a
-	ld [AttackMissed], a
+	ld [TypeModifier], a
+	scf
 	ret
 
 
@@ -1719,6 +1719,9 @@ BattleCommand_DamageVariation: ; 34cfd
 
 BattleCommand_CheckHit: ; 34d32
 ; checkhit
+
+	call CheckNullifyPlayerMove
+	jp c, .Miss
 
 	call .DreamEater
 	jp z, .Miss
