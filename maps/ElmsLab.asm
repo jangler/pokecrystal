@@ -187,6 +187,10 @@ CyndaquilPokeBallScript:
 	buttonsound
 	givepoke CYNDAQUIL, 5, BERRY
 	closetext
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iffalse EndScript
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iffalse EndScript
 	checkcode VAR_FACING
 	if_equal RIGHT, ElmDirectionsScript
 	applymovement PLAYER, AfterCyndaquilMovement
@@ -217,6 +221,10 @@ TotodilePokeBallScript:
 	buttonsound
 	givepoke TOTODILE, 5, BERRY
 	closetext
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	iffalse EndScript
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iffalse EndScript
 	applymovement PLAYER, AfterTotodileMovement
 	jump ElmDirectionsScript
 
@@ -245,6 +253,10 @@ ChikoritaPokeBallScript:
 	buttonsound
 	givepoke CHIKORITA, 5, BERRY
 	closetext
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	iffalse EndScript
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iffalse EndScript
 	applymovement PLAYER, AfterChikoritaMovement
 	jump ElmDirectionsScript
 
@@ -252,6 +264,7 @@ DidntChooseStarterScript:
 	writetext DidntChooseStarterText
 	waitbutton
 	closetext
+EndScript:
 	end
 
 ElmDirectionsScript:
