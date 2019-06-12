@@ -1537,6 +1537,13 @@ MoveScreenLoop: ; 12fd5
 	ld a, [CurPartyMon]
 	inc a
 	ld [wPartyMenuCursor], a
+
+	; reset move increment index
+	ld a, $21
+	call GetPartyParamLocation
+	ld a, 1
+	ld [hl], a
+
 	call SetUpMoveScreenBG
 	call Function132d3
 	ld de, MoveScreenAttributes
