@@ -1778,11 +1778,12 @@ CustomIncrementMove:
 	ld a, e
 	ld [hl], a
 
-	; also, clear the PP of the move
-	ld hl, PartyMon1PP
-	call AddSelectedMoveOffset
-	xor a
-	ld [hl], a
+	; reset PP to new max
+	ld a, [wMenuCursorY]
+	push af
+	callba RestoreAllPP
+	pop af
+	ld [wMenuCursorY], a
 
 	; clear move names before being redrawn
 	hlcoord 1, 2
