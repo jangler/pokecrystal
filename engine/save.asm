@@ -183,17 +183,11 @@ AskOverwriteSaveFile: ; 14b89
 	and a
 	jr z, .erase
 	call CompareLoadedAndSavedPlayerID
-	jr z, .yoursavefile
+	jr z, .ok
 	ld hl, UnknownText_0x15297
 	call SaveTheGame_yesorno
 	jr nz, .refused
 	jr .erase
-
-.yoursavefile
-	ld hl, UnknownText_0x15292
-	call SaveTheGame_yesorno
-	jr nz, .refused
-	jr .ok
 
 .erase
 	call ErasePreviousSave
