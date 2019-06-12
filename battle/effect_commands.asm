@@ -1536,8 +1536,13 @@ BattleCommand_Stab: ; 346d2
 
 
 ; returns c if it's the players turn and they're using a move that isn't super
-; effective.
+; effective. sketch is exempt.
 CheckNullifyPlayerMove:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_SKETCH
+	ret z
+
 	ld a, [hBattleTurn]
 	or a
 	ret nz
