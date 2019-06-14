@@ -171,9 +171,8 @@ KurtScript_0x18e178:
 	jump .GaveKurtApricorns
 
 .GaveKurtApricorns:
-	setevent EVENT_GAVE_KURT_APRICORNS
-	setflag ENGINE_KURT_MAKING_BALLS
 .WaitForApricorns:
+	jump .GotLureBall ; give ball instantly
 	writetext UnknownText_0x18e779
 	waitbutton
 	closetext
@@ -186,7 +185,6 @@ KurtScript_0x18e178:
 	end
 
 ._ThatTurnedOutGreat:
-	setevent EVENT_RECEIVED_BALLS_FROM_KURT
 .ThatTurnedOutGreat:
 	writetext UnknownText_0x18e82a
 	waitbutton
@@ -274,7 +272,6 @@ KurtScript_0x18e178:
 	closetext
 	setevent EVENT_GAVE_GS_BALL_TO_KURT
 	takeitem GS_BALL
-	setflag ENGINE_KURT_MAKING_BALLS
 	end
 
 .GaveGSBallToKurt:
