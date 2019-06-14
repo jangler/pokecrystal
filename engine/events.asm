@@ -953,17 +953,11 @@ CountStep: ; 96b79
 	callba StepHappiness
 
 .skip_happiness
-	; Every 256 steps, offset from the happiness incrementor by 128 steps,
-	; decrease the hatch counter of all your eggs until you reach the first
-	; one that is ready to hatch.
-	ld a, [StepCount]
-	cp $80
-	jr nz, .skip_egg
-
+	; Every step, decrease the hatch counter of all your eggs until you
+	; reach the first one that is ready to hatch.
 	callba DoEggStep
 	jr nz, .hatch
 
-.skip_egg
 	; Increase the EXP of (both) DayCare Pokemon by 1.
 	callba DaycareStep
 
