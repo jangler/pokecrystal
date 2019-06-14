@@ -666,11 +666,11 @@ GetTreeMon: ; b83e5
 	call GetTreeScore
 	pop hl
 	and a
-	jr z, .bad
+	jr z, SelectTreeMon
 	cp 1
-	jr z, .good
+	jr z, SelectTreeMon
 	cp 2
-	jr z, .rare
+	jr z, SelectTreeMon
 	ret
 
 .bad
