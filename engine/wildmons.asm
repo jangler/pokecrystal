@@ -183,8 +183,6 @@ endr
 
 TryWildEncounter:: ; 2a0e7
 ; Try to trigger a wild encounter.
-	call .EncounterRate
-	jr nc, .no_battle
 	call ChooseWildEncounter
 	jr nz, .no_battle
 	call CheckRepelEffect
