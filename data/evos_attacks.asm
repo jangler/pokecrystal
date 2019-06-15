@@ -976,7 +976,6 @@ TentacruelEvosAttacks:
 
 GeodudeEvosAttacks:
 	db EVOLVE_LEVEL, 25, GRAVELER
-	db EVOLVE_ITEM, KINGS_ROCK, SLOWKING
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 6, DEFENSE_CURL
