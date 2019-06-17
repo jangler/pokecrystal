@@ -36,3 +36,6 @@ pokecrystal.txt
 # swap files for gedit
 *~
 
+# my stuff
+dist
+tools
