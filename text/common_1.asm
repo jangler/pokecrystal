@@ -1702,6 +1702,11 @@ UnknownText_0x1bdcff::
 	cont "you battle with?"
 	prompt
 
+CantRaiseInjuredMonText::
+	text "I can't raise"
+	line "injured #MON."
+	prompt
+
 UnknownText_0x1bdd30::
 	text "OK. I'll raise"
 	line "your @"

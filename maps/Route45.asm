@@ -303,7 +303,7 @@ Route45Nugget:
 	itemball NUGGET
 
 Route45Revive:
-	itemball REVIVE
+	itemball PEARL
 
 Route45Elixer:
 	itemball ELIXER

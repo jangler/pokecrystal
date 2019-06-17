@@ -99,7 +99,7 @@ _BillsPC: ; e3fd
 .items ; e4c4
 	db 5
 	db 0 ; WITHDRAW
-	db 1;  DEPOSIT
+	db 1 ; DEPOSIT
 	db 2 ; CHANGE BOX
 	db 3 ; MOVE PKMN
 	db 4 ; SEE YA!
@@ -200,6 +200,35 @@ CheckCurPartyMonFainted: ; e538
 	ret
 
 .notfainted
+	and a
+	ret
+
+; returns z if mon is at full hp and has no status condition.
+CheckCurPartyMonInjured:
+	; eggs are considered healthy
+	ld a, [CurSpecies]
+	cp EGG
+	ret z
+
+	; check hp
+	ld a, MON_HP
+	call GetPartyParamLocation
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	ld a, MON_MAXHP
+	call GetPartyParamLocation
+	ld a, [hl+]
+	cp b
+	ret nz
+	ld a, [hl]
+	cp c
+	ret nz
+
+	; check for status condition
+	ld a, MON_STATUS
+	call GetPartyParamLocation
+	ld a, [hl]
 	and a
 	ret
 

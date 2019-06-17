@@ -267,12 +267,6 @@ ElmDirectionsScript:
 	waitsfx
 	waitbutton
 	closetext
-	spriteface ELMSLAB_ELM, LEFT
-	opentext
-	writetext ElmDirectionsText2
-	waitbutton
-	closetext
-	spriteface ELMSLAB_ELM, DOWN
 	opentext
 	writetext ElmDirectionsText3
 	waitbutton
@@ -298,28 +292,8 @@ LookAtElmPokeBallScript:
 
 ElmsLabHealingMachine:
 	opentext
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .CanHeal
 	writetext ElmsLabHealingMachineText1
 	waitbutton
-	closetext
-	end
-
-.CanHeal:
-	writetext ElmsLabHealingMachineText2
-	yesorno
-	iftrue ElmsLabHealingMachine_HealParty
-	closetext
-	end
-
-ElmsLabHealingMachine_HealParty:
-	special Mobile_HealParty
-	special HealParty
-	playmusic MUSIC_NONE
-	writebyte 1 ; Machine is in Elm's Lab
-	special HealMachineAnim
-	pause 30
-	special RestartMapMusic
 	closetext
 	end
 
@@ -922,17 +896,6 @@ ElmDirectionsText1:
 	line "anything comes up!"
 	done
 
-ElmDirectionsText2:
-	text "If your #MON is"
-	line "hurt, you should"
-
-	para "heal it with this"
-	line "machine."
-
-	para "Feel free to use"
-	line "it anytime."
-	done
-
 ElmDirectionsText3:
 	text "<PLAY_G>, I'm"
 	line "counting on you!"
@@ -962,11 +925,6 @@ ElmPokeBallText:
 ElmsLabHealingMachineText1:
 	text "I wonder what this"
 	line "does?"
-	done
-
-ElmsLabHealingMachineText2:
-	text "Would you like to"
-	line "heal your #MON?"
 	done
 
 ElmAfterTheftText1:

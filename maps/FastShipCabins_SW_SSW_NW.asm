@@ -71,16 +71,8 @@ FastShipBed:
 	closetext
 	special Special_FadeBlackQuickly
 	special Special_ReloadSpritesNoPalettes
-	special Mobile_HealParty
-	special HealParty
-	playmusic MUSIC_HEAL
 	pause 60
-	special RestartMapMusic
 	special Special_FadeInQuickly
-	opentext
-	writetext FastShipBedText2
-	waitbutton
-	closetext
 	checkevent EVENT_FAST_SHIP_HAS_ARRIVED
 	iftrue UnknownScript_0x75ae1
 	checkevent EVENT_FAST_SHIP_FOUND_GIRL

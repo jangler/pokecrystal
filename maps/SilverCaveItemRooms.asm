@@ -10,7 +10,7 @@ SilverCaveItemRooms_MapScriptHeader:
 	db 0
 
 SilverCaveItemRoomsMaxRevive:
-	itemball MAX_REVIVE
+	itemball BIG_PEARL
 
 SilverCaveItemRoomsFullRestore:
 	itemball FULL_RESTORE

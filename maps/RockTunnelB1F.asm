@@ -17,7 +17,7 @@ RockTunnelB1FPPUp:
 	itemball PP_UP
 
 RockTunnelB1FRevive:
-	itemball REVIVE
+	itemball PEARL
 
 RockTunnelB1FHiddenMaxPotion:
 	dwb EVENT_ROCK_TUNNEL_B1F_HIDDEN_MAX_POTION, MAX_POTION
