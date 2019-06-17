@@ -8,6 +8,7 @@
 	const DAYCARETEXT_CANT_BREED_EGG
 	const DAYCARETEXT_LAST_MON
 	const DAYCARETEXT_LAST_ALIVE_MON
+	const DAYCARETEXT_INJURED
 	const DAYCARETEXT_COME_BACK_LATER
 	const DAYCARETEXT_REMOVE_MAIL
 	const DAYCARETEXT_GENIUSES
@@ -131,6 +132,8 @@ DayCareAskDepositPokemon: ; 16798
 	jr z, .Egg
 	callba CheckCurPartyMonFainted
 	jr c, .OutOfUsableMons
+	callba CheckCurPartyMonInjured
+	jr nz, .Injured
 	ld hl, PartyMon1Item
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld a, [CurPartyMon]
@@ -161,6 +164,11 @@ DayCareAskDepositPokemon: ; 16798
 
 .OutOfUsableMons:
 	ld a, DAYCARETEXT_LAST_ALIVE_MON
+	scf
+	ret
+
+.Injured
+	ld a, DAYCARETEXT_INJURED
 	scf
 	ret
 
@@ -292,6 +300,7 @@ PrintDayCareText: ; 1689b
 	dw .CantAcceptEgg ; 06
 	dw .JustOneMon ; 07
 	dw .LastHealthyMon ; 08
+	dw .CantRaiseInjuredMon ; 08
 	dw .ComeBackForItLater ; 09
 	dw .RemoveMail ; 0a
 	dw .AreWeGeniusesOrWhat ; 0b
@@ -358,6 +367,10 @@ PrintDayCareText: ; 1689b
 	text_jump UnknownText_0x1bdcff
 	db "@"
 ; 0x168ff
+
+.CantRaiseInjuredMon:
+	text_jump CantRaiseInjuredMonText
+	db "@"
 
 .OkayIllRaiseYourMon: ; 0x168ff
 	; OK. I'll raise your @ .

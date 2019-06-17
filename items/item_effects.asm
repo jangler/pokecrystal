@@ -1207,6 +1207,10 @@ SunStone: ; ee0f
 	cp EVERSTONE
 	jr z, .NoEffect
 
+	; disallow usage on fainted pokémon to prevent revival exploit
+	call GetFainted
+	jr z, .NoEffect
+
 	ld a, $1
 	ld [wForceEvolution], a
 	callba EvolvePokemon
@@ -1240,6 +1244,10 @@ Calcium: ; ee3d
 	call RareCandy_StatBooster_GetParameters
 
 	call GetStatExpRelativePointer
+
+	; disallow usage on fainted pokémon to prevent revival exploit
+	call GetFainted
+	jr z, NoEffectMessage
 
 	ld a, MON_STAT_EXP
 	call GetPartyParamLocation
@@ -1364,6 +1372,20 @@ RareCandy_StatBooster_GetParameters: ; eef5
 ; 0xef14
 
 
+GetFainted:
+; set z flag iff pokémon has zero HP
+	push hl
+	ld a, MON_HP
+	call GetPartyParamLocation
+	ld a, [hli]
+	and a
+	ret nz
+	ld a, [hl]
+	and a
+	pop hl
+	ret
+
+
 RareCandy: ; ef14
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
@@ -1371,6 +1393,10 @@ RareCandy: ; ef14
 	jp c, RareCandy_StatBooster_ExitMenu
 
 	call RareCandy_StatBooster_GetParameters
+
+	; disallow usage on fainted pokémon to prevent revival exploit
+	call GetFainted
+	jp z, NoEffectMessage
 
 	jp .skiplevel
 
@@ -1666,7 +1692,7 @@ MaxRevive: ; f0c8
 RevivePokemon: ; f0d6
 	call IsMonFainted
 	ld a, 1
-	ret nz
+	ret ; never allow revives
 	ld a, [wBattleMode]
 	and a
 	jr z, .skip_to_revive
@@ -2810,10 +2836,9 @@ BasementKey: ; f74c
 
 
 SacredAsh: ; f753
-	callba _SacredAsh
-	ld a, [wItemEffectSucceeded]
-	cp $1
-	ret nz
+	xor a
+	ld [wItemEffectSucceeded], a
+	ret
 	call UseDisposableItem
 	ret
 ; f763

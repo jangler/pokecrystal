@@ -159,6 +159,8 @@ BillsPCDepositJumptable: ; e24a1 (38:64a1)
 
 
 BillsPCDepositFuncDeposit: ; e24a9 (38:64a9)
+	call BillsPC_CheckCurPartyMonInjured
+	jp nz, BillsPCDepositFuncCancel
 	call BillsPC_CheckMail_PreventBlackout
 	jp c, BillsPCDepositFuncCancel
 	call DepositPokemon
@@ -1648,6 +1650,24 @@ BillsPC_CheckSpaceInDestination: ; e2ee5
 	ret
 ; e2f18
 
+BillsPC_CheckCurPartyMonInjured:
+	ld a, [wBillsPC_CursorPosition]
+	ld hl, wBillsPC_ScrollPosition
+	add [hl]
+	ld [CurPartyMon], a
+	callba CheckCurPartyMonInjured
+	ret z
+	ld de, PCString_MonInjured
+	call BillsPC_PlaceString
+	ld de, SFX_WRONG
+	call WaitPlaySFX
+	call WaitSFX
+	ld c, 50
+	call DelayFrames
+	xor a
+	inc a ; clear z flag
+	ret
+
 BillsPC_CheckMail_PreventBlackout: ; e2f18 (38:6f18)
 	ld a, [wBillsPC_LoadedBox]
 	and a
@@ -1834,6 +1854,7 @@ DepositPokemon: ; e307c (38:707c)
 	ld [wPokemonWithdrawDepositParameter], a
 	predef SentGetPkmnIntoFromBox
 	jr c, .asm_boxisfull
+
 	xor a
 	ld [wPokemonWithdrawDepositParameter], a
 	callba RemoveMonFromPartyOrBox
@@ -2303,6 +2324,7 @@ PCString_Stored: db "Stored @"
 PCString_Got: db "Got @"
 PCString_Non: db "Non.@"
 PCString_BoxFull: db "The BOX is full.@"
+PCString_MonInjured: db "The <PK><MN> is injured!@"
 PCString_PartyFull: db "The party's full!@"
 PCString_NoReleasingEGGS: db "No releasing EGGS!@"
 ; e35aa
