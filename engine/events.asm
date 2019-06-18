@@ -201,7 +201,14 @@ MaxOverworldDelay: ; 967af
 ; 967b0
 
 ResetOverworldDelay: ; 967b0
+	ld a, [wDelayCounter]
+	inc a
+	ld [wDelayCounter], a
+	and $01
 	ld a, [MaxOverworldDelay]
+	jr z, .next
+	dec a
+.next
 	ld [OverworldDelay], a
 	ret
 ; 967b7

@@ -336,6 +336,10 @@ PrintLetterDelay:: ; 313d
 	ld a, 1
 
 .updatedelay
+	ld a, [wDelayCounter]
+	inc a
+	ld [wDelayCounter], a
+	and $01
 	ld [TextDelayFrames], a
 
 .checkjoypad

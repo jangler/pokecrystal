@@ -1425,6 +1425,7 @@ GameTimerPause:: ; cfbc
 ; bit 0
 	ds 1
 
+wDelayCounter::
 	ds 1
 
 wcfbe::
