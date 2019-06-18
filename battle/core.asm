@@ -2273,7 +2273,6 @@ UpdateBattleStateAndExperienceAfterEnemyFaint: ; 3ce01
 	call CopyBytes
 	xor a
 	ld [wGivingExperienceToExpShareHolders], a
-	call GiveExperiencePoints
 	call IsAnyMonHoldingExpShare
 	ret z
 
@@ -2287,7 +2286,6 @@ UpdateBattleStateAndExperienceAfterEnemyFaint: ; 3ce01
 	call CopyBytes
 	ld a, $1
 	ld [wGivingExperienceToExpShareHolders], a
-	call GiveExperiencePoints
 	pop af
 	ld [wBattleParticipantsNotFainted], a
 	ret
