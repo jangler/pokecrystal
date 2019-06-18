@@ -186,7 +186,8 @@ DoEggStep:: ; 16f3e
 	ret z
 	cp EGG
 	jr nz, .next
-	dec [hl]
+	xor a
+	ld [hl], a
 	jr nz, .next
 	ld a, 1
 	and a

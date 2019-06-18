@@ -448,9 +448,6 @@ Special_DayCareManOutside: ; 16936
 	cp PARTY_LENGTH
 	jr nc, .PartyFull
 	call DayCare_GiveEgg
-	ld hl, wDaycareMan
-	res 6, [hl]
-	call DayCare_InitBreeding
 	ld hl, .GotEggText
 	call PrintText
 	ld de, SFX_GET_EGG_FROM_DAYCARE_LADY

@@ -208,7 +208,8 @@ DaycareStep:: ; 7282
 	bit 5, [hl] ; egg
 	ret z
 	ld hl, wStepsToEgg
-	dec [hl]
+	xor a
+	ld [hl], a
 	ret nz
 
 	call Random
@@ -216,17 +217,17 @@ DaycareStep:: ; 7282
 	callab CheckBreedmonCompatibility
 	ld a, [wd265]
 	cp 230
-	ld b, -1 + 32 percent
+	ld b, 100 percent
 	jr nc, .okay
 	ld a, [wd265]
 	cp 170
-	ld b, 16 percent
+	ld b, 100 percent
 	jr nc, .okay
 	ld a, [wd265]
 	cp 110
-	ld b, 12 percent
+	ld b, 100 percent
 	jr nc, .okay
-	ld b, 4 percent
+	ld b, 100 percent
 
 .okay
 	call Random
