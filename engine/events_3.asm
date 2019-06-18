@@ -38,7 +38,7 @@ ReturnFromMapSetupScript:: ; b8000
 	ld [wPreviousLandmark], a
 
 	call .CheckSpecialMap
-	jr z, .dont_do_map_sign
+	jr .dont_do_map_sign
 
 ; Display for 60 frames
 	ld a, 60
