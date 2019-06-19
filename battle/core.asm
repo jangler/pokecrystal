@@ -8456,6 +8456,8 @@ StartBattle: ; 3f4c1
 	and a
 	ret z
 
+	call EnforceSpeciesClause
+
 	ld a, [TimeOfDayPal]
 	push af
 	call BattleIntro
@@ -8467,6 +8469,64 @@ StartBattle: ; 3f4c1
 	ret
 ; 3f4d9
 
+EnforceSpeciesClause:
+; Faint duplicate Pokémon at the beginning of a battle.
+; The first non-fainted one in party order remains untouched.
+	push bc
+	push de
+	push hl
+	ld a, [PartyCount]
+	dec a ; last pokémon can't be a dupe
+	ld d, a
+	ld hl, PartyMon1Species
+	ld bc, PARTYMON_STRUCT_LENGTH
+.outerloop
+	ld a, [hl]
+	ld e, a
+
+	; skip fainted pokémon
+	push bc
+	push hl
+	ld bc, $0022 ; current hp offset
+	add hl, bc
+	ldi a, [hl]
+	ld b, a
+	ld a, [hl]
+	or b
+	pop hl
+	pop bc
+	jr z, .nextouter
+
+	push de
+	push hl
+.innerloop
+	add hl, bc
+	ld a, [hl]
+	cp e
+	jr nz, .nextinner
+	push bc
+	push hl
+	ld bc, $0022 ; current hp offset
+	add hl, bc
+	xor a
+	ldi [hl], a
+	ld [hl], a
+	pop hl
+	pop bc
+.nextinner
+	dec d
+	jr nz, .innerloop
+	pop hl
+	pop de
+
+.nextouter
+	add hl, bc
+	dec d
+	jr nz, .outerloop
+	pop hl
+	pop de
+	pop bc
+	ret
 
 _DoBattle: ; 3f4d9
 ; unreferenced
