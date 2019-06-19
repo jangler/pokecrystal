@@ -917,10 +917,10 @@ KogaGroup:
 	; party
 
 	db 40, ARIADOS
-		db DOUBLE_TEAM
 		db SPIDER_WEB
 		db BATON_PASS
 		db GIGA_DRAIN
+		db 0
 
 	db 41, VENOMOTH
 		db SUPERSONIC
@@ -935,16 +935,16 @@ KogaGroup:
 		db SPIKES
 
 	db 42, MUK
-		db MINIMIZE
 		db ACID_ARMOR
 		db SLUDGE_BOMB
 		db TOXIC
+		db 0
 
 	db 44, CROBAT
-		db DOUBLE_TEAM
 		db QUICK_ATTACK
 		db WING_ATTACK
 		db TOXIC
+		db 0
 
 	db $ff ; end
 
@@ -1024,7 +1024,7 @@ BrockGroup:
 		db FURY_ATTACK
 		db SCARY_FACE
 		db EARTHQUAKE
-		db HORN_DRILL
+		db 0
 
 	db 42, OMASTAR
 		db BITE
@@ -1108,21 +1108,21 @@ LtSurgeGroup:
 
 	db 40, ELECTRODE
 		db SCREECH
-		db DOUBLE_TEAM
 		db SWIFT
 		db EXPLOSION
+		db 0
 
 	db 40, MAGNETON
 		db LOCK_ON
-		db DOUBLE_TEAM
 		db SWIFT
 		db ZAP_CANNON
+		db 0
 
 	db 40, ELECTRODE
 		db SCREECH
-		db DOUBLE_TEAM
 		db SWIFT
 		db EXPLOSION
+		db 0
 
 	db 46, ELECTABUZZ
 		db QUICK_ATTACK
@@ -1730,9 +1730,9 @@ SchoolboyGroup:
 
 	db 32, YANMA
 		db QUICK_ATTACK
-		db DOUBLE_TEAM
 		db SONICBOOM
 		db SUPERSONIC
+		db 0
 
 	db 35, QUAGSIRE
 		db TAIL_WHIP
@@ -2333,9 +2333,9 @@ JanineGroup:
 
 	db 39, VENOMOTH
 		db FORESIGHT
-		db DOUBLE_TEAM
 		db GUST
 		db PSYCHIC_M
+		db 0
 
 	db $ff ; end
 
@@ -2439,8 +2439,8 @@ CooltrainerMGroup:
 	db 35, KINGLER
 		db BUBBLEBEAM
 		db STOMP
-		db GUILLOTINE
 		db PROTECT
+		db 0
 
 	db 35, FLAREON
 		db SAND_ATTACK
@@ -2467,8 +2467,8 @@ CooltrainerMGroup:
 	db 39, KINGLER, KINGS_ROCK
 		db SURF
 		db STOMP
-		db GUILLOTINE
 		db BLIZZARD
+		db 0
 
 	db 39, FLAREON, NO_ITEM
 		db FLAMETHROWER
@@ -2539,8 +2539,8 @@ CooltrainerMGroup:
 	db 32, KINGLER
 		db BUBBLEBEAM
 		db STOMP
-		db GUILLOTINE
 		db PROTECT
+		db 0
 
 	db 32, FLAREON
 		db SAND_ATTACK
@@ -2816,9 +2816,9 @@ CooltrainerFGroup:
 
 	db 36, PIKACHU
 		db QUICK_ATTACK
-		db DOUBLE_TEAM
 		db THUNDERBOLT
 		db THUNDER
+		db 0
 
 	db 32, BLASTOISE
 		db BITE
@@ -3009,10 +3009,10 @@ CooltrainerFGroup:
 	; party
 
 	db 38, STARMIE, NO_ITEM
-		db DOUBLE_TEAM
 		db PSYCHIC_M
 		db WATERFALL
 		db CONFUSE_RAY
+		db 0
 
 	db 40, NIDOQUEEN, PINK_BOW
 		db EARTHQUAKE
@@ -4256,7 +4256,7 @@ BugCatcherGroup:
 		db FURY_ATTACK
 		db PURSUIT
 		db TWINEEDLE
-		db DOUBLE_TEAM
+		db 0
 
 	db 34, BUTTERFREE
 		db PSYBEAM
@@ -4638,9 +4638,9 @@ FisherGroup:
 
 	db 35, QWILFISH
 		db TOXIC
-		db MINIMIZE
 		db SURF
 		db PIN_MISSILE
+		db 0
 
 	db 39, SEAKING
 		db ENDURE
@@ -6668,10 +6668,10 @@ BlackbeltGroup:
 		db SANDSTORM
 
 	db 36, HITMONLEE
-		db DOUBLE_TEAM
 		db HI_JUMP_KICK
 		db MUD_SLAP
 		db SWIFT
+		db 0
 
 	db $ff ; end
 
@@ -7102,7 +7102,7 @@ PicnickerGroup:
 		db THUNDERSHOCK
 		db GROWL
 		db QUICK_ATTACK
-		db DOUBLE_TEAM
+		db 0
 
 	db $ff ; end
 
@@ -7261,7 +7261,7 @@ PicnickerGroup:
 		db ENCORE
 		db SING
 		db DOUBLESLAP
-		db MINIMIZE
+		db 0
 
 	db $ff ; end
 
@@ -7276,8 +7276,8 @@ PicnickerGroup:
 	db 37, CLEFAIRY
 		db ENCORE
 		db DOUBLESLAP
-		db MINIMIZE
 		db METRONOME
+		db 0
 
 	db $ff ; end
 
@@ -7316,7 +7316,7 @@ PicnickerGroup:
 		db ENCORE
 		db SING
 		db DOUBLESLAP
-		db MINIMIZE
+		db 0
 
 	db $ff ; end
 
@@ -7329,10 +7329,10 @@ PicnickerGroup:
 	; party
 
 	db 36, PONYTA
-		db DOUBLE_TEAM
 		db STOMP
 		db FIRE_SPIN
 		db SUNNY_DAY
+		db 0
 
 	db 34, RAICHU
 		db SWIFT
@@ -7341,10 +7341,10 @@ PicnickerGroup:
 		db THUNDERBOLT
 
 	db 36, PONYTA
-		db DOUBLE_TEAM
 		db STOMP
 		db FIRE_SPIN
 		db SUNNY_DAY
+		db 0
 
 	db $ff ; end
 
@@ -7442,7 +7442,7 @@ PicnickerGroup:
 		db METRONOME
 		db ENCORE
 		db MOONLIGHT
-		db MINIMIZE
+		db 0
 
 	db $ff ; end
 

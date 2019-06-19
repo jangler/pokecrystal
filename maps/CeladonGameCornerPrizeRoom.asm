@@ -36,10 +36,10 @@ CeladonPrizeRoom_tmcounterloop:
 .doubleteam
 	checkcoins 1500
 	if_equal $2, CeladonPrizeRoom_notenoughcoins
-	itemtotext TM_DOUBLE_TEAM, $0
+	itemtotext TM_HIDDEN_POWER, $0
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_cancel
-	giveitem TM_DOUBLE_TEAM
+	giveitem TM_HIDDEN_POWER
 	iffalse CeladonPrizeRoom_notenoughroom
 	takecoins 1500
 	jump CeladonPrizeRoom_purchased
