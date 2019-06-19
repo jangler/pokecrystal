@@ -1427,7 +1427,7 @@ CalcPkmnStatC: ; e17b
 	sla c
 	ld a, d
 	and a
-	jr z, .no_stat_exp
+	jr .no_stat_exp
 	add hl, bc
 	push de
 	ld a, [hld]
@@ -1527,7 +1527,7 @@ endr
 	ld [hMultiplicand + 1], a
 	xor a
 	ld [hMultiplicand + 0], a
-	ld a, [CurPartyLevel]
+	ld a, DEFAULT_LEVEL
 	ld [hMultiplier], a
 	call Multiply
 	ld a, [hProduct + 1]
@@ -1545,7 +1545,7 @@ endr
 	cp STAT_HP
 	ld a, 5
 	jr nz, .not_hp
-	ld a, [CurPartyLevel]
+	ld a, DEFAULT_LEVEL
 	ld b, a
 	ld a, [hQuotient + 2]
 	add b

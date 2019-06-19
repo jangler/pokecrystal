@@ -398,7 +398,6 @@ endr
 
 	ld a, [CurPartyLevel]
 	cp [hl]
-	jr nc, .encounter
 	and a
 	ret
 

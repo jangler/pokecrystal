@@ -3221,7 +3221,7 @@ BattleCommand_BeatUp: ; 35461
 	push bc
 	ld a, MON_LEVEL
 	call GetBeatupMonLocation
-	ld a, [hl]
+	ld a, DEFAULT_LEVEL
 	ld e, a
 	pop bc
 	ld a, [wPlayerMoveStructPower]
@@ -3327,7 +3327,7 @@ BattleCommand_BeatUp: ; 35461
 	push bc
 	ld a, MON_LEVEL
 	call GetBeatupMonLocation
-	ld a, [hl]
+	ld a, DEFAULT_LEVEL
 	ld e, a
 	pop bc
 	ld a, [wEnemyMoveStructPower]
@@ -3469,7 +3469,7 @@ BattleCommand_DamageCalc: ; 35612
 	ld [hl], a
 
 ; Level * 2
-	ld a, e
+	ld a, DEFAULT_LEVEL
 	add a
 	jr nc, .level_not_overflowing
 	ld [hl], $1
@@ -3692,7 +3692,8 @@ BattleCommand_ConstantDamage: ; 35726
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_LEVEL_DAMAGE
-	ld b, [hl]
+	ld a, DEFAULT_LEVEL
+	ld b, a
 	ld a, 0
 	jr z, .got_power
 
