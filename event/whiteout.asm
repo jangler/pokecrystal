@@ -14,7 +14,7 @@ Script_Whiteout: ; 0x124ce
 	pause 40
 	checkflag ENGINE_BUG_CONTEST_TIMER
 	iftrue .bug_contest
-	callasm HalveMoney
+	; callasm HalveMoney
 	callasm GetWhiteoutSpawn
 	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
