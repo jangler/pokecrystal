@@ -41,7 +41,12 @@ HealPartyMon: ; c677
 	ld b, h
 	ld c, l
 	dec bc
+	ld a, [bc]
+	ld e, a
 	dec bc
+	ld a, [bc]
+	or e
+	ret z ; don't heal if pokémon is fainted
 
 	ld a, [hli]
 	ld [bc], a
