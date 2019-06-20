@@ -128,10 +128,6 @@ endr
 
 
 .happiness
-	ld a, [TempMonHappiness]
-	cp 220
-	jp c, .dont_evolve_2
-
 	call IsMonHoldingEverstone
 	jp z, .dont_evolve_2
 
