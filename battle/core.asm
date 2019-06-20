@@ -235,6 +235,11 @@ BattleTurn: ; 3c12f
 	jp .loop
 
 .quit
+	call CheckPlayerPartyForFitPkmn
+	ld a, d
+	and a
+	ret z
+	callba HealParty
 	ret
 ; 3c1bf
 
