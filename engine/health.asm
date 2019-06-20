@@ -10,6 +10,11 @@ HealParty: ; c658
 	jr z, .next
 
 	push hl
+	call ShouldMonBeHealed
+	pop hl
+	jr nc, .next
+
+	push hl
 	call HealPartyMon
 	pop hl
 
@@ -20,6 +25,24 @@ HealParty: ; c658
 	jr .loop
 
 .done
+	ret
+
+; returns c if the pokémon is non-fainted or was only fainted due to the
+; species clause.
+ShouldMonBeHealed:
+	ld a, MON_STATUS
+	call GetPartyParamLocation
+	inc hl
+	bit BIT_SPECIES_CLAUSED, [hl]
+	res BIT_SPECIES_CLAUSED, [hl]
+	inc hl
+	jr nz, .ok
+	ldi a, [hl]
+	ld b, [hl]
+	or b
+	ret z
+.ok
+	scf
 	ret
 
 HealPartyMon: ; c677
@@ -41,24 +64,6 @@ HealPartyMon: ; c677
 	ld c, l
 	dec bc
 	dec bc
-
-	; don't heal if the pokémon is fainted, unless it was fainted due to
-	; the species clause. this is tracked using an unused byte.
-	dec bc
-	ld a, [bc]
-	bit BIT_SPECIES_CLAUSED, a
-	res BIT_SPECIES_CLAUSED, a
-	ld [bc], a
-	inc bc ; bc = MON_HP
-	jr nz, .ok
-	ld a, [bc]
-	ld e, a
-	inc bc
-	ld a, [bc]
-	or e
-	ret z ; don't heal if pokémon is fainted
-	dec bc
-.ok
 
 	ld a, [hli]
 	ld [bc], a
