@@ -92,7 +92,6 @@ endr
 ; EVOLVE_STAT
 	ld a, [TempMonLevel]
 	cp [hl]
-	jp c, .dont_evolve_1
 
 	call IsMonHoldingEverstone
 	jp z, .dont_evolve_1
@@ -192,7 +191,6 @@ endr
 	ld b, a
 	ld a, [TempMonLevel]
 	cp b
-	jp c, .dont_evolve_3
 	call IsMonHoldingEverstone
 	jp z, .dont_evolve_3
 
