@@ -464,6 +464,12 @@ PokegearClock_Joypad: ; 90f3e (24:4f3e)
 	and A_BUTTON + B_BUTTON + START + SELECT
 	jr nz, .quit
 	ld a, [hl]
+	and D_UP + D_DOWN
+	jr z, .next
+	callba RestartClock
+	ret
+.next
+	ld a, [hl]
 	and D_RIGHT
 	ret z
 	ld a, [wPokegearFlags]
