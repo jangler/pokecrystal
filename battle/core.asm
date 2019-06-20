@@ -8477,6 +8477,7 @@ EnforceSpeciesClause:
 	push hl
 	ld a, [PartyCount]
 	dec a ; last pokémon can't be a dupe
+	jr z, .done ; only one pokémon in party
 	ld d, a
 	ld hl, PartyMon1Species
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -8523,6 +8524,7 @@ EnforceSpeciesClause:
 	add hl, bc
 	dec d
 	jr nz, .outerloop
+.done
 	pop hl
 	pop de
 	pop bc
