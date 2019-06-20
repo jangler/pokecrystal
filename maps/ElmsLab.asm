@@ -502,9 +502,15 @@ AideScript_WalkBalls2:
 	end
 
 AideScript_GiveYouBalls:
+	setevent EVENT_RESTORED_POWER_TO_KANTO
 	opentext
 	writetext AideText_GiveYouBalls
 	buttonsound
+	itemtotext PASS, $1
+	scall AideScript_ReceiveTheBalls
+	giveitem PASS
+	buttonsound
+	itemnotify
 	itemtotext POKE_BALL, $1
 	scall AideScript_ReceiveTheBalls
 	giveitem POKE_BALL, 5
