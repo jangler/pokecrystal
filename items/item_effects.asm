@@ -1189,6 +1189,10 @@ Bicycle: ; ee08
 ; ee0f
 
 
+KingsRock:
+MetalCoat:
+DragonScale:
+UpGrade:
 MoonStone:
 FireStone:
 Thunderstone:
@@ -2885,7 +2889,6 @@ GoldLeaf:
 SoftSand:
 SharpBeak:
 PoisonBarb:
-KingsRock:
 RedApricorn:
 Tinymushroom:
 BigMushroom:
@@ -2934,14 +2937,12 @@ Charcoal:
 ScopeLens:
 Item8D:
 Item8E:
-MetalCoat:
 DragonFang:
 Item91:
 Leftovers:
 Item93:
 Item94:
 Item95:
-DragonScale:
 BerserkGene:
 Item99:
 Item9A:
@@ -2951,7 +2952,6 @@ ItemA2:
 LightBall:
 PolkadotBow:
 ItemAB:
-UpGrade:
 ItemB0:
 RainbowWing:
 ItemB3:
