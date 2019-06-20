@@ -333,6 +333,7 @@ Pokedex_InitDexEntryScreen: ; 40217 (10:4217)
 	call Pokedex_InitArrowCursor
 	call Pokedex_GetSelectedMon
 	ld [wLastDexEntry], a
+	ld [wLastDexSpecies], a
 	callba DisplayDexEntry
 	call Pokedex_DrawFootprint
 	call WaitBGMap
@@ -1602,6 +1603,9 @@ Pokedex_CheckCaught: ; 40bc4 (10:4bc4)
 
 
 Pokedex_CheckSeen: ; 40bd0
+	or 1
+	ret ; always true
+
 	push de
 	push hl
 	ld a, [wd265]
@@ -1927,7 +1931,7 @@ Pokedex_SearchForMons: ; 41086
 	jr z, .next_mon
 	ld [wd265], a
 	ld [CurSpecies], a
-	call Pokedex_CheckCaught
+	call Pokedex_CheckSeen
 	jr z, .next_mon
 	push hl
 	push de

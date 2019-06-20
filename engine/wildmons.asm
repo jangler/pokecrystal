@@ -376,10 +376,20 @@ endr
 ; 2a1df
 
 CheckRepelEffect:: ; 2a1df
-; Replace "menu account" option with automatic repel.
-	ld a, [Options2]
-	bit MENU_ACCOUNT, a
+; Handle auto repel menu option.
+	ld a, [Options]
+	and $07
+	cp 5
+	jr z, .repel
+	cp 3
+	jr z, .normal
+; Repel all but last selected Pokédex entry in this mode.
+	ld a, [wLastDexSpecies]
+	ld b, a
+	ld a, [TempWildMonSpecies]
+	cp b
 	jr nz, .repel
+.normal
 ; If there is no active Repel, there's no need to be here.
 	ld a, [wRepelEffect]
 	and a

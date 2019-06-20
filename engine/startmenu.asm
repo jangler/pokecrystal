@@ -384,7 +384,8 @@ endr
 ; 128cb
 
 .IsMenuAccountOn: ; 128cb
-	xor a ; always off, used for auto repel instead
+	ld a, [Options2]
+	and 1
 	ret
 ; 128d1
 

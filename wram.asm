@@ -1437,6 +1437,7 @@ InBattleTowerBattle:: ; cfc0
 ; 1 BattleTower-Battle
 	ds 1
 
+wLastDexSpecies:: ; only set when actually viewing
 	ds 1
 
 FXAnimID::

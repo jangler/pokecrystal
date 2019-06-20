@@ -62,7 +62,7 @@ _OptionsMenu: ; e41d0
 ; e4241
 
 StringOptions: ; e4241
-	db "TEXT SPEED<LNBRK>"
+	db "WILD ENCOUNTERS<LNBRK>"
 	db "        :<LNBRK>"
 	db "BATTLE SCENE<LNBRK>"
 	db "        :<LNBRK>"
@@ -72,7 +72,7 @@ StringOptions: ; e4241
 	db "        :<LNBRK>"
 	db "PRINT<LNBRK>"
 	db "        :<LNBRK>"
-	db "AUTO REPEL<LNBRK>"
+	db "MENU ACCOUNT<LNBRK>"
 	db "        :<LNBRK>"
 	db "FRAME<LNBRK>"
 	db "        :TYPE<LNBRK>"
@@ -161,11 +161,11 @@ endr
 	dw .Slow
 
 .Fast:
-	db "FAST@"
+	db "#DEX@"
 .Mid:
-	db "MID @"
+	db "NORMAL @"
 .Slow:
-	db "SLOW@"
+	db "REPEL  @"
 ; e4346
 
 
