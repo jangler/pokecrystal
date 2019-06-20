@@ -595,11 +595,11 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 	call PlaceString
 	hlcoord 17, 14
 	call .PrintNextLevel
+	call .CalcExpToNextLevel
 	hlcoord 13, 10
 	lb bc, 3, 7
-	ld de, TempMonExp
+	ld de, Buffer1
 	call PrintNum
-	call .CalcExpToNextLevel
 	hlcoord 13, 13
 	lb bc, 3, 7
 	ld de, Buffer1 ; wd1ea (aliases: MagikarpLength)
@@ -637,7 +637,7 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 .CalcExpToNextLevel: ; 4e0e7 (13:60e7)
 	ld a, [TempMonLevel]
 	cp MAX_LEVEL
-	jr z, .AlreadyAtMaxLevel
+	jr .AlreadyAtMaxLevel
 	inc a
 	ld d, a
 	callba CalcExpAtLevel

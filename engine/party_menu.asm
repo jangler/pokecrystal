@@ -256,17 +256,12 @@ PlacePartyMonLevel: ; 50176
 	ld e, l
 	ld d, h
 	pop hl
-	ld a, [de]
-	cp 100 ; This is distinct from MAX_LEVEL.
-	jr nc, .ThreeDigits
 	ld a, "<LV>"
 	ld [hli], a
-	lb bc, PRINTNUM_RIGHTALIGN | 1, 2
-	; jr .okay
-.ThreeDigits:
-	lb bc, PRINTNUM_RIGHTALIGN | 1, 3
-; .okay
-	call PrintNum
+	ld a, "0"
+	ld [hli], a
+	ld a, " "
+	ld [hl], a
 
 .next
 	pop hl
