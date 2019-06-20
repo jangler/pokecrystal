@@ -72,7 +72,7 @@ StringOptions: ; e4241
 	db "        :<LNBRK>"
 	db "PRINT<LNBRK>"
 	db "        :<LNBRK>"
-	db "MENU ACCOUNT<LNBRK>"
+	db "AUTO REPEL<LNBRK>"
 	db "        :<LNBRK>"
 	db "FRAME<LNBRK>"
 	db "        :TYPE<LNBRK>"

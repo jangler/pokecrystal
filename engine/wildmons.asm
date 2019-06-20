@@ -376,11 +376,16 @@ endr
 ; 2a1df
 
 CheckRepelEffect:: ; 2a1df
+; Replace "menu account" option with automatic repel.
+	ld a, [Options2]
+	bit MENU_ACCOUNT, a
+	jr nz, .repel
 ; If there is no active Repel, there's no need to be here.
 	ld a, [wRepelEffect]
 	and a
 	jr z, .encounter
 ; Get the first Pokemon in your party that isn't fainted.
+.repel
 	ld hl, PartyMon1HP
 	ld bc, PARTYMON_STRUCT_LENGTH - 1
 .loop
