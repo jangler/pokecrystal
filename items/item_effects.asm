@@ -1372,6 +1372,8 @@ RareCandy: ; ef14
 
 	call RareCandy_StatBooster_GetParameters
 
+	jp .skiplevel
+
 	ld a, MON_LEVEL
 	call GetPartyParamLocation
 
@@ -1448,9 +1450,14 @@ RareCandy: ; ef14
 	ld [wd265], a
 	predef LearnLevelMoves
 
+.skiplevel
 	xor a
 	ld [wForceEvolution], a
 	callba EvolvePokemon
+
+	ld a, [wMonTriedToEvolve]
+	and a
+	jp z, NoEffectMessage
 
 	jp UseDisposableItem
 ; efad

@@ -162,7 +162,7 @@ DaycareStep:: ; 7282
 
 	ld a, [wDaycareMan]
 	bit 0, a
-	jr z, .daycare_lady
+	jr .check_egg ; skip giving exp
 
 	ld a, [wBreedMon1Level] ; level
 	cp 100

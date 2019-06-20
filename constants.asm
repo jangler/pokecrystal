@@ -33,3 +33,5 @@ INCLUDE "constants/cgb_constants.asm"
 INCLUDE "constants/battle_tower_constants.asm"
 INCLUDE "constants/cry_constants.asm"
 INCLUDE "constants/audio_constants.asm"
+
+DEFAULT_LEVEL EQU 50

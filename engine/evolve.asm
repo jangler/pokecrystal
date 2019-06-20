@@ -92,7 +92,6 @@ endr
 ; EVOLVE_STAT
 	ld a, [TempMonLevel]
 	cp [hl]
-	jp c, .dont_evolve_1
 
 	call IsMonHoldingEverstone
 	jp z, .dont_evolve_1
@@ -192,7 +191,6 @@ endr
 	ld b, a
 	ld a, [TempMonLevel]
 	cp b
-	jp c, .dont_evolve_3
 	call IsMonHoldingEverstone
 	jp z, .dont_evolve_3
 
@@ -458,7 +456,7 @@ endr
 	ld a, [CurPartyLevel]
 	cp b
 	ld a, [hli]
-	jr nz, .find_move
+	jr .find_move
 
 	push hl
 	ld d, a
@@ -522,6 +520,7 @@ FillMoves: ; 424e1
 
 .NextMove:
 	pop de
+	pop hl
 .GetMove:
 	inc hl
 .GetLevel:
@@ -529,17 +528,16 @@ FillMoves: ; 424e1
 	and a
 	jp z, .done
 	ld b, a
-	ld a, [CurPartyLevel]
-	cp b
-	jp c, .done
 	ld a, [Buffer1]
 	and a
 	jr z, .CheckMove
 	ld a, [wd002]
-	cp b
+	cp 1
 	jr nc, .GetMove
 
 .CheckMove:
+	push hl
+	call _GetRandomLearnMove
 	push de
 	ld c, NUM_MOVES
 .CheckRepeat:
@@ -607,6 +605,68 @@ FillMoves: ; 424e1
 	pop hl
 	ret
 ; 4256e
+
+; points hl to a "random" move from the pokémon's learnset.
+; wild, egg, and gift pokémon moves are actually random.
+; trainer moves depend on trainer class and the move this function replaces.
+_GetRandomLearnMove:
+	push bc
+	push de
+	ld e, [hl] ; usual move
+
+	; same thing done at the beginning of FillMoves
+	ld hl, EvosAttacksPointers
+	ld b, 0
+	ld a, [CurPartySpecies]
+	dec a
+	add a
+	rl b
+	ld c, a
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+.GoToAttacks:
+	ld a, [hli]
+	and a
+	jr nz, .GoToAttacks
+
+	; count number of moves in c
+	push hl
+	ld c, -1
+.countloop
+	inc c
+	ldi a, [hl]
+	inc hl
+	and a
+	jr nz, .countloop
+	pop hl
+
+	; get move index
+	ld a, [OtherTrainerClass]
+	and a
+	jr nz, .nonrandom
+	call Random
+	jr .divide
+.nonrandom
+	add e
+.divide
+	call SimpleDivide
+
+	; get move address
+.incloop
+	and a
+	jr z, .done
+	dec a
+	inc hl
+	inc hl
+	jr .incloop
+.done
+	inc hl
+
+	pop de
+	pop bc
+	ret
 
 ShiftMoves: ; 4256e
 	ld c, NUM_MOVES - 1

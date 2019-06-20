@@ -1689,7 +1689,7 @@ INCLUDE "home/cry.asm"
 PrintLevel:: ; 382d
 ; Print TempMonLevel at hl
 
-	ld a, [TempMonLevel]
+	xor a
 	ld [hl], "<LV>"
 	inc hl
 

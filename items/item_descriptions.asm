@@ -412,8 +412,8 @@ CalciumDesc:
 	next "of one #MON.@"
 
 RareCandyDesc:
-	db   "Raises level of a"
-	next "#MON by one.@"
+	db   "Evolves certain"
+	next "kinds of #MON.@"
 
 XAccuracyDesc:
 	db   "Raises accuracy."
