@@ -32,7 +32,6 @@ HealPartyMon: ; c677
 	add hl, de
 	xor a
 	ld [hli], a
-	ld [hl], a
 
 	ld hl, MON_MAXHP
 	add hl, de
@@ -41,12 +40,25 @@ HealPartyMon: ; c677
 	ld b, h
 	ld c, l
 	dec bc
+	dec bc
+
+	; don't heal if the pokémon is fainted, unless it was fainted due to
+	; the species clause. this is tracked using an unused byte.
+	dec bc
+	ld a, [bc]
+	bit BIT_SPECIES_CLAUSED, a
+	res BIT_SPECIES_CLAUSED, a
+	ld [bc], a
+	inc bc ; bc = MON_HP
+	jr nz, .ok
 	ld a, [bc]
 	ld e, a
-	dec bc
+	inc bc
 	ld a, [bc]
 	or e
 	ret z ; don't heal if pokémon is fainted
+	dec bc
+.ok
 
 	ld a, [hli]
 	ld [bc], a

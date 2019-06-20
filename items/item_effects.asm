@@ -1764,7 +1764,6 @@ FullRestore: ; f128
 	call GetPartyParamLocation
 	xor a
 	ld [hli], a
-	ld [hl], a
 	call HealStatus
 	call BattlemonRestoreHealth
 	call HealHP_SFX_GFX

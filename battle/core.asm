@@ -8474,6 +8474,8 @@ StartBattle: ; 3f4c1
 EnforceSpeciesClause:
 ; Faint duplicate Pokémon at the beginning of a battle.
 ; The first non-fainted one in party order remains untouched.
+; Pokémon fainted this way are marked with a flag used to check whether they
+; should be revived when the battle is over.
 	push bc
 	push de
 	push hl
@@ -8514,6 +8516,9 @@ EnforceSpeciesClause:
 	xor a
 	ldi [hl], a
 	ld [hl], a
+	dec hl
+	dec hl
+	set BIT_SPECIES_CLAUSED, [hl]
 	pop hl
 	pop bc
 .nextinner

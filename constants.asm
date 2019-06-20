@@ -35,3 +35,4 @@ INCLUDE "constants/cry_constants.asm"
 INCLUDE "constants/audio_constants.asm"
 
 DEFAULT_LEVEL EQU 50
+BIT_SPECIES_CLAUSED EQU 7

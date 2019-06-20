@@ -4293,7 +4293,6 @@ _TempMonStatsCalculation: ; 50893
 	add hl, bc
 	xor a
 	ld [hli], a
-	ld [hl], a
 	ret
 
 GetPkmnSpecies: ; 508d5
