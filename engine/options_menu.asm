@@ -72,7 +72,7 @@ StringOptions: ; e4241
 	db "        :<LNBRK>"
 	db "PRINT<LNBRK>"
 	db "        :<LNBRK>"
-	db "WILD ENCOUNTERS<LNBRK>"
+	db "MENU ACCOUNT<LNBRK>"
 	db "        :<LNBRK>"
 	db "FRAME<LNBRK>"
 	db "        :TYPE<LNBRK>"
