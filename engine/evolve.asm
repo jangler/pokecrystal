@@ -540,6 +540,9 @@ FillMoves: ; 424e1
 	call _GetRandomLearnMove
 	push de
 	ld c, NUM_MOVES
+	ld a, SKETCH ; allow multiple sketches
+	cp [hl]
+	jr z, .CheckSlot
 .CheckRepeat:
 	ld a, [de]
 	inc de
