@@ -5218,6 +5218,8 @@ LoadBattleMenu2: ; 3e19b
 ; 3e1c7
 
 BattleMenu_Pack: ; 3e1c7
+	jp .ItemsCantBeUsed
+
 	ld a, [wLinkMode]
 	and a
 	jp nz, .ItemsCantBeUsed
