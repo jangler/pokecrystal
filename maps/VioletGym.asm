@@ -37,6 +37,7 @@ FalknerScript_0x683c2:
 	setevent EVENT_BEAT_BIRD_KEEPER_ROD
 	setevent EVENT_BEAT_BIRD_KEEPER_ABE
 	domaptrigger ELMS_LAB, $2
+	domaptrigger ROUTE_32, $1
 	specialphonecall SPECIALCALL_ASSISTANT
 	writetext UnknownText_0x685c8
 	buttonsound

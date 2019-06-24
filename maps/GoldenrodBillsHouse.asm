@@ -22,7 +22,7 @@ BillsHouseBill:
 	buttonsound
 	waitsfx
 	checkcode VAR_PARTYCOUNT
-	if_equal $6, UnknownScript_0x54c13
+	if_greater_than 0, UnknownScript_0x54c13
 	writetext UnknownText_0x54dae
 	playsound SFX_CAUGHT_MON
 	waitsfx

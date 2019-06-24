@@ -213,7 +213,7 @@ ElderScript_0x18d1a5:
 	writetext UnknownText_0x18d604
 	waitbutton
 	checkcode VAR_PARTYCOUNT
-	if_equal 6, .PartyFull
+	if_greater_than 0, .PartyFull
 	writetext UnknownText_0x18d697
 	playsound SFX_CAUGHT_MON
 	waitsfx

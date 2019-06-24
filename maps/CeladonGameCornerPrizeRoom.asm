@@ -141,7 +141,7 @@ GoldenrodGameCornerPokemonVendor:
 	checkcoins 2222
 	if_equal $2, CeladonPrizeRoom_notenoughcoins
 	checkcode VAR_PARTYCOUNT
-	if_equal $6, CeladonPrizeRoom_notenoughroom
+	if_greater_than 0, CeladonPrizeRoom_notenoughroom
 	pokenamemem PIKACHU, $0
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_cancel
@@ -159,7 +159,7 @@ GoldenrodGameCornerPokemonVendor:
 	checkcoins 5555
 	if_equal $2, CeladonPrizeRoom_notenoughcoins
 	checkcode VAR_PARTYCOUNT
-	if_equal $6, CeladonPrizeRoom_notenoughroom
+	if_greater_than 0, CeladonPrizeRoom_notenoughroom
 	pokenamemem PORYGON, $0
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_cancel
@@ -177,7 +177,7 @@ GoldenrodGameCornerPokemonVendor:
 	checkcoins 8888
 	if_equal $2, CeladonPrizeRoom_notenoughcoins
 	checkcode VAR_PARTYCOUNT
-	if_equal $6, CeladonPrizeRoom_notenoughroom
+	if_greater_than 0, CeladonPrizeRoom_notenoughroom
 	pokenamemem LARVITAR, $0
 	scall CeladonPrizeRoom_askbuy
 	iffalse CeladonPrizeRoom_cancel

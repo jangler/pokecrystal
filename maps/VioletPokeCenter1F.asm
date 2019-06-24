@@ -25,7 +25,7 @@ VioletPokeCenter1F_ElmsAideScript:
 	yesorno
 	iffalse .RefusedEgg
 	checkcode VAR_PARTYCOUNT
-	if_equal PARTY_LENGTH, .PartyFull
+	if_greater_than 0, .PartyFull
 	giveegg TOGEPI, 5
 	stringtotext .eggname, $1
 	scall .AideGivesEgg

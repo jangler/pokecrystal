@@ -180,7 +180,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	checkcoins 100
 	if_equal $2, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	checkcode VAR_PARTYCOUNT
-	if_equal $6, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	if_greater_than 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
 	pokenamemem ABRA, $0
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
@@ -198,7 +198,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	checkcoins 800
 	if_equal $2, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	checkcode VAR_PARTYCOUNT
-	if_equal $6, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	if_greater_than 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
 	pokenamemem CUBONE, $0
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
@@ -216,7 +216,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	checkcoins 1500
 	if_equal $2, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	checkcode VAR_PARTYCOUNT
-	if_equal $6, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	if_greater_than 0, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
 	pokenamemem WOBBUFFET, $0
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript

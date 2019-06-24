@@ -10,8 +10,7 @@ SpecialGiveShuckle: ; 7305
 	ld a, 15
 	ld [CurPartyLevel], a
 
-	predef TryAddMonToParty
-	jr nc, .NotGiven
+	jr .NotGiven ; nope!
 
 ; Caught data.
 	ld b, 0
