@@ -384,8 +384,7 @@ endr
 ; 128cb
 
 .IsMenuAccountOn: ; 128cb
-	ld a, [Options2]
-	and 1
+	xor a ; no, it's not
 	ret
 ; 128d1
 

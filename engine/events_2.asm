@@ -103,6 +103,9 @@ CheckFacingTileEvent:: ; 97c5f
 
 RandomEncounter:: ; 97cc0
 ; Random encounter
+	ld a, [Options2]
+	and 1
+	jr z, .nope
 
 	call CheckWildEncounterCooldown
 	jr c, .nope
