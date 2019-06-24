@@ -1,6 +1,4 @@
 PokemonCenterPC: ; 1559a
-	call PC_CheckPartyForPokemon
-	ret c
 	call PC_PlayBootSound
 	ld hl, PokeCenterPCText_BootedUpPC
 	call PC_DisplayText

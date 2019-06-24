@@ -62,6 +62,18 @@ ChangeBoxSaveGame: ; 14a83 (5:4a83)
 	pop de
 	ret
 
+IntroChangeBoxSaveGame:
+	push de
+	call SetWRAMStateForSave
+	call SaveBox
+	pop de
+	ld a, e
+	ld [wCurBox], a
+	call LoadBox
+	call SaveGameData_
+	call ClearWRAMStateAfterSave
+	ret
+
 Link_SaveGame: ; 14ab2
 	call AskOverwriteSaveFile
 	jr c, .refused
@@ -177,6 +189,17 @@ SaveGameData: ; 14b85
 	call SaveGameData_
 	ret
 ; 14b89
+
+PrintPCInitText:
+	ld hl, PCInitText
+	ld b, BANK(PCInitText)
+	call MapTextbox
+	ret
+
+PCInitText:
+	text "Creating file."
+	line "Please wait."
+	done
 
 AskOverwriteSaveFile: ; 14b89
 	ld a, [wSaveFileExists]

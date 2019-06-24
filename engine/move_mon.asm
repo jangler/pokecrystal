@@ -1800,3 +1800,326 @@ InitNickname: ; e3de
 	rst FarCall
 	ret
 ; e3fd
+
+InitPCBoxes:
+	callba PrintPCInitText
+	callba ErasePreviousSave
+
+	ld hl, PokemonByBST
+	ld c, 0 ; box index
+
+.box_loop
+	ld b, 20 ; space left in box
+
+.pkmn_loop
+	ldi a, [hl]
+	and a
+	jr z, .done
+
+	cp a, $ff
+	jr z, .next_box
+
+	ld [CurPartySpecies], a
+	push bc
+	push hl
+	call AddPokemonToPC
+	pop hl
+	pop bc
+
+	dec b
+	jr nz, .pkmn_loop
+
+	; box full; change to next one
+.next_box
+	inc c
+	push hl
+	push bc
+	ld e, c
+	callba IntroChangeBoxSaveGame
+	pop bc
+	pop hl
+	jr .box_loop
+
+.done
+	; change back to first box
+	ld e, 0
+	callba IntroChangeBoxSaveGame
+	ret
+
+; uses [CurPartySpecies]
+AddPokemonToPC:
+	; init pokémon
+	xor a
+	ld [MonType], a
+	ld a, 5
+	ld [CurPartyLevel], a
+	call TryAddMonToParty
+
+	; put pokémon in PC
+	ld a, PC_DEPOSIT
+	ld [wPokemonWithdrawDepositParameter], a
+	xor a
+	ld [CurPartyMon], a
+	call SentGetPkmnIntoFromBox
+
+	; remove pokémon from party
+	xor a
+	ld [CurPartyMon], a
+	ld [wPokemonWithdrawDepositParameter], a
+	call RemoveMonFromPartyOrBox
+	ret
+
+PokemonByBST:
+	db SUNKERN
+	db CATERPIE
+	db WEEDLE
+	db MAGIKARP
+	db KAKUNA
+	db METAPOD
+	db PICHU
+	db IGGLYBUFF
+	db TYROGUE
+	db WOOPER
+	db SENTRET
+	db CLEFFA
+	db TOGEPI
+	db ZUBAT
+	db HOPPIP
+	db MARILL
+	db SLUGMA
+	db SMEARGLE
+	db SPINARAK
+	db SWINUB
+	db PIDGEY
+	db RATTATA
+	db HOOTHOOT
+	db SPEAROW
+	db DIGLETT
+	db LEDYBA
+	db JIGGLYPUFF
+	db NIDORAN_F
+	db NIDORAN_M
+	db MAREEP
+	db PARAS
+	db DITTO
+	db EKANS
+	db MEOWTH
+	db PINECO
+	db HORSEA
+	db VULPIX
+	db BELLSPROUT
+	db DRATINI
+	db GEODUDE
+	db LARVITAR
+	db PIKACHU
+	db POLIWAG
+	db REMORAID
+	db SANDSHREW
+	db SNUBBULL
+	db MACHOP
+	db MANKEY
+	db SHELLDER
+	db SMOOCHUM
+	db VENONAT
+	db CHARMANDER
+	db CYNDAQUIL
+	db ABRA
+	db DODUO
+	db GASTLY
+	db SQUIRTLE
+	db TOTODILE
+	db SLOWPOKE
+	db BULBASAUR
+	db CHIKORITA
+	db CUBONE
+	db GOLDEEN
+	db NATU
+	db ODDISH
+	db PSYDUCK
+	db CLEFAIRY
+	db EEVEE
+	db EXEGGCUTE
+	db GRIMER
+	db KRABBY
+	db MAGNEMITE
+	db SEEL
+	db DROWZEE
+	db CHINCHOU
+	db DELIBIRD
+	db HOUNDOUR
+	db PHANPY
+	db TEDDIURSA
+	db VOLTORB
+	db TENTACOOL
+	db UNOWN
+	db KOFFING
+	db SKIPLOOM
+	db STARYU
+	db RHYHORN
+	db PIDGEOTTO
+	db GROWLITHE
+	db FARFETCH_D
+	db KABUTO
+	db OMANYTE
+	db AIPOM
+	db ELEKID
+	db FLAAFFY
+	db MAGBY
+	db NIDORINA
+	db NIDORINO
+	db CORSOLA
+	db BEEDRILL
+	db BUTTERFREE
+	db LICKITUNG
+	db ONIX
+	db POLIWHIRL
+	db ARIADOS
+	db GRAVELER
+	db LEDIAN
+	db WEEPINBELL
+	db YANMA
+	db GLOOM
+	db PORYGON
+	db KADABRA
+	db BAYLEEF
+	db CHARMELEON
+	db CROCONAW
+	db DUGTRIO
+	db HAUNTER
+	db IVYSAUR
+	db MACHOKE
+	db MURKROW
+	db PARASECT
+	db QUILAVA
+	db TOGETIC
+	db WARTORTLE
+	db WOBBUFFET
+	db AZUMARILL
+	db MAGCARGO
+	db PONYTA
+	db PUPITAR
+	db SUDOWOODO
+	db RATICATE
+	db DUNSPARCE
+	db FURRET
+	db DRAGONAIR
+	db MAROWAK
+	db SUNFLORA
+	db WIGGLYTUFF
+	db GLIGAR
+	db QUAGSIRE
+	db QWILFISH
+	db SNEASEL
+	db MISDREAVUS
+	db TANGELA
+	db ARBOK
+	db PERSIAN
+	db SEADRA
+	db FEAROW
+	db NOCTOWL
+	db CHANSEY
+	db GRANBULL
+	db JUMPLUFF
+	db PILOSWINE
+	db SANDSLASH
+	db SEAKING
+	db VENOMOTH
+	db GIRAFARIG
+	db GOLBAT
+	db HITMONCHAN
+	db HITMONLEE
+	db HITMONTOP
+	db JYNX
+	db PRIMEAPE
+	db DODRIO
+	db LANTURN
+	db MR__MIME
+	db FORRETRESS
+	db MAGNETON
+	db MANTINE
+	db SKARMORY
+	db STANTLER
+	db PIDGEOT
+	db XATU
+	db CLEFABLE
+	db DEWGONG
+	db KINGLER
+	db RAICHU
+	db BELLOSSOM
+	db ELECTRODE
+	db OCTILLERY
+	db VICTREEBEL
+	db VILEPLUME
+	db HYPNO
+	db GOLEM
+	db RHYDON
+	db ALAKAZAM
+	db ELECTABUZZ
+	db KANGASKHAN
+	db MILTANK
+	db SLOWBRO
+	db SLOWKING
+	db TAUROS
+	db WEEZING
+	db KABUTOPS
+	db MAGMAR
+	db NIDOKING
+	db NIDOQUEEN
+	db OMASTAR
+	db AMPHAROS
+	db DONPHAN
+	db GENGAR
+	db GOLDUCK
+	db HERACROSS
+	db HOUNDOOM
+	db MUK
+	db PINSIR
+	db POLITOED
+	db POLIWRATH
+	db RAPIDASH
+	db SCIZOR
+	db SCYTHER
+	db URSARING
+	db MACHAMP
+	db NINETALES
+	db SHUCKLE
+	db STEELIX
+	db AERODACTYL
+	db PORYGON2
+	db TENTACRUEL
+	db EXEGGUTOR
+	db STARMIE
+	db CLOYSTER
+	db ESPEON
+	db FLAREON
+	db JOLTEON
+	db MEGANIUM
+	db UMBREON
+	db VAPOREON
+	db VENUSAUR
+	db BLASTOISE
+	db FERALIGATR
+	db CHARIZARD
+	db TYPHLOSION
+	db CROBAT
+	db LAPRAS
+	db BLISSEY
+	db GYARADOS
+	db KINGDRA
+	db SNORLAX
+	db ARCANINE
+	db $ff ; split legendaries
+	db ARTICUNO
+	db ENTEI
+	db MOLTRES
+	db RAIKOU
+	db SUICUNE
+	db ZAPDOS
+	db CELEBI
+	db DRAGONITE
+	db MEW
+	db TYRANITAR
+	db HO_OH
+	db LUGIA
+	db MEWTWO
+	db 0

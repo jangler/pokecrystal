@@ -71,6 +71,7 @@ NewGame: ; 5b6b
 	ld [wMonStatusFlags], a
 	call ResetWRAM
 	call NewGame_ClearTileMapEtc
+	callba InitPCBoxes
 	call AreYouABoyOrAreYouAGirl
 	call OakSpeech
 	call InitializeWorld

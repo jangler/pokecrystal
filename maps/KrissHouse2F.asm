@@ -91,12 +91,8 @@ KrissHouseBookshelf:
 
 KrissHousePC:
 	opentext
-	special Special_KrissHousePC
-	iftrue .Warp
+	special PokemonCenterPC
 	closetext
-	end
-.Warp:
-	warp NONE, $0, $0
 	end
 
 KrisRadioText1:

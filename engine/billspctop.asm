@@ -1,6 +1,4 @@
 _BillsPC: ; e3fd
-	call .CheckCanUsePC
-	ret c
 	call .LogIn
 	call .UseBillsPC
 	jp .LogOut
