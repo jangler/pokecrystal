@@ -270,9 +270,8 @@ TrainerCard_Page1_PrintDexCaught_GameTime: ; 2530a (9:530a)
 	hlcoord 10, 15
 	ld de, .Badges
 	call PlaceString
-	ld hl, PokedexCaught
-	ld b, EndPokedexCaught - PokedexCaught
-	call CountSetBits
+	ld a, [wLevelCap]
+	ld [wd265], a
 	ld de, wd265
 	hlcoord 15, 10
 	lb bc, 1, 3
@@ -281,8 +280,8 @@ TrainerCard_Page1_PrintDexCaught_GameTime: ; 2530a (9:530a)
 	hlcoord 2, 8
 	ld de, .StatusTilemap
 	call TrainerCardSetup_PlaceTilemapString
-	ld a, [StatusFlags] ; pokedex
-	bit 0, a
+	ld a, [wLevelCap]
+	and a
 	ret nz
 	hlcoord 1, 9
 	lb bc, 2, 17
@@ -290,7 +289,7 @@ TrainerCard_Page1_PrintDexCaught_GameTime: ; 2530a (9:530a)
 	ret
 
 .Dex_PlayTime:
-	db   "#DEX"
+	db   "LEVEL CAP"
 	next "PLAY TIME@@"
 
 .Badges:

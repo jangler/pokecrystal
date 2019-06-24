@@ -6,7 +6,6 @@ _InitializeStartDay: ; 113d6
 ClearDailyTimers: ; 113da
 	xor a
 	ld [wLuckyNumberDayBuffer], a
-	ld [wUnusedTwoDayTimer], a
 	ld [wDailyResetTimer], a
 	ret
 ; 113e5

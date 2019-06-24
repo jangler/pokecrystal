@@ -400,6 +400,14 @@ BattleText_StringBuffer1GrewToLevel: ; 0x80c9c
 	db "@@"
 ; 0x80cb9
 
+BattleText_LevelCapIncreased:
+	text "Level cap rose"
+	line "to @"
+	deciram wLevelCap, 1, 3
+	text "!@"
+	sound_dex_fanfare_50_79
+	db "@@"
+
 BattleText_WildPkmnIsEating: ; 0x80cba
 	text "Wild @"
 	text_from_ram EnemyMonNick

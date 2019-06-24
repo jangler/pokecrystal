@@ -72,6 +72,8 @@ NewGame: ; 5b6b
 	call ResetWRAM
 	call NewGame_ClearTileMapEtc
 	callba InitPCBoxes
+	ld a, 5
+	ld [wLevelCap], a
 	call AreYouABoyOrAreYouAGirl
 	call OakSpeech
 	call InitializeWorld
@@ -553,8 +555,8 @@ Continue_LoadMenuHeader: ; 5ebf
 	xor a
 	ld [hBGMapMode], a
 	ld hl, .MenuDataHeader_Dex
-	ld a, [StatusFlags]
-	bit 0, a ; pokedex
+	ld a, [wLevelCap]
+	and a
 	jr nz, .pokedex_header
 	ld hl, .MenuDataHeader_NoDex
 
@@ -578,7 +580,7 @@ Continue_LoadMenuHeader: ; 5ebf
 	db 4 ; items
 	db "PLAYER@"
 	db "BADGES@"
-	db "#DEX@"
+	db "LEVEL CAP@"
 	db "TIME@"
 ; 5efb
 
@@ -654,18 +656,10 @@ Continue_DisplayBadgeCount: ; 5f58
 ; 5f6b
 
 Continue_DisplayPokedexNumCaught: ; 5f6b
-	ld a, [StatusFlags]
-	bit 0, a ; Pokedex
+	ld a, [wLevelCap]
+	and a
 	ret z
-	push hl
-	ld hl, PokedexCaught
-IF NUM_POKEMON % 8
-	ld b, NUM_POKEMON / 8 + 1
-ELSE
-	ld b, NUM_POKEMON / 8
-ENDC
-	call CountSetBits
-	pop hl
+	ld [wd265], a
 	ld de, wd265
 	lb bc, 1, 3
 	jp PrintNum

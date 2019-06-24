@@ -2760,6 +2760,7 @@ wSpecialPhoneCallID:: ds 1
 	ds 3
 wBugContestStartTime:: ds 4 ; day, hour, min, sec ; dc35
 wUnusedTwoDayTimerOn:: ds 1 ; dc39
+wLevelCap::
 wUnusedTwoDayTimer:: ds 1
 wUnusedTwoDayTimerStartDate:: ds 1
 	ds 4

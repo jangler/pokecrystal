@@ -1375,8 +1375,12 @@ RareCandy: ; ef14
 	ld a, MON_LEVEL
 	call GetPartyParamLocation
 
+	push bc
+	ld a, [wLevelCap]
+	ld b, a
 	ld a, [hl]
-	cp MAX_LEVEL
+	cp b
+	pop bc
 	jp nc, NoEffectMessage
 
 	inc a

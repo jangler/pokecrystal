@@ -7387,6 +7387,18 @@ GiveExperiencePoints: ; 3ee3b
 	bit 0, a
 	ret nz
 
+	; adjust level cap
+	ld a, [EnemyMonLevel]
+	ld b, a
+	ld a, [wLevelCap]
+	cp b
+	jr nc, .no_new_cap
+	ld a, b
+	ld [wLevelCap], a
+	ld hl, BattleText_LevelCapIncreased
+	call StdBattleTextBox
+.no_new_cap
+
 	call .EvenlyDivideExpAmongParticipants
 	xor a
 	ld [CurPartyMon], a
@@ -7514,8 +7526,17 @@ GiveExperiencePoints: ; 3ee3b
 	ld a, [CurPartyMon]
 	ld hl, PartyMonNicknames
 	call GetNick
+; At *least* don't show text if we're at max level
+	ld a, MON_LEVEL
+	call GetPartyParamLocation
+	ld a, [wLevelCap]
+	ld b, a
+	ld a, [hl]
+	cp b
+	jr nc, .no_text
 	ld hl, Text_PkmnGainedExpPoint
 	call BattleTextBox
+.no_text
 	ld a, [StringBuffer2 + 1]
 	ld [hQuotient + 2], a
 	ld a, [StringBuffer2]
@@ -7554,7 +7575,8 @@ GiveExperiencePoints: ; 3ee3b
 	ld [CurSpecies], a
 	call GetBaseData
 	push bc
-	ld d, MAX_LEVEL
+	ld a, [wLevelCap]
+	ld d, a
 	callab CalcExpAtLevel
 	pop bc
 	ld hl, MON_STAT_EXP - 1
@@ -7588,8 +7610,12 @@ GiveExperiencePoints: ; 3ee3b
 	pop bc
 	ld hl, MON_LEVEL
 	add hl, bc
+	push bc
+	ld a, [wLevelCap]
+	ld b, a
 	ld a, [hl]
-	cp MAX_LEVEL
+	cp b
+	pop bc
 	jp nc, .skip_stats
 	cp d
 	jp z, .skip_stats
@@ -7843,8 +7869,10 @@ AnimateExpBar: ; 3f136
 	cp [hl]
 	jp nz, .finish
 
+	ld a, [wLevelCap]
+	ld b, a
 	ld a, [BattleMonLevel]
-	cp MAX_LEVEL
+	cp b
 	jp nc, .finish
 
 	ld a, [hProduct + 3]
@@ -7881,7 +7909,8 @@ AnimateExpBar: ; 3f136
 	ld [hl], a
 
 .NoOverflow:
-	ld d, MAX_LEVEL
+	ld a, [wLevelCap]
+	ld d, a
 	callab CalcExpAtLevel
 	ld a, [hProduct + 1]
 	ld b, a
@@ -7916,8 +7945,12 @@ AnimateExpBar: ; 3f136
 	ld d, a
 
 .LoopLevels:
+	push bc
+	ld a, [wLevelCap]
+	ld b, a
 	ld a, e
-	cp MAX_LEVEL
+	cp b
+	pop bc
 	jr nc, .FinishExpBar
 	cp d
 	jr z, .FinishExpBar
