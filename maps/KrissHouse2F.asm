@@ -6,7 +6,10 @@ const_value set 2
 
 KrissHouse2F_MapScriptHeader:
 .MapTriggers:
-	db 0
+	db 1
+
+	; triggers
+	maptrigger .Trigger0
 
 .MapCallbacks:
 	db 2
@@ -16,6 +19,9 @@ KrissHouse2F_MapScriptHeader:
 	dbw MAPCALLBACK_NEWMAP, .InitializeRoom
 
 	dbw MAPCALLBACK_TILES, .SetSpawn
+
+.Trigger0:
+	end
 
 .Null:
 	end
@@ -95,6 +101,27 @@ KrissHousePC:
 	closetext
 	end
 
+Trigger_DontLeaveWithoutPokemon:
+	checkcode VAR_PARTYCOUNT
+	if_greater_than 0, .OK
+	opentext
+	writetext Text_DontLeaveWithoutPokemon
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_DontLeaveWithoutPokemon
+.OK
+	end
+
+Movement_DontLeaveWithoutPokemon:
+	step_down
+	step_end
+
+Text_DontLeaveWithoutPokemon:
+	text "Better not"
+	line "leave without"
+	cont "a #MON!"
+	done
+
 KrisRadioText1:
 	text "PROF.OAK'S #MON"
 	line "TALK! Please tune"
@@ -124,7 +151,8 @@ KrissHouse2F_MapEventHeader:
 	warp_def $0, $7, 3, KRISS_HOUSE_1F
 
 .XYTriggers:
-	db 0
+	db 1
+	xy_trigger 0, $1, $7, $0, Trigger_DontLeaveWithoutPokemon, $0, $0
 
 .Signposts:
 	db 4

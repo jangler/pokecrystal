@@ -210,15 +210,9 @@ Text_WhatDoYouThinkYoureDoing:
 	done
 
 Text_ItsDangerousToGoAlone:
-	text "It's dangerous to"
-	line "go out without a"
-	cont "#MON!"
-
-	para "Wild #MON"
-	line "jump out of the"
-
-	para "grass on the way"
-	line "to the next town."
+	text "Don't you have an"
+	line "errand to run for"
+	cont "PROF.ELM?"
 	done
 
 Text_YourMonIsAdorable:

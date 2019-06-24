@@ -85,13 +85,8 @@ ElmsLab_ElmGetsEmail:
 	applymovement ELMSLAB_ELM, ElmsLab_ElmToDefaultPositionMovement1
 	spriteface PLAYER, UP
 	applymovement ELMSLAB_ELM, ElmsLab_ElmToDefaultPositionMovement2
-	spriteface PLAYER, RIGHT
-	opentext
-	writetext ElmText_ChooseAPokemon
-	waitbutton
-	dotrigger $1
-	closetext
-	end
+	applymovement PLAYER, PlayerAfterEmailMovement
+	jump ElmDirectionsScript
 
 ProfElmScript:
 	faceplayer
@@ -709,6 +704,11 @@ ElmsLab_ElmToDefaultPositionMovement2:
 	turn_head_down
 	step_end
 
+PlayerAfterEmailMovement:
+	step_right
+	step_up
+	step_end
+
 AfterCyndaquilMovement:
 	step_left
 	step_up
@@ -745,28 +745,6 @@ ElmText_Intro:
 
 	para "could help me with"
 	line "it, <PLAY_G>."
-
-	para "You see…"
-
-	para "I'm writing a"
-	line "paper that I want"
-
-	para "to present at a"
-	line "conference."
-
-	para "But there are some"
-	line "things I don't"
-
-	para "quite understand"
-	line "yet."
-
-	para "So!"
-
-	para "I'd like you to"
-	line "raise a #MON"
-
-	para "that I recently"
-	line "caught."
 	done
 
 ElmText_Accepted:
