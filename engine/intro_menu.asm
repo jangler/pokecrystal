@@ -247,6 +247,13 @@ SetDefaultBoxNames: ; 5ca6
 	ld c, 0
 .loop
 	push hl
+	ld a, c
+	cp 3
+	jr c, .notlocked
+	ld de, .LockedName
+	call CopyName2
+	jr .next
+.notlocked
 	ld de, .Box
 	call CopyName2
 	dec hl
@@ -262,6 +269,7 @@ SetDefaultBoxNames: ; 5ca6
 	add "0"
 	ld [hli], a
 	ld [hl], "@"
+.next
 	pop hl
 	ld de, 9
 	add hl, de
@@ -273,6 +281,8 @@ SetDefaultBoxNames: ; 5ca6
 
 .Box:
 	db "BOX@"
+.LockedName:
+	db "LOCKED@"
 ; 5cd3
 
 InitializeMagikarpHouse: ; 5cd3

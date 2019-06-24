@@ -2122,4 +2122,6 @@ PokemonByBST:
 	db HO_OH
 	db LUGIA
 	db MEWTWO
+	db $ff ; joke
+	db SUNKERN
 	db 0

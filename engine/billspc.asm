@@ -1913,6 +1913,14 @@ BillsPC_CheckIsBoxSealed:
 	xor a
 	ret
 
+BillsPC_CheckIsBoxLocked:
+	ld a, [MenuSelection]
+	dec a
+	call GetBoxName
+	ld de, LockedBoxName
+	call CompareNames
+	ret
+
 TryWithdrawPokemon: ; e30fa (38:70fa)
 	ld a, [wBillsPC_CursorPosition]
 	ld hl, wBillsPC_ScrollPosition
@@ -1983,6 +1991,8 @@ BillsPC_SealBox:
 
 SealedBoxName:
 	db "SEALED@"
+LockedBoxName:
+	db "LOCKED@"
 
 ReleasePKMN_ByePKMN: ; e3180 (38:7180)
 	hlcoord 0, 0
@@ -2457,17 +2467,28 @@ BillsPC_PrintBoxCountAndCapacity: ; e3632
 	hlcoord 12, 9
 	ld de, .Pokemon
 	call PlaceString
+	call BillsPC_CheckIsBoxLocked
+	jr nz, .notlocked
+	hlcoord 13, 11
+	ld de, .QuestionMarks
+	call PlaceString
+	hlcoord 15, 11
+	jr .next
+.notlocked
 	call GetBoxCount
 	ld [wd265], a
 	hlcoord 13, 11
 	ld de, wd265
 	lb bc, 1, 2
 	call PrintNum
+.next
 	ld de, .out_of_20
 	call PlaceString
 	ret
 ; e3663
 
+.QuestionMarks:
+	db "??@"
 .Pokemon: ; e3663
 	db "#MON@"
 ; e3668
@@ -2601,30 +2622,22 @@ BillsPC_ChangeBoxSubmenu: ; e36f9 (38:76f9)
 	ld a, [wCurBox]
 	cp e
 	ret z
+	push de
+	call BillsPC_CheckIsBoxLocked
+	pop de
+	jr nz, .notlocked
+	call BillsPC_PlaceLockedBoxString_SFX
+	and a
+	ret
+.notlocked
 	callba ChangeBoxSaveGame
 	ret
 
 .Name:
-	ld b, $4 ; box
-	ld de, wd002
-	callba NamingScreen
-	call ClearTileMap
-	call LoadStandardFont
-	call LoadFontsBattleExtra
-	ld a, [MenuSelection]
-	dec a
-	call GetBoxName
-	ld e, l
-	ld d, h
-	ld hl, wd002
-	ld c, BOX_NAME_LENGTH - 1
-	call InitString
-	ld a, [MenuSelection]
-	dec a
-	call GetBoxName
-	ld de, wd002
-	call CopyName2
+	call BillsPC_PlaceNoNameString_SFX
+	and a
 	ret
+
 ; e3778 (38:7778)
 
 	hlcoord 11, 7 ; XXX
@@ -2664,8 +2677,21 @@ BillsPC_PlaceWhatsUpString: ; e37af (38:77af)
 	db "What's up?@"
 ; e37be
 
+BillsPC_PlaceNoNameString_SFX:
+	ld de, .NoNameString
+	jp BillsPC_PlaceBoxString_SFX
+.NoNameString:
+	db "Nope.@"
+
+BillsPC_PlaceLockedBoxString_SFX:
+	ld de, .LockedBoxString
+	jp BillsPC_PlaceBoxString_SFX
+.LockedBoxString:
+	db "The BOX is locked.@"
+
 BillsPC_PlaceEmptyBoxString_SFX: ; e37be (38:77be)
-	ld de, .NoMonString
+	ld de, NoMonString
+BillsPC_PlaceBoxString_SFX:
 	call BillsPC_PlaceChangeBoxString
 	ld de, SFX_WRONG
 	call WaitPlaySFX
@@ -2675,7 +2701,7 @@ BillsPC_PlaceEmptyBoxString_SFX: ; e37be (38:77be)
 	ret
 ; e37d3 (38:77d3)
 
-.NoMonString: ; e37d3
+NoMonString: ; e37d3
 	db "There's no #MON.@"
 ; e37e3
 
