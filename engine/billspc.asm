@@ -152,7 +152,6 @@ endr
 
 BillsPCDepositJumptable: ; e24a1 (38:64a1)
 
-	dw BillsPCDepositFuncDeposit ; Deposit Pokemon
 	dw BillsPCDepositFuncStats ; Pokemon Stats
 	dw BillsPCDepositFuncRelease ; Release Pokemon
 	dw BillsPCDepositFuncCancel ; Cancel
@@ -242,8 +241,7 @@ BillsPCDepositMenuDataHeader: ; 0xe253d (38:653d)
 
 .MenuData2: ; 0xe2545 (38:6545)
 	db $80 ; flags
-	db 4 ; items
-	db "DEPOSIT@"
+	db 3 ; items
 	db "STATS@"
 	db "RELEASE@"
 	db "CANCEL@"
@@ -427,6 +425,10 @@ endr
 
 
 .withdraw ; e26a1 (38:66a1)
+	call BillsPC_CheckIsBoxSealed
+	jp z, .FailedWithdraw
+	call BillsPC_WarnSealBox
+	jp c, .cancel
 	call BillsPC_CheckMail_PreventBlackout
 	jp c, .cancel
 	call TryWithdrawPokemon
@@ -512,6 +514,20 @@ endr
 	db "RELEASE@"
 	db "CANCEL@"
 ; 0xe2759
+
+BillsPC_WarnSealBox:
+	ld de, PCString_WarnSealBox
+	call BillsPC_PlaceString
+	call LoadStandardMenuDataHeader
+	lb bc, 14, 11
+	call PlaceYesNoBox
+	ld a, [wMenuCursorY]
+	dec a
+	call ExitMenu
+	and a
+	ret z
+	scf
+	ret
 
 _MovePKMNWithoutMail: ; e2759
 	ld hl, Options
@@ -1874,6 +1890,29 @@ DepositPokemon: ; e307c (38:707c)
 	scf
 	ret
 
+; compares strings at de and hl.
+CompareNames:
+	ld a, [de]
+	cp [hl]
+	ret nz
+	inc de
+	inc hl
+	cp "@"
+	ret z
+	jp CompareNames
+
+BillsPC_CheckIsBoxSealed:
+	ld a, [wCurBox]
+	and $f
+	call GetBoxName
+	ld de, SealedBoxName
+	call CompareNames
+	ret nz
+	ld de, PCString_BoxSealed
+	call BillsPC_DisplayError
+	xor a
+	ret
+
 TryWithdrawPokemon: ; e30fa (38:70fa)
 	ld a, [wBillsPC_CursorPosition]
 	ld hl, wBillsPC_ScrollPosition
@@ -1915,11 +1954,17 @@ TryWithdrawPokemon: ; e30fa (38:70fa)
 	ld [bc], a
 	ld c, 50
 	call DelayFrames
+	call BillsPC_SealBox
+	ld de, PCString_BoxSealed
+	call BillsPC_PlaceString
+	ld c, 50
+	call DelayFrames
 	and a
 	ret
 
 .PartyFull:
 	ld de, PCString_PartyFull
+BillsPC_DisplayError:
 	call BillsPC_PlaceString
 	ld de, SFX_WRONG
 	call WaitPlaySFX
@@ -1929,6 +1974,15 @@ TryWithdrawPokemon: ; e30fa (38:70fa)
 	scf
 	ret
 
+BillsPC_SealBox:
+	ld a, [wCurBox]
+	and $f
+	call GetBoxName
+	ld de, SealedBoxName
+	jp CopyName2
+
+SealedBoxName:
+	db "SEALED@"
 
 ReleasePKMN_ByePKMN: ; e3180 (38:7180)
 	hlcoord 0, 0
@@ -2305,6 +2359,8 @@ PCString_Non: db "Non.@"
 PCString_BoxFull: db "The BOX is full.@"
 PCString_PartyFull: db "The party's full!@"
 PCString_NoReleasingEGGS: db "No releasing EGGS!@"
+PCString_WarnSealBox: db "Choose this <PK><MN>?@"
+PCString_BoxSealed: db "BOX sealed.@"
 ; e35aa
 
 

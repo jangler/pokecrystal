@@ -82,7 +82,7 @@ _BillsPC: ; e3fd
 
 .strings ; e47f
 	db "WITHDRAW <PK><MN>@"
-	db "DEPOSIT <PK><MN>@"
+	db "RELEASE <PK><MN>@"
 	db "CHANGE BOX@"
 	db "MOVE <PK><MN> W/O MAIL@"
 	db "SEE YA!@"
@@ -97,7 +97,7 @@ _BillsPC: ; e3fd
 .items ; e4c4
 	db 5
 	db 0 ; WITHDRAW
-	db 1;  DEPOSIT
+	db 1;  RELEASE
 	db 2 ; CHANGE BOX
 	db 3 ; MOVE PKMN
 	db 4 ; SEE YA!
