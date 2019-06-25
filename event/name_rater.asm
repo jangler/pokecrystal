@@ -16,7 +16,7 @@ NameRater: ; fb6ed
 ; ... or a Pokemon you got from a trade.
 	call GetCurNick
 	call CheckIfMonIsYourOT
-	jr c, .traded
+	; jr c, .traded
 ; This name is good, but we can do better.  How about it?
 	ld hl, NameRaterIsGoodText
 	call PrintText
