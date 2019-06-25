@@ -10,6 +10,11 @@ HealParty: ; c658
 	jr z, .next
 
 	push hl
+	call ShouldMonBeHealed
+	pop hl
+	jr nc, .next
+
+	push hl
 	call HealPartyMon
 	pop hl
 
@@ -20,6 +25,17 @@ HealParty: ; c658
 	jr .loop
 
 .done
+	ret
+
+; returns c if the pokémon is non-fainted.
+ShouldMonBeHealed:
+	ld a, MON_HP
+	call GetPartyParamLocation
+	ldi a, [hl]
+	ld b, [hl]
+	or b
+	ret z
+	scf
 	ret
 
 HealPartyMon: ; c677

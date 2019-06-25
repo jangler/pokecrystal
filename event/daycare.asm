@@ -129,8 +129,7 @@ DayCareAskDepositPokemon: ; 16798
 	ld a, [CurPartySpecies]
 	cp EGG
 	jr z, .Egg
-	callba CheckCurPartyMonFainted
-	jr c, .OutOfUsableMons
+	jr .OutOfUsableMons
 	ld hl, PartyMon1Item
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld a, [CurPartyMon]
