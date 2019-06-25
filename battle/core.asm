@@ -42,7 +42,7 @@ DoBattle: ; 3c000
 	call EnemySwitch
 
 .wild
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 
 .player_2
@@ -1208,7 +1208,7 @@ ResidualDamage: ; 3c716
 
 .fainted
 	call RefreshBattleHuds
-	ld c, 20
+	ld c, 10
 	call DelayFrames
 	xor a
 	ret
@@ -2129,7 +2129,7 @@ HandleEnemyMonFaint: ; 3cd55
 
 	ld a, $1
 	ld [hBGMapMode], a
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 
 	ld a, [wBattleMode]
@@ -2489,7 +2489,7 @@ WinTrainerBattle: ; 3cfa4
 	jr nz, .battle_tower
 
 	call BattleWinSlideInEnemyTrainerFrontpic
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 	ld a, [BattleType]
 	cp BATTLETYPE_CANLOSE
@@ -2506,7 +2506,7 @@ WinTrainerBattle: ; 3cfa4
 
 .mobile
 	call BattleWinSlideInEnemyTrainerFrontpic
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 	ld c, $4
 	callba Function4ea0a
@@ -2514,7 +2514,7 @@ WinTrainerBattle: ; 3cfa4
 
 .battle_tower
 	call BattleWinSlideInEnemyTrainerFrontpic
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 	call EmptyBattleTextBox
 	ld c, $3
@@ -3109,7 +3109,7 @@ LostBattle: ; 3d38e
 	call ClearBox
 	call BattleWinSlideInEnemyTrainerFrontpic
 
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 
 	ld a, [wMonStatusFlags]
@@ -3126,7 +3126,7 @@ LostBattle: ; 3d38e
 	call ClearBox
 	call BattleWinSlideInEnemyTrainerFrontpic
 
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 
 	call EmptyBattleTextBox
@@ -3178,7 +3178,7 @@ LostBattle: ; 3d38e
 	call ClearBox
 	call BattleWinSlideInEnemyTrainerFrontpic
 
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 
 	ld c, $3
@@ -5215,7 +5215,7 @@ LoadBattleMenu2: ; 3e19b
 	jr nz, .error
 	ld hl, BattleText_LinkErrorBattleCanceled
 	call StdBattleTextBox
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 .error
 	scf
@@ -5517,7 +5517,7 @@ EnemyMonEntrance: ; 3e3ff
 BattleMonEntrance: ; 3e40b
 	call WithdrawPkmnText
 
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 
 	ld hl, PlayerSubStatus4
@@ -5552,7 +5552,7 @@ BattleMonEntrance: ; 3e40b
 ; 3e459
 
 PassedBattleMonEntrance: ; 3e459
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 
 	hlcoord 9, 7
@@ -6061,7 +6061,7 @@ CheckPlayerHasUsableMoves: ; 3e786
 .force_struggle
 	ld hl, BattleText_PkmnHasNoMovesLeft
 	call StdBattleTextBox
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 	xor a
 	ret
@@ -7735,7 +7735,7 @@ GiveExperiencePoints: ; 3ee3b
 	hlcoord 11, 1
 	ld bc, 4
 	predef PrintTempMonStats
-	ld c, 30
+	ld c, 10
 	call DelayFrames
 	call WaitPressAorB_BlinkCursor
 	call Call_LoadTempTileMapToTileMap
@@ -9593,7 +9593,7 @@ BattleStartMessage: ; 3fc8b
 	call PlaySFX
 	call WaitSFX
 
-	ld c, 20
+	ld c, 10
 	call DelayFrames
 
 	callba Battle_GetTrainerName

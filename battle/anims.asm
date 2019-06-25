@@ -644,20 +644,10 @@ BattleAnim_EnemyDamage: ; c9581
 ; c9592
 
 BattleAnim_EnemyStatDown: ; c9592
-	anim_call BattleAnim_FollowEnemyFeet_1
-	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
-	anim_wait 40
-	anim_call BattleAnim_ShowMon_1
-	anim_wait 1
 	anim_ret
 ; c95a0
 
 BattleAnim_PlayerStatDown: ; c95a0
-	anim_call BattleAnim_FollowEnemyFeet_1
-	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $0, $0
-	anim_wait 40
-	anim_call BattleAnim_ShowMon_1
-	anim_wait 1
 	anim_ret
 ; c95ae
 
@@ -668,14 +658,10 @@ BattleAnim_PlayerDamage: ; c95ae
 ; c95b5
 
 BattleAnim_Wobble: ; c95b5
-	anim_bgeffect ANIM_BG_35, $0, $0, $0
-	anim_wait 40
 	anim_ret
 ; c95bc
 
 BattleAnim_Shake: ; c95bc
-	anim_bgeffect ANIM_BG_1F, $20, $2, $40
-	anim_wait 40
 	anim_ret
 ; c95c3
 
