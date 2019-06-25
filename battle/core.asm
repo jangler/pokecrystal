@@ -5223,7 +5223,11 @@ LoadBattleMenu2: ; 3e19b
 ; 3e1c7
 
 BattleMenu_Pack: ; 3e1c7
-	jp .ItemsCantBeUsed
+	; replaced with "PASS"
+	ld a, 1
+	ld [wPlayerAction], a
+	and a
+	ret
 
 	ld a, [wLinkMode]
 	and a

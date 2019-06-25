@@ -51,7 +51,7 @@ MenuData_0x24f34: ; 0x24f34
 Strings24f3d: ; 0x24f3d
 	db "FIGHT@"
 	db "<PKMN>@"
-	db "PACK@"
+	db "PASS@"
 	db "RUN@"
 ; 24f4e
 
