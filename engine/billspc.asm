@@ -1679,8 +1679,6 @@ BillsPC_CheckMail_PreventBlackout: ; e2f18 (38:6f18)
 	ld hl, wBillsPC_ScrollPosition
 	add [hl]
 	ld [CurPartyMon], a
-	callba CheckCurPartyMonFainted
-	jr c, .AllOthersFainted
 	ld a, [wBillsPC_MonHasMail]
 	and a
 	jr nz, .HasMail
