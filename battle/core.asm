@@ -7528,6 +7528,13 @@ GiveExperiencePoints: ; 3ee3b
 	ld a, [hl]
 	cp LUCKY_EGG
 	call z, BoostExp
+
+; just give 9999 exp every time
+	ld a, $27
+	ld [hQuotient + 1], a
+	ld a, $0f
+	ld [hQuotient + 2], a
+
 	ld a, [hQuotient + 2]
 	ld [StringBuffer2 + 1], a
 	ld a, [hQuotient + 1]
