@@ -472,6 +472,12 @@ endr
 
 	push hl
 	ld d, a
+
+	; special case - allow learning multiple instances of sketch.
+	; this is important when mega-exp gains are in play.
+	cp SKETCH
+	jr z, .learn
+
 	ld hl, PartyMon1Moves
 	ld a, [CurPartyMon]
 	ld bc, PARTYMON_STRUCT_LENGTH
