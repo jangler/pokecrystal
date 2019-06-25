@@ -7490,7 +7490,7 @@ GiveExperiencePoints: ; 3ee3b
 	ld a, [EnemyMonLevel]
 	ld [hMultiplier], a
 	call Multiply
-	ld a, 7
+	ld a, 1 ; don't divide at all, just move value into hQuotient
 	ld [hDivisor], a
 	ld b, 4
 	call Divide
