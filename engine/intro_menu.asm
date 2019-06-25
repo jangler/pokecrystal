@@ -67,6 +67,10 @@ OptionsMenu: ; 5b64
 ; 5b6b
 
 NewGame: ; 5b6b
+	; new game immediately overwrites save, so ask first
+	callba AskOverwriteSaveFile
+	ret c
+
 	xor a
 	ld [wMonStatusFlags], a
 	call ResetWRAM
