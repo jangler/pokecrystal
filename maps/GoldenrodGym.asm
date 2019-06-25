@@ -63,6 +63,10 @@ WhitneyScript_0x5400c:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_PLAINBADGE
+	writetext Text_Box6Unlocked
+	playsound SFX_ITEM
+	waitsfx
+	callasm UnlockBox6
 	checkcode VAR_BADGES
 	scall GoldenrodGymTriggerRockets
 UnknownScript_0x54064:
@@ -379,6 +383,10 @@ GoldenrodGymGuyWinText:
 	text "You won? Great! I"
 	line "was busy admiring"
 	cont "the ladies here."
+	done
+
+Text_Box6Unlocked:
+	text "BOX6 unlocked."
 	done
 
 GoldenrodGym_MapEventHeader:

@@ -2659,6 +2659,77 @@ BillsPC_ChangeBoxSubmenu: ; e36f9 (38:76f9)
 	db "QUIT@"
 ; 0xe379c
 
+UnlockBox4::
+	ld e, 3
+	jp UnlockPCBox
+
+UnlockBox5::
+	ld e, 4
+	jp UnlockPCBox
+
+UnlockBox6::
+	ld e, 5
+	jp UnlockPCBox
+
+UnlockBox7::
+	ld e, 6
+	jp UnlockPCBox
+
+UnlockBox8::
+	ld e, 7
+	jp UnlockPCBox
+
+UnlockBox9::
+	ld e, 8
+	jp UnlockPCBox
+
+UnlockBox10::
+	ld e, 9
+	jp UnlockPCBox
+
+UnlockBox11::
+	ld e, 10
+	jp UnlockPCBox
+
+UnlockBox12::
+	ld e, 11
+	jp UnlockPCBox
+
+UnlockBox13::
+	ld e, 12
+	jp UnlockPCBox
+
+UnlockBox14::
+	ld e, 13
+	jp UnlockPCBox
+
+UnlockPCBox:
+	ld hl, .BoxNames
+	ld a, e
+	ld bc, $0006
+	call AddNTimes
+	ld a, e
+	push hl
+	call GetBoxName
+	pop de
+	jp CopyName2
+
+.BoxNames:
+	db "BOX1 @"
+	db "BOX2 @"
+	db "BOX3 @"
+	db "BOX4 @"
+	db "BOX5 @"
+	db "BOX6 @"
+	db "BOX7 @"
+	db "BOX8 @"
+	db "BOX9 @"
+	db "BOX10@"
+	db "BOX11@"
+	db "BOX12@"
+	db "BOX13@"
+	db "BOX14@"
+
 BillsPC_PlaceChooseABoxString: ; e379c (38:779c)
 	ld de, .ChooseABox
 	jr BillsPC_PlaceChangeBoxString

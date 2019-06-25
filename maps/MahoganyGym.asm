@@ -32,6 +32,10 @@ PryceScript_0x199a9e:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_GLACIERBADGE
+	writetext Text_Box10Unlocked
+	playsound SFX_ITEM
+	waitsfx
+	callasm UnlockBox10
 	checkcode VAR_BADGES
 	scall MahoganyGymTriggerRockets
 .FightDone:
@@ -370,6 +374,10 @@ MahoganyGymGuyWinText:
 
 	para "bridged the gen-"
 	line "eration gap!"
+	done
+
+Text_Box10Unlocked:
+	text "BOX10 unlocked."
 	done
 
 MahoganyGym_MapEventHeader:

@@ -27,6 +27,10 @@ BlueScript_0x9aa26:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_EARTHBADGE
+	writetext Text_Box13Unlocked
+	playsound SFX_ITEM
+	waitsfx
+	callasm UnlockBox13
 	writetext LeaderBlueAfterText
 	waitbutton
 	closetext
@@ -167,6 +171,10 @@ ViridianGymGuyWinText:
 
 	para "battle. It brought"
 	line "tears to my eyes."
+	done
+
+Text_Box13Unlocked:
+	text "BOX13 unlocked."
 	done
 
 ViridianGym_MapEventHeader:

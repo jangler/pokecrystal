@@ -24,6 +24,10 @@ Red:
 	opentext
 	writetext .Text3
 	waitbutton
+	writetext Text_Box14Unlocked
+	playsound SFX_ITEM
+	waitsfx
+	callasm UnlockBox14
 	closetext
 	special Special_FadeBlackQuickly
 	special Special_ReloadSpritesNoPalettes
@@ -48,6 +52,10 @@ Red:
 .Text3:
 	text $56
 	line $56
+	done
+
+Text_Box14Unlocked:
+	text "BOX14 unlocked."
 	done
 
 SilverCaveRoom3_MapEventHeader:

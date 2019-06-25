@@ -29,6 +29,10 @@ FalknerScript_0x683c2:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_ZEPHYRBADGE
+	writetext Text_Box4Unlocked
+	playsound SFX_ITEM
+	waitsfx
+	callasm UnlockBox4
 	checkcode VAR_BADGES
 	scall VioletGymTriggerRockets
 .FightDone:
@@ -280,6 +284,10 @@ VioletGymGuyWinText:
 
 	para "be the CHAMP in no"
 	line "time at all!"
+	done
+
+Text_Box4Unlocked:
+	text "BOX4 unlocked."
 	done
 
 VioletGym_MapEventHeader:

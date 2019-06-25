@@ -165,6 +165,10 @@ DragonShrineTestScript:
 	setflag ENGINE_RISINGBADGE
 	playsound SFX_GET_BADGE
 	waitsfx
+	writetext Text_Box11Unlocked
+	playsound SFX_ITEM
+	waitsfx
+	callasm UnlockBox11
 	special RestartMapMusic
 	specialphonecall SPECIALCALL_MASTERBALL
 	dotrigger $1
@@ -668,6 +672,10 @@ UnknownText_0x18da0b:
 
 UnknownText_0x18dab4:
 	text $56, $56, $56, $56, $56, $56
+	done
+
+Text_Box11Unlocked:
+	text "BOX11 unlocked."
 	done
 
 DragonShrine_MapEventHeader:

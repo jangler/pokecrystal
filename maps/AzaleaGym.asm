@@ -32,6 +32,10 @@ BugsyScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_HIVEBADGE
+	writetext Text_Box5Unlocked
+	playsound SFX_ITEM
+	waitsfx
+	callasm UnlockBox5
 	checkcode VAR_BADGES
 	scall AzaleaGymTriggerRockets
 .FightDone:
@@ -359,6 +363,10 @@ AzaleaGymGuyWinText:
 	para "With people like"
 	line "you, the future of"
 	cont "#MON is bright!"
+	done
+
+Text_Box5Unlocked:
+	text "BOX5 unlocked."
 	done
 
 AzaleaGym_MapEventHeader:

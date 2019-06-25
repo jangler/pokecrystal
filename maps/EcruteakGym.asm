@@ -43,6 +43,10 @@ MortyScript_0x99d58:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_FOGBADGE
+	writetext Text_Box7Unlocked
+	playsound SFX_ITEM
+	waitsfx
+	callasm UnlockBox7
 	checkcode VAR_BADGES
 	scall EcruteakGymTriggerRockets
 	domaptrigger ECRUTEAK_HOUSE, $1
@@ -386,6 +390,10 @@ UnknownText_0x9a49c:
 	line "have to leave."
 
 	para "Hohohoho."
+	done
+
+Text_Box7Unlocked:
+	text "BOX7 unlocked."
 	done
 
 EcruteakGym_MapEventHeader:

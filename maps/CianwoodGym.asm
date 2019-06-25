@@ -49,6 +49,10 @@ ChuckScript_0x9d60f:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_STORMBADGE
+	writetext Text_Box8Unlocked
+	playsound SFX_ITEM
+	waitsfx
+	callasm UnlockBox8
 	checkcode VAR_BADGES
 	scall CianwoodGymTriggerRockets
 .FightDone:
@@ -303,6 +307,10 @@ BlackbeltLungAfterText:
 	text "My #MON lost…"
 	line "My… my pride is"
 	cont "shattered…"
+	done
+
+Text_Box8Unlocked:
+	text "BOX8 unlocked."
 	done
 
 CianwoodGym_MapEventHeader:

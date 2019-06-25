@@ -27,6 +27,10 @@ HallOfFameScript:
 	opentext
 	writetext HallOfFame_LanceText
 	waitbutton
+	writetext Text_Box12Unlocked
+	playsound SFX_ITEM
+	waitsfx
+	callasm UnlockBox12
 	closetext
 	spriteface HALLOFFAME_LANCE, UP
 	applymovement PLAYER, HallOfFame_SlowlyApproachMachine
@@ -110,6 +114,10 @@ HallOfFame_LanceText:
 
 	para "and your partners"
 	line "as CHAMPIONS!"
+	done
+
+Text_Box12Unlocked:
+	text "BOX12 unlocked."
 	done
 
 HallOfFame_MapEventHeader:

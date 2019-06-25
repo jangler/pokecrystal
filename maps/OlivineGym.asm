@@ -27,6 +27,10 @@ JasmineScript_0x9c12f:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_MINERALBADGE
+	writetext Text_Box9Unlocked
+	playsound SFX_ITEM
+	waitsfx
+	callasm UnlockBox9
 	checkcode VAR_BADGES
 	scall OlivineGymTriggerRockets
 .FightDone:
@@ -195,6 +199,10 @@ OlivineGymGuyPreText:
 	para "A strong trainer"
 	line "has to be compas-"
 	cont "sionate."
+	done
+
+Text_Box9Unlocked:
+	text "BOX9 unlocked."
 	done
 
 OlivineGym_MapEventHeader:
