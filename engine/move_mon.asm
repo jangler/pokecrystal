@@ -1870,6 +1870,26 @@ AddPokemonToPC:
 	ret
 
 PokemonByBST:
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
+	db SMEARGLE
 	db SUNKERN
 	db CATERPIE
 	db WEEDLE
@@ -1887,7 +1907,6 @@ PokemonByBST:
 	db HOPPIP
 	db MARILL
 	db SLUGMA
-	db SMEARGLE
 	db SPINARAK
 	db SWINUB
 	db PIDGEY
@@ -2122,6 +2141,4 @@ PokemonByBST:
 	db HO_OH
 	db LUGIA
 	db MEWTWO
-	db $ff ; joke
-	db SUNKERN
 	db 0

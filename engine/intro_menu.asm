@@ -254,6 +254,12 @@ SetDefaultBoxNames: ; 5ca6
 .loop
 	push hl
 	ld a, c
+	and a
+	jr nz, .notsmeargle
+	ld de, .Smeargle
+	call CopyName2
+	jr .next
+.notsmeargle
 	cp 3
 	jr c, .notlocked
 	ld de, .LockedName
@@ -285,6 +291,8 @@ SetDefaultBoxNames: ; 5ca6
 	jr c, .loop
 	ret
 
+.Smeargle:
+	db "SMEARGLE@"
 .Box:
 	db "BOX@"
 .LockedName:

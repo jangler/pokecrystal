@@ -427,8 +427,12 @@ endr
 .withdraw ; e26a1 (38:66a1)
 	call BillsPC_CheckIsBoxSealed
 	jp z, .FailedWithdraw
+	ld a, [wCurBox]
+	and a
+	jr z, .no_warning ; smeargle!
 	call BillsPC_WarnSealBox
 	jp c, .cancel
+.no_warning
 	call BillsPC_CheckMail_PreventBlackout
 	jp c, .cancel
 	call TryWithdrawPokemon
@@ -1962,6 +1966,9 @@ TryWithdrawPokemon: ; e30fa (38:70fa)
 	ld [bc], a
 	ld c, 50
 	call DelayFrames
+	ld a, [wCurBox]
+	and a
+	ret z ; smeargle!
 	call BillsPC_SealBox
 	ld de, PCString_BoxSealed
 	call BillsPC_PlaceString

@@ -109,7 +109,12 @@ Trigger_DontLeaveWithoutPokemon:
 	waitbutton
 	closetext
 	applymovement PLAYER, Movement_DontLeaveWithoutPokemon
+	end
 .OK
+	opentext
+	writetext Text_HackBriefing
+	waitbutton
+	closetext
 	end
 
 Movement_DontLeaveWithoutPokemon:
@@ -120,6 +125,20 @@ Text_DontLeaveWithoutPokemon:
 	text "Better not"
 	line "leave without"
 	cont "a #MON!"
+	done
+
+Text_HackBriefing:
+	text "Just so you know:"
+
+	para "Smeargle's base"
+	line "speed is 125 in"
+	cont "this changeset."
+
+	para "You can figure"
+	line "the rest out"
+	cont "yourself."
+
+	para "Good luck."
 	done
 
 KrisRadioText1:
