@@ -12,7 +12,12 @@ DelayFrame::
 	ret
 
 DelayFrames::
-; Wait c frames
+; Wait c frames, max 10
+	ld a, c
+	cp 4
+	jr c, .under
+	ld c, 4
+.under
 	call DelayFrame
 	dec c
 	jr nz, DelayFrames
