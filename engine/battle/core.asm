@@ -3410,6 +3410,7 @@ ScoreMonTypeMatchups:
 	jr z, .loop5
 
 .quit
+	farcall HealParty
 	ret
 
 LoadEnemyMonToSwitchTo:
