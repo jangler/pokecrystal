@@ -23,6 +23,8 @@ _CheckTrainerBattle::
 	push af
 	push de
 
+	jr .next ; just kidding, never.
+
 ; Has a sprite
 	ld hl, MAPOBJECT_SPRITE
 	add hl, de
