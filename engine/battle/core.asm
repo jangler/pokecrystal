@@ -6986,14 +6986,8 @@ GiveExperiencePoints:
 	ld bc, wPartyMon1Species
 
 .loop
-	ld hl, MON_HP
-	add hl, bc
-	ld a, [hli]
-	or [hl]
-	jp z, .next_mon ; fainted
-
 	push bc
-	ld hl, wBattleParticipantsNotFainted
+	ld hl, wBattleParticipantsIncludingFainted
 	ld a, [wCurPartyMon]
 	ld c, a
 	ld b, CHECK_FLAG
