@@ -7004,6 +7004,14 @@ GiveExperiencePoints:
 	pop bc
 	jp z, .next_mon
 
+; if a pokémon is level 2, it can't be demoted further due to exp curve
+; shenanigans
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	cp 3
+	jp c, .next_mon
+
 ; give stat exp
 	ld hl, MON_STAT_EXP + 1
 	add hl, bc
@@ -7100,6 +7108,12 @@ GiveExperiencePoints:
 	ld a, [hl]
 	cp LUCKY_EGG
 	call z, BoostExp
+
+; actually, give zero exp
+	xor a
+	ld [hQuotient + 2], a
+	ld [hQuotient + 3], a
+
 	ldh a, [hQuotient + 3]
 	ld [wStringBuffer2 + 1], a
 	ldh a, [hQuotient + 2]
@@ -7107,8 +7121,6 @@ GiveExperiencePoints:
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
 	call GetNick
-	ld hl, Text_MonGainedExpPoint
-	call BattleTextbox
 	ld a, [wStringBuffer2 + 1]
 	ldh [hQuotient + 3], a
 	ld a, [wStringBuffer2]
@@ -7147,7 +7159,10 @@ GiveExperiencePoints:
 	ld [wCurSpecies], a
 	call GetBaseData
 	push bc
-	ld d, MAX_LEVEL
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld d, [hl]
+	dec d ; demote pokémon by one level
 	callfar CalcExpAtLevel
 	pop bc
 	ld hl, MON_EXP + 2
@@ -7279,7 +7294,6 @@ GiveExperiencePoints:
 	ld b, a
 	ld a, [wCurPartyMon]
 	cp b
-	jr z, .skip_exp_bar_animation
 	ld de, SFX_HIT_END_OF_EXP_BAR
 	call PlaySFX
 	call WaitSFX
@@ -7287,7 +7301,6 @@ GiveExperiencePoints:
 	call StdBattleTextbox
 	call LoadTileMapToTempTileMap
 
-.skip_exp_bar_animation
 	xor a ; PARTYMON
 	ld [wMonType], a
 	predef CopyMonToTempMon
@@ -7316,9 +7329,6 @@ GiveExperiencePoints:
 	inc b
 	ld a, b
 	ld [wCurPartyLevel], a
-	push bc
-	predef LearnLevelMoves
-	pop bc
 	ld a, b
 	cp c
 	jr nz, .level_loop
@@ -7508,7 +7518,7 @@ AnimateExpBar:
 	jr nc, .FinishExpBar
 	cp d
 	jr z, .FinishExpBar
-	inc a
+	dec a
 	ld [wTempMonLevel], a
 	ld [wCurPartyLevel], a
 	ld [wBattleMonLevel], a
@@ -8274,7 +8284,6 @@ ExitBattle:
 	call CheckPayDay
 	xor a
 	ld [wForceEvolution], a
-	predef EvolveAfterBattle
 	farcall GivePokerusAndConvertBerries
 	ret
 

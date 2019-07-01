@@ -342,7 +342,7 @@ BattleText_TargetsEncoreEnded:
 
 BattleText_StringBuffer1GrewToLevel:
 	text_ram wStringBuffer1
-	text " grew to"
+	text " fell to"
 	line "level @"
 	text_decimal wCurPartyLevel, 1, 3
 	text "!@"
