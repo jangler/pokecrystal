@@ -226,6 +226,7 @@ BattleTurn:
 	jp .loop
 
 .quit
+	farcall HealParty
 	ret
 
 Stubbed_Function3c1bf:
@@ -3406,7 +3407,6 @@ ScoreMonTypeMatchups:
 	jr z, .loop5
 
 .quit
-	farcall HealParty
 	ret
 
 LoadEnemyMonToSwitchTo:
