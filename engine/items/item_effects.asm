@@ -2082,25 +2082,74 @@ EscapeRopeEffect:
 	ret
 
 SuperRepelEffect:
-	ld b, 200
+	ld b, 20
 	jr UseRepel
 
 MaxRepelEffect:
-	ld b, 250
+	ld b, 30
 	jr UseRepel
 
 RepelEffect:
-	ld b, 100
+	ld b, 10
 
+; repel effect is replaced with "learn moves up to level" effect
 UseRepel:
-	ld a, [wRepelEffect]
-	and a
-	ld hl, TextJump_RepelUsedEarlierIsStillInEffect
-	jp nz, PrintText
+	push bc
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+	pop bc
 
-	ld a, b
-	ld [wRepelEffect], a
-	jp UseItemText
+	jp c, RareCandy_StatBooster_ExitMenu
+
+	call SumMoveset
+	ld e, a
+
+	ld a, MON_LEVEL
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld c, a
+	add b
+	ld b, a
+	inc b
+
+.loop
+	ld a, c
+	ld [wCurPartyLevel], a
+	xor a ; PARTYMON
+	ld [wMonType], a
+	ld a, [wCurPartySpecies]
+	ld [wTempSpecies], a
+	push bc
+	push de
+	predef LearnLevelMoves
+	pop de
+	pop bc
+
+	inc c
+	ld a, c
+	cp b
+	jr c, .loop
+
+	call SumMoveset
+	cp e
+	jp nz, UseDisposableItem
+
+	ld hl, TutorFailedText
+	jp CantUseItemMessage
+
+; get sum of pokémon's current moveset in a
+SumMoveset:
+	push de
+	ld a, MON_MOVES
+	call GetPartyParamLocation
+	xor a
+rept NUM_MOVES
+	ld e, [hl]
+	add e
+	inc hl
+endr
+	pop de
+	ret
 
 TextJump_RepelUsedEarlierIsStillInEffect:
 	; The REPEL used earlier is still in effect.
@@ -2720,6 +2769,10 @@ BelongsToSomeoneElseText:
 WontHaveAnyEffectText:
 	; It won't have any effect.
 	text_far UnknownText_0x1c5db6
+	text_end
+
+TutorFailedText:
+	text_far FarTutorFailedText
 	text_end
 
 BlockedTheBallText:

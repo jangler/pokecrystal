@@ -1367,6 +1367,10 @@ UnknownText_0x1c5d97::
 	line "someone else!"
 	prompt
 
+FarTutorFailedText::
+	text "No moves learned."
+	prompt
+
 UnknownText_0x1c5db6::
 	text "It won't have any"
 	line "effect."

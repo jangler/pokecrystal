@@ -332,8 +332,8 @@ EscapeRopeDesc:
 	next "from caves, etc.@"
 
 RepelDesc:
-	db   "Repels weak #-"
-	next "MON for 100 steps.@"
+	db   "Teaches moves 10"
+	next "levels in advance.@"
 
 MaxElixerDesc:
 	db   "Fully restores the"
@@ -419,12 +419,12 @@ GuardSpecDesc:
 	next "reduction. (1 BTL)@"
 
 SuperRepelDesc:
-	db   "Repels weak #-"
-	next "MON for 200 steps.@"
+	db   "Teaches moves 20"
+	next "levels in advance.@"
 
 MaxRepelDesc:
-	db   "Repels weak #-"
-	next "MON for 250 steps.@"
+	db   "Teaches moves 30"
+	next "levels in advance.@"
 
 DireHitDesc:
 	db   "Ups critical hit"
