@@ -1126,6 +1126,11 @@ TryTileCollisionEvent::
 RandomEncounter::
 ; Random encounter
 
+	; menu account option is replaced with wild encounters option
+	ld a, [wOptions2]
+	and 1 << MENU_ACCOUNT
+	jr z, .nope
+
 	call CheckWildEncounterCooldown
 	jr c, .nope
 	call CanUseSweetScent

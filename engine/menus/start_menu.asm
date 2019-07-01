@@ -382,8 +382,7 @@ endr
 	jp TextboxPalette
 
 .IsMenuAccountOn:
-	ld a, [wOptions2]
-	and 1 << MENU_ACCOUNT
+	and 0 ; always off (option used for wild encounters instead)
 	ret
 
 .DrawBugContestStatusBox:
