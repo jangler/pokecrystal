@@ -50,11 +50,7 @@ DoBattle:
 	call CheckPlayerPartyForFitMon
 	ld a, d
 	and a
-	jr nz, .no_loss
-	ld a, 1
-	ld [wBattleResult], a
-	jp LostBattle
-.no_loss
+	jp z, LostBattle
 	call Call_LoadTempTileMapToTileMap
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG

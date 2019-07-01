@@ -41,10 +41,6 @@ EvolveAfterBattle_MasterLoop:
 	and a
 	jp z, EvolveAfterBattle_MasterLoop
 
-	; prevent fainted pokémon from evolving in order to avoid revival
-	farcall CheckFainted
-	jp z, EvolveAfterBattle_MasterLoop
-
 	ld a, [wEvolutionOldSpecies]
 	dec a
 	ld b, 0

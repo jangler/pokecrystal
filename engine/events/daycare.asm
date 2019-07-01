@@ -122,7 +122,7 @@ DayCareAskDepositPokemon:
 	call PrintDayCareText
 	ld b, PARTYMENUACTION_GIVE_MON
 	farcall SelectTradeOrDayCareMon
-	jr c, .Declined ; never accept pokémon
+	jr c, .Declined
 	ld a, [wCurPartySpecies]
 	cp EGG
 	jr z, .Egg

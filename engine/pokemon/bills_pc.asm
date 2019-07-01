@@ -153,8 +153,6 @@ BillsPCDepositJumptable:
 	dw BillsPCDepositFuncCancel ; Cancel
 
 BillsPCDepositFuncDeposit:
-	call BillsPC_CheckCurPartyMonFainted
-	jp c, BillsPCDepositFuncCancel
 	call BillsPC_CheckMail_PreventBlackout
 	jp c, BillsPCDepositFuncCancel
 	call DepositPokemon
@@ -170,12 +168,6 @@ BillsPCDepositFuncDeposit:
 	ld de, PCString_WhatsUp
 	call BillsPC_PlaceString
 	ret
-
-BillsPC_CheckCurPartyMonFainted:
-	farcall CheckFainted
-	ret nz
-	ld de, PCString_MonFainted
-	jp BillsPC_Wrong
 
 BillsPCDepositFuncStats:
 	call LoadStandardMenuHeader
@@ -1590,7 +1582,6 @@ BillsPC_CheckSpaceInDestination:
 
 .no_room
 	ld de, PCString_TheresNoRoom
-BillsPC_Wrong:
 	call BillsPC_PlaceString
 	ld de, SFX_WRONG
 	call WaitPlaySFX
@@ -2235,7 +2226,6 @@ PCString_Non: db "Non.@"
 PCString_BoxFull: db "The BOX is full.@"
 PCString_PartyFull: db "The party's full!@"
 PCString_NoReleasingEGGS: db "No releasing EGGS!@"
-PCString_MonFainted: db "The <PK><MN> is fainted!@"
 
 _ChangeBox:
 	call LoadStandardMenuHeader
