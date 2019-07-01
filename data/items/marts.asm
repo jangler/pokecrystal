@@ -54,10 +54,11 @@ MartCherrygroveDex:
 	db -1 ; end
 
 MartViolet:
-	db 10 ; # items
+	db 11 ; # items
 	db POKE_BALL
 	db POTION
 	db ESCAPE_ROPE
+	db REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
