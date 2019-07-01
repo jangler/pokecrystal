@@ -217,7 +217,7 @@ INCLUDE "home/sprite_anims.asm"
 INCLUDE "home/audio.asm"
 INCLUDE "home/mobile.asm"
 
-; add badge count to a.
+; add badge count + 1 to a.
 AddLevelModifier::
 	push bc
 	ld b, a
@@ -230,5 +230,6 @@ AddLevelModifier::
 	pop hl
 	ld a, [wNumSetBits]
 	add b
+	inc a
 	pop bc
 	ret
