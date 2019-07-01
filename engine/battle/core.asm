@@ -7237,6 +7237,7 @@ GiveExperiencePoints:
 	dec hl
 	ld a, [hl]
 	add e
+	dec hl
 	ld a, [hl]
 	adc d
 	ld a, [wCurBattleMon]
