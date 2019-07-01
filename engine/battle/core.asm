@@ -7237,10 +7237,8 @@ GiveExperiencePoints:
 	dec hl
 	ld a, [hl]
 	add e
-	ld [hld], a
 	ld a, [hl]
 	adc d
-	ld [hl], a
 	ld a, [wCurBattleMon]
 	ld d, a
 	ld a, [wCurPartyMon]
