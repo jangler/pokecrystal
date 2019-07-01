@@ -1498,6 +1498,9 @@ FishFunction:
 	and a
 	jr z, .nonibble
 	ld [wTempWildMonSpecies], a
+	dec a
+	call CheckCaughtMon
+	jr nz, .nonibble
 	ld a, e
 	call AddLevelModifier
 	ld [wCurPartyLevel], a

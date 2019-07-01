@@ -175,8 +175,6 @@ FindNest:
 
 TryWildEncounter::
 ; Try to trigger a wild encounter.
-	call .EncounterRate
-	jr nc, .no_battle
 	call ChooseWildEncounter
 	jr nz, .no_battle
 	call CheckRepelEffect
@@ -190,14 +188,6 @@ TryWildEncounter::
 	ld [wBattleType], a
 	ld a, 1
 	and a
-	ret
-
-.EncounterRate:
-	call GetMapEncounterRate
-	call ApplyMusicEffectOnEncounterRate
-	call ApplyCleanseTagEffectOnEncounterRate
-	call Random
-	cp b
 	ret
 
 GetMapEncounterRate:
@@ -348,6 +338,11 @@ ChooseWildEncounter:
 INCLUDE "data/wild/probabilities.asm"
 
 CheckRepelEffect::
+; Repel species that were already caught.
+	ld a, [wTempWildMonSpecies]
+	dec a
+	call CheckCaughtMon
+	ret nz
 ; If there is no active Repel, there's no need to be here.
 	ld a, [wRepelEffect]
 	and a

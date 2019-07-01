@@ -179,6 +179,17 @@ SelectTreeMon:
 	cp -1
 	jr z, NoTreeMon
 
+	push bc
+	push de
+	push hl
+	ld a, [hl]
+	dec a
+	call CheckCaughtMon
+	pop hl
+	pop de
+	pop bc
+	jr nz, NoTreeMon
+
 	ld a, [hli]
 	ld [wTempWildMonSpecies], a
 	ld a, [hl]
