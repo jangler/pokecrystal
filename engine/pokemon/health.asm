@@ -9,6 +9,9 @@ HealParty:
 	cp EGG
 	jr z, .next
 
+	farcall CheckFainted
+	jr z, .next
+
 	push hl
 	call HealPartyMon
 	pop hl

@@ -1151,6 +1151,10 @@ EvoStoneEffect:
 	cp EVERSTONE
 	jr z, .NoEffect
 
+	; disallow usage on fainted pokémon to prevent revival exploit
+	call CheckFainted
+	jr z, NoEffectMessage
+
 	ld a, $1
 	ld [wForceEvolution], a
 	farcall EvolvePokemon
@@ -1178,6 +1182,10 @@ VitaminEffect:
 	call RareCandy_StatBooster_GetParameters
 
 	call GetStatExpRelativePointer
+
+	; disallow usage on fainted pokémon to prevent revival exploit
+	call CheckFainted
+	jr z, NoEffectMessage
 
 	ld a, MON_STAT_EXP
 	call GetPartyParamLocation
@@ -1294,6 +1302,10 @@ RareCandyEffect:
 	jp c, RareCandy_StatBooster_ExitMenu
 
 	call RareCandy_StatBooster_GetParameters
+
+	; disallow usage on fainted pokémon to prevent revival exploit
+	call CheckFainted
+	jp z, NoEffectMessage
 
 	ld a, MON_LEVEL
 	call GetPartyParamLocation
@@ -1541,7 +1553,7 @@ ReviveEffect:
 RevivePokemon:
 	call IsMonFainted
 	ld a, 1
-	ret nz
+	ret ; never allow revives
 	ld a, [wBattleMode]
 	and a
 	jr z, .skip_to_revive
@@ -2568,11 +2580,9 @@ BasementKeyEffect:
 	ret
 
 SacredAshEffect:
-	farcall _SacredAsh
-	ld a, [wItemEffectSucceeded]
-	cp $1
-	ret nz
-	call UseDisposableItem
+	; doesn't work, permadeath
+	xor a
+	ld [wItemEffectSucceeded], a
 	ret
 
 NormalBoxEffect:
@@ -2955,4 +2965,17 @@ GetMthMoveOfCurrentMon:
 	ld c, a
 	ld b, 0
 	add hl, bc
+	ret
+
+; sets z flag if pokémon has zero HP
+CheckFainted:
+	push hl
+	ld a, MON_HP
+	call GetPartyParamLocation
+	ldi a, [hl]
+	and a
+	ret nz
+	ld a, [hl]
+	and a
+	pop hl
 	ret
