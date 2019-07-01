@@ -182,6 +182,7 @@ SelectTreeMon:
 	ld a, [hli]
 	ld [wTempWildMonSpecies], a
 	ld a, [hl]
+	call AddLevelModifier
 	ld [wCurPartyLevel], a
 	scf
 	ret

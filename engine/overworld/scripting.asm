@@ -1291,6 +1291,7 @@ Script_loadpikachudata:
 	ld a, PIKACHU
 	ld [wTempWildMonSpecies], a
 	ld a, 5
+	call AddLevelModifier
 	ld [wCurPartyLevel], a
 	ret
 
@@ -1321,6 +1322,7 @@ Script_loadwildmon:
 	call GetScriptByte
 	ld [wTempWildMonSpecies], a
 	call GetScriptByte
+	call AddLevelModifier
 	ld [wCurPartyLevel], a
 	ret
 
@@ -2288,6 +2290,7 @@ Script_givepoke:
 	call GetScriptByte
 	ld [wCurPartySpecies], a
 	call GetScriptByte
+	call AddLevelModifier
 	ld [wCurPartyLevel], a
 	call GetScriptByte
 	ld [wCurItem], a
@@ -2320,6 +2323,7 @@ Script_giveegg:
 	call GetScriptByte
 	ld [wCurPartySpecies], a
 	call GetScriptByte
+	call AddLevelModifier
 	ld [wCurPartyLevel], a
 	farcall GiveEgg
 	ret nc

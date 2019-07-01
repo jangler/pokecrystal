@@ -216,3 +216,20 @@ INCLUDE "home/battle.asm"
 INCLUDE "home/sprite_anims.asm"
 INCLUDE "home/audio.asm"
 INCLUDE "home/mobile.asm"
+
+; add badge count + 1 to a.
+AddLevelModifier::
+	push bc
+	ld b, a
+	push hl
+	push bc
+	ld hl, wBadges
+	ld b, 2
+	call CountSetBits
+	pop bc
+	pop hl
+	ld a, [wNumSetBits]
+	add b
+	inc a
+	pop bc
+	ret

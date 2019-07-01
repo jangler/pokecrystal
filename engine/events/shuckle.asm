@@ -9,6 +9,7 @@ GiveShuckle:
 	ld a, SHUCKLE
 	ld [wCurPartySpecies], a
 	ld a, 15
+	call AddLevelModifier
 	ld [wCurPartyLevel], a
 
 	predef TryAddMonToParty

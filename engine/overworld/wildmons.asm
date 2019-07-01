@@ -314,6 +314,7 @@ ChooseWildEncounter:
 ; Store the level
 .ok
 	ld a, b
+	call AddLevelModifier
 	ld [wCurPartyLevel], a
 	ld b, [hl]
 	; ld a, b
@@ -557,6 +558,7 @@ CheckEncounterRoamMon:
 	ld a, [hli]
 	ld [wTempWildMonSpecies], a
 	ld a, [hl]
+	call AddLevelModifier
 	ld [wCurPartyLevel], a
 	ld a, BATTLETYPE_ROAMING
 	ld [wBattleType], a

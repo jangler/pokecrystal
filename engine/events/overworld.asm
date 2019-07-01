@@ -1499,6 +1499,7 @@ FishFunction:
 	jr z, .nonibble
 	ld [wTempWildMonSpecies], a
 	ld a, e
+	call AddLevelModifier
 	ld [wCurPartyLevel], a
 	ld a, BATTLETYPE_FISH
 	ld [wBattleType], a
