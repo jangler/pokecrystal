@@ -144,7 +144,7 @@ DayCareStep::
 
 	ld a, [wDayCareMan]
 	bit DAYCAREMAN_HAS_MON_F, a
-	jr z, .day_care_lady
+	jr .day_care_lady ; don't give exp
 
 	ld a, [wBreedMon1Level] ; level
 	cp MAX_LEVEL
@@ -166,7 +166,7 @@ DayCareStep::
 .day_care_lady
 	ld a, [wDayCareLady]
 	bit DAYCARELADY_HAS_MON_F, a
-	jr z, .check_egg
+	jr .check_egg ; don't give exp
 
 	ld a, [wBreedMon2Level] ; level
 	cp MAX_LEVEL
