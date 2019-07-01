@@ -139,7 +139,6 @@ GetTreeMon:
 	ld a, 10
 	call RandomRange
 	and a
-	jr nz, NoTreeMon
 	jr SelectTreeMon
 
 .good
@@ -147,7 +146,6 @@ GetTreeMon:
 	ld a, 10
 	call RandomRange
 	cp 5
-	jr nc, NoTreeMon
 	jr SelectTreeMon
 
 .rare
@@ -155,7 +153,6 @@ GetTreeMon:
 	ld a, 10
 	call RandomRange
 	cp 8
-	jr nc, NoTreeMon
 	jr .skip
 .skip
 	ld a, [hli]
