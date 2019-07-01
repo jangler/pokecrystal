@@ -198,6 +198,12 @@ PokeBallEffect:
 	dec a
 	jp nz, UseBallInTrainerBattle
 
+	; can't catch already owned pokémon
+	ld a, [wEnemyMonSpecies]
+	dec a
+	call CheckCaughtMon
+	jp nz, Ball_MonAlreadyCaughtMessage
+
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
 	jr nz, .room_in_party
@@ -2646,6 +2652,13 @@ LooksBitterMessage:
 	ld hl, LooksBitterText
 	jp PrintText
 
+Ball_MonAlreadyCaughtMessage:
+	ld hl, Ball_MonAlreadyCaughtText
+	call PrintText
+	ld a, $2
+	ld [wItemEffectSucceeded], a
+	ret
+
 Ball_BoxIsFullMessage:
 	ld hl, Ball_BoxIsFullText
 	call PrintText
@@ -2727,6 +2740,10 @@ CyclingIsntAllowedText:
 CantGetOnYourBikeText:
 	; Can't get on your @  now.
 	text_far UnknownText_0x1c5e1d
+	text_end
+
+Ball_MonAlreadyCaughtText:
+	text_far MonAlreadyCaughtText
 	text_end
 
 Ball_BoxIsFullText:

@@ -1393,6 +1393,11 @@ UnknownText_0x1c5e1d::
 	text " now."
 	prompt
 
+MonAlreadyCaughtText::
+	text "You already own"
+	line "that #MON."
+	prompt
+
 UnknownText_0x1c5e3a::
 	text "The #MON BOX"
 	line "is full. That"
