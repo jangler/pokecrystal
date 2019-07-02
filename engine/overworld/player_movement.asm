@@ -337,7 +337,11 @@ DoPlayerMovement::
 	and a
 	jr nz, .ExitWater
 
+	call .RunCheck
 	ld a, STEP_WALK
+	jr nz, .no_supersurf
+	ld a, STEP_BIKE
+.no_supersurf
 	call .DoStep
 	scf
 	ret
@@ -739,7 +743,10 @@ ENDM
 .RunCheck:
 	ld a, [wPlayerState]
 	cp PLAYER_NORMAL
+	jr z, .ok
+	cp PLAYER_SURF
 	ret nz
+.ok
 	ldh a, [hJoypadDown]
 	and B_BUTTON
 	cp B_BUTTON
