@@ -487,123 +487,39 @@ BattleAnim_BatonPass_branch_c9486:
 	anim_ret
 
 BattleAnim_Confused:
-	anim_1gfx ANIM_GFX_STATUS
-	anim_sound 0, 0, SFX_KINESIS
-	anim_obj ANIM_OBJ_CHICK, 44, 56, $15
-	anim_obj ANIM_OBJ_CHICK, 44, 56, $aa
-	anim_obj ANIM_OBJ_CHICK, 44, 56, $bf
-	anim_wait 96
 	anim_ret
 
 BattleAnim_Slp:
-	anim_1gfx ANIM_GFX_STATUS
-	anim_sound 0, 0, SFX_TAIL_WHIP
-.loop
-	anim_obj ANIM_OBJ_ASLEEP, 64, 80, $0
-	anim_wait 40
-	anim_loop 3, .loop
-	anim_wait 32
 	anim_ret
 
 BattleAnim_Brn:
-	anim_1gfx ANIM_GFX_FIRE
-.loop
-	anim_sound 0, 0, SFX_BURN
-	anim_obj ANIM_OBJ_BURNED, 56, 88, $10
-	anim_wait 4
-	anim_loop 3, .loop
-	anim_wait 6
 	anim_ret
 
 BattleAnim_Psn:
-	anim_1gfx ANIM_GFX_POISON
-	anim_sound 0, 0, SFX_POISON
-	anim_obj ANIM_OBJ_SKULL, 64, 56, $0
-	anim_wait 8
-	anim_sound 0, 0, SFX_POISON
-	anim_obj ANIM_OBJ_SKULL, 48, 56, $0
-	anim_wait 8
 	anim_ret
 
 BattleAnim_Sap:
-	anim_1gfx ANIM_GFX_CHARGE
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_ABSORB, 136, 64, $3
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_ABSORB, 136, 32, $4
-	anim_wait 16
 	anim_ret
 
 BattleAnim_Frz:
-	anim_1gfx ANIM_GFX_ICE
-	anim_obj ANIM_OBJ_FROZEN, 44, 110, $0
-	anim_sound 0, 0, SFX_SHINE
-	anim_wait 16
-	anim_sound 0, 0, SFX_SHINE
-	anim_wait 16
 	anim_ret
 
 BattleAnim_Par:
-	anim_1gfx ANIM_GFX_STATUS
-	anim_bgeffect ANIM_BG_06, $0, $2, $0
-	anim_sound 0, 0, SFX_THUNDERSHOCK
-	anim_obj ANIM_OBJ_PARALYZED, 20, 88, $42
-	anim_obj ANIM_OBJ_PARALYZED, 76, 88, $c2
-	anim_wait 128
 	anim_ret
 
 BattleAnim_InLove:
-	anim_1gfx ANIM_GFX_OBJECTS
-	anim_sound 0, 0, SFX_LICK
-	anim_obj ANIM_OBJ_HEART, 64, 76, $0
-	anim_wait 32
-	anim_sound 0, 0, SFX_LICK
-	anim_obj ANIM_OBJ_HEART, 36, 72, $0
-	anim_wait 32
 	anim_ret
 
 BattleAnim_InSandstorm:
-	anim_1gfx ANIM_GFX_POWDER
-	anim_obj ANIM_OBJ_SANDSTORM, 88, 0, $0
-	anim_wait 8
-	anim_obj ANIM_OBJ_SANDSTORM, 72, 0, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_SANDSTORM, 56, 0, $2
-.loop
-	anim_sound 0, 1, SFX_MENU
-	anim_wait 8
-	anim_loop 6, .loop
-	anim_wait 8
 	anim_ret
 
 BattleAnim_InNightmare:
-	anim_1gfx ANIM_GFX_ANGELS
-	anim_sound 0, 0, SFX_BUBBLEBEAM
-	anim_obj ANIM_OBJ_IN_NIGHTMARE, 68, 80, $0
-	anim_wait 40
 	anim_ret
 
 BattleAnim_InWhirlpool:
-	anim_1gfx ANIM_GFX_WIND
-	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
-	anim_sound 0, 1, SFX_SURF
-.loop
-	anim_obj ANIM_OBJ_GUST, 132, 72, $0
-	anim_wait 6
-	anim_loop 6, .loop
-	anim_incbgeffect ANIM_BG_WHIRLPOOL
-	anim_wait 1
 	anim_ret
 
 BattleAnim_HitConfusion:
-	anim_1gfx ANIM_GFX_HIT
-	anim_sound 0, 0, SFX_POUND
-	anim_obj ANIM_OBJ_04, 44, 96, $0
-	anim_wait 16
 	anim_ret
 
 BattleAnim_Miss:
@@ -619,19 +535,9 @@ BattleAnim_EnemyDamage:
 	anim_ret
 
 BattleAnim_EnemyStatDown:
-	anim_call BattleAnim_UserObj_1Row
-	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
-	anim_wait 40
-	anim_call BattleAnim_ShowMon_1
-	anim_wait 1
 	anim_ret
 
 BattleAnim_PlayerStatDown:
-	anim_call BattleAnim_UserObj_1Row
-	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $0, $0
-	anim_wait 40
-	anim_call BattleAnim_ShowMon_1
-	anim_wait 1
 	anim_ret
 
 BattleAnim_PlayerDamage:
@@ -640,13 +546,9 @@ BattleAnim_PlayerDamage:
 	anim_ret
 
 BattleAnim_Wobble:
-	anim_bgeffect ANIM_BG_35, $0, $0, $0
-	anim_wait 40
 	anim_ret
 
 BattleAnim_Shake:
-	anim_bgeffect ANIM_BG_1F, $20, $2, $40
-	anim_wait 40
 	anim_ret
 
 BattleAnim_Pound:
