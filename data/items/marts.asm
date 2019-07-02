@@ -62,9 +62,6 @@ MartViolet:
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
-	db X_DEFEND
-	db X_ATTACK
-	db X_SPEED
 	db FLOWER_MAIL
 	db -1 ; end
 
@@ -115,13 +112,8 @@ MartGoldenrod2F2:
 
 MartGoldenrod3F:
 	db 7 ; # items
-	db X_SPEED
-	db X_SPECIAL
-	db X_DEFEND
-	db X_ATTACK
 	db DIRE_HIT
 	db GUARD_SPEC
-	db X_ACCURACY
 	db -1 ; end
 
 MartGoldenrod4F:
@@ -222,8 +214,6 @@ MartBlackthorn:
 	db FULL_HEAL
 	db REVIVE
 	db MAX_REPEL
-	db X_DEFEND
-	db X_ATTACK
 	db -1 ; end
 
 MartViridian:
@@ -257,8 +247,6 @@ MartCerulean:
 	db SUPER_POTION
 	db SUPER_REPEL
 	db FULL_HEAL
-	db X_DEFEND
-	db X_ATTACK
 	db DIRE_HIT
 	db SURF_MAIL
 	db -1 ; end
@@ -339,13 +327,8 @@ MartCeladon5F1:
 
 MartCeladon5F2:
 	db 7 ; # items
-	db X_ACCURACY
 	db GUARD_SPEC
 	db DIRE_HIT
-	db X_ATTACK
-	db X_DEFEND
-	db X_SPEED
-	db X_SPECIAL
 	db -1 ; end
 
 MartFuchsia:
@@ -366,8 +349,6 @@ MartSaffron:
 	db HYPER_POTION
 	db MAX_POTION
 	db FULL_HEAL
-	db X_ATTACK
-	db X_DEFEND
 	db FLOWER_MAIL
 	db -1 ; end
 
