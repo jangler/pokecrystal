@@ -7237,9 +7237,11 @@ GiveExperiencePoints:
 	dec hl
 	ld a, [hl]
 	add e
-	dec hl
+	ld [hld], a
 	ld a, [hl]
 	adc d
+	ld [hl], a
+	call FixHPUnderflow
 	ld a, [wCurBattleMon]
 	ld d, a
 	ld a, [wCurPartyMon]
@@ -9137,4 +9139,40 @@ BattleStartMessage:
 	ld c, $2 ; start
 	farcall Mobile_PrintOpponentBattleMessage
 
+	ret
+
+; set current HP equal to 0 if current HP appears to have underflowed.
+; this assumes that bc is the pokémon's offset in the party.
+FixHPUnderflow:
+	; subtract current HP from max HP (to see if we have more than max HP)
+	push bc
+	push de
+	push hl
+	ld hl, MON_MAXHP + 1
+	add hl, bc
+	ld d, h
+	ld e, l
+	ld hl, MON_HP + 1
+	add hl, bc
+
+	ld a, [hld]
+	ld b, a
+	ld a, [de]
+	dec de
+	sub b
+	ld a, [hli]
+	ld b, a
+	ld a, [de]
+	inc de
+	sbc b
+	jr nc, .finish
+
+	xor a
+	ld [hld], a
+	ld [hl], a
+
+.finish
+	pop hl
+	pop de
+	pop bc
 	ret
