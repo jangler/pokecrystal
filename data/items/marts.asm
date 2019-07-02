@@ -54,7 +54,7 @@ MartCherrygroveDex:
 	db -1 ; end
 
 MartViolet:
-	db 11 ; # items
+	db 8 ; # items
 	db POKE_BALL
 	db POTION
 	db ESCAPE_ROPE
@@ -111,7 +111,7 @@ MartGoldenrod2F2:
 	db -1 ; end
 
 MartGoldenrod3F:
-	db 7 ; # items
+	db 2 ; # items
 	db DIRE_HIT
 	db GUARD_SPEC
 	db -1 ; end
@@ -206,7 +206,7 @@ MartMahogany2:
 	db -1 ; end
 
 MartBlackthorn:
-	db 9 ; # items
+	db 7 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db HYPER_POTION
@@ -217,7 +217,7 @@ MartBlackthorn:
 	db -1 ; end
 
 MartViridian:
-	db 9 ; # items
+	db 7 ; # items
 	db ULTRA_BALL
 	db HYPER_POTION
 	db FULL_HEAL
@@ -326,7 +326,7 @@ MartCeladon5F1:
 	db -1 ; end
 
 MartCeladon5F2:
-	db 7 ; # items
+	db 2 ; # items
 	db GUARD_SPEC
 	db DIRE_HIT
 	db -1 ; end
@@ -343,7 +343,7 @@ MartFuchsia:
 	db -1 ; end
 
 MartSaffron:
-	db 8 ; # items
+	db 6 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db HYPER_POTION
